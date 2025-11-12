@@ -5,7 +5,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
-import { WorkExperience } from './components/WorkExperience';
+import { WorkExperience } from './components/Experience';
 import { Community } from './components/Community';
 import { Education } from './components/Education';
 import { Talks } from './components/Talks';
