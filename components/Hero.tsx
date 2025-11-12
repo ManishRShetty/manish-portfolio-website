@@ -2,6 +2,7 @@
 import React from 'react';
 // FIX: Import Variants type from framer-motion to explicitly type animation variants.
 import { motion, Variants } from 'framer-motion';
+import { DownloadIcon } from './Icons';
 
 export const Hero: React.FC = () => {
   const containerVariants: Variants = {
@@ -56,7 +57,7 @@ export const Hero: React.FC = () => {
           Building fast, scalable, and user-centered web apps using Next.js & DevOps.
         </motion.p>
         <motion.div
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
           variants={itemVariants}
         >
           <a
@@ -70,6 +71,14 @@ export const Hero: React.FC = () => {
             className="w-full sm:w-auto px-8 py-3 text-base font-medium text-accent bg-transparent border-2 border-accent rounded-xl hover:bg-accent/10 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent"
           >
             Contact Me
+          </a>
+           <a 
+              href="/placeholder-cv.pdf" 
+              download
+              className="w-full sm:w-auto px-8 py-3 inline-flex items-center justify-center gap-2 text-base font-medium text-accent bg-transparent border-2 border-accent rounded-xl hover:bg-accent/10 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent"
+          >
+              <DownloadIcon />
+              Download Resume
           </a>
         </motion.div>
       </motion.div>
