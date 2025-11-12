@@ -5,7 +5,11 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
-import { Experience } from './components/Experience';
+import { WorkExperience } from './components/WorkExperience';
+import { Community } from './components/Community';
+import { Education } from './components/Education';
+import { Talks } from './components/Talks';
+import { Achievements } from './components/Achievements';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CaseStudyModal } from './components/CaseStudyModal';
@@ -63,7 +67,11 @@ const App: React.FC = () => {
         <Hero />
         <About />
         <Projects projects={projectsData} onProjectClick={openModal} />
-        <Experience />
+        <WorkExperience />
+        <Community />
+        <Education />
+        <Talks />
+        <Achievements />
         <Contact />
       </main>
       <Footer />

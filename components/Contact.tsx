@@ -57,11 +57,11 @@ export const Contact: React.FC = () => {
                     {status && <p className="text-center mt-4">{status}</p>}
                 </form>
             </div>
-            {/* <div className="mt-16 flex justify-center items-center gap-6">
+            <div className="mt-16 flex justify-center items-center gap-6">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors"><GithubIcon /></a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors"><LinkedinIcon /></a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors"><TwitterIcon /></a>
-            </div> */}
+            </div>
         </motion.section>
     );
 };
