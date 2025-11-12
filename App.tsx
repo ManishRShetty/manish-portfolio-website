@@ -9,7 +9,7 @@ import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CaseStudyModal } from './components/CaseStudyModal';
-import { projectsData } from './data/projects';
+import { projectsData } from './data/projects.json';
 import type { Project } from './types';
 
 const App: React.FC = () => {
