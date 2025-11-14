@@ -49,6 +49,36 @@ export const DownloadIcon = () => (
     </svg>
 );
 
+/**
+ * A React component rendering the "Manish" SVG text.
+ */
+export const ManishLogo = () => {
+  // CSS styles from the original <style> tag are
+  // converted to a JavaScript style object.
+  const textStyle = {
+    fontSize: '300px',
+    fill: '#fff',
+    textAnchor: 'middle',
+    fontFamily: 'Hathama'
+  };
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 2357 767">
+      {/* The <defs> and <style> tags are removed */}
+      <text 
+        id="Manish" 
+        style={textStyle} // The style object is applied inline
+        transform="matrix(1.687, 0, 0, 1.687, 1174.479, 506.68)"
+      >
+        <tspan x="0">Manish</tspan>
+      </text>
+    </svg>
+  );
+};
+
+ ManishLogo;
+
+
 // Skill Icons
 export const NextjsIcon = () => (<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-full h-full"><title>Next.js</title><path d="M12.001 0c6.628 0 12 5.373 12 12s-5.372 12-12 12-12-5.373-12-12 5.372-12 12-12zm4.321 4.555h-3.033v10.354h-1.937v-4.06l-3.321 4.06h-2.18l3.655-4.47-3.483-5.884h2.203l2.426 4.314v-4.314zm-4.321 11.233c.48.005.873.398.872.877a.876.876 0 1 1-.872-.877z" fill="currentColor"/></svg>);
 export const ReactIcon = () => (<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-full h-full"><title>React</title><path d="M12.001 2.002c-5.524 0-10.002 4.478-10.002 10.002s4.478 10.002 10.002 10.002 10.002-4.478 10.002-10.002S17.525 2.002 12.001 2.002zm0 18.004c-4.412 0-8.002-3.59-8.002-8.002s3.59-8.002 8.002-8.002 8.002 3.59 8.002 8.002-3.59 8.002-8.002 8.002zm-.088-9.04a2.12 2.12 0 1 0-.001 4.24 2.12 2.12 0 0 0 0-4.24zm-4.22 3.193a.473.473 0 0 1-.22-.613 6.002 6.002 0 0 1 8.86-.01.473.473 0 1 1-.68.65 4.99 4.99 0 0 0-7.34-.012.473.473 0 0 1-.62.035zm8.508-2.61a.473.473 0 0 1-.168-.65 6.002 6.002 0 0 0-8.525 4.945.473.473 0 0 1-.945-.045 7.002 7.002 0 0 1 9.947-5.77.473.473 0 0 1-.309 1.52zm-3.692-4.22a.473.473 0 0 1-.613-.22 6.002 6.002 0 0 0-4.945-8.525.473.473 0 0 1 .045-.945 7.002 7.002 0 0 1 5.77 9.947.473.473 0 0 1-.252.743z" fill="currentColor"/></svg>);
