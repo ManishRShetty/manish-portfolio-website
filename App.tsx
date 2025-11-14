@@ -44,6 +44,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black bg-red text-gray-900 font-sans">
+      
       <Header />
       <main className="container bg-black mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />
