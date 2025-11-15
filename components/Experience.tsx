@@ -5,34 +5,36 @@ import { motion } from 'framer-motion';
 // Mock data created to match the structure of the original component
 const workExperienceData = [
   {
-    duration: "2023 - Present",
-    role: "Senior Product Designer",
-    company: "Apple Inc.",
+    duration: "August 2025 - October 2025",
+    role: "Frontend Developer Intern",
+    company: "MyDBLink, Cassablanca, Morocco [Remote]",
     tasks: [
-      "Designing world-class user interfaces for flagship products.",
-      "Leading design sprints for new features on macOS and iOS.",
-      "Mentoring junior designers and shaping team design principles."
+      "Contributed to the redesign of a major production-level web application, improving overall user experience and visual consistency.",
+
+"Implemented responsive UI components using modern frontend best practices, significantly enhancing usability across mobile and tablet devices.",
+
+"Optimized frontend performance through code refactoring and asset optimization, achieving noticeable reductions in page load times (≈20%)."
     ]
   },
   {
-    duration: "2020 - 2023",
-    role: "UX/UI Designer",
-    company: "Quantum Studios",
+    duration: "October 2025 - Present",
+    role: "Full Stack Technical Developer & Trainer",
+    company: "Thaniya Technologies, Mangalore, India",
     tasks: [
       "Developed high-fidelity prototypes for mobile and web applications.",
       "Conducted user research and usability testing sessions.",
       "Collaborated with developers to ensure pixel-perfect implementation."
     ]
   },
-  {
-    duration: "2018 - 2020",
-    role: "Junior Designer",
-    company: "Creative Solutions",
-    tasks: [
-      "Assisted senior designers with asset creation and wireframing.",
-      "Learned and applied user-centric design principles."
-    ]
-  }
+  // {
+  //   duration: "2018 - 2020",
+  //   role: "Junior Designer",
+  //   company: "Creative Solutions",
+  //   tasks: [
+  //     "Assisted senior designers with asset creation and wireframing.",
+  //     "Learned and applied user-centric design principles."
+  //   ]
+  // }
 ];
 
 /**

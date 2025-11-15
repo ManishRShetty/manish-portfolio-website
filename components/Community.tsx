@@ -5,33 +5,33 @@ import { motion } from 'framer-motion';
 // Mock data created to match the structure of the original component
 const communityData = [
   {
-    organization: "React Conference 2024",
-    role: "Speaker",
-    duration: "March 2024",
-    description: "Delivered a talk on 'State Management in Modern React' to an audience of over 500 developers.",
-    logoUrl: "https://placehold.co/64x64/1C1C1E/0A84FF?text=RC&font=sans-serif&shape=circle"
+    organization: "Nexus Clubs",
+    role: "Vice-President",
+    duration: "From August 2024",
+    description: "Leading a team of 60+ members to organize tech talks, hackathons, and community service events for over 200 club members.",
+    logoUrl: "https://placehold.co/64x64/1C1C1E/0A84FF?text=NEXUS&font=sans-serif&shape=circle"
   },
-  {
-    organization: "OpenSource Collective",
-    role: "Core Contributor",
-    duration: "2022 - Present",
-    description: "Actively maintain and contribute to three major open-source UI libraries, focusing on accessibility and performance.",
-    logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=OSC&font=sans-serif&shape=circle"
-  },
-  {
-    organization: "Design Meetup NYC",
-    role: "Mentor",
-    duration: "2021 - 2023",
-    description: "Mentored aspiring designers, providing portfolio reviews and career guidance at monthly meetups.",
-    logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=DM&font=sans-serif&shape=circle"
-  },
-  {
-    organization: "Tech for Good",
-    role: "Volunteer Developer",
-    duration: "Summer 2022",
-    description: "Built a donation tracking application for a local non-profit organization, pro bono.",
-    logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=TFG&font=sans-serif&shape=circle"
-  }
+  // {
+  //   organization: "OpenSource Collective",
+  //   role: "Core Contributor",
+  //   duration: "2022 - Present",
+  //   description: "Actively maintain and contribute to three major open-source UI libraries, focusing on accessibility and performance.",
+  //   logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=OSC&font=sans-serif&shape=circle"
+  // },
+  // {
+  //   organization: "Design Meetup NYC",
+  //   role: "Mentor",
+  //   duration: "2021 - 2023",
+  //   description: "Mentored aspiring designers, providing portfolio reviews and career guidance at monthly meetups.",
+  //   logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=DM&font=sans-serif&shape=circle"
+  // },
+  // {
+  //   organization: "Tech for Good",
+  //   role: "Volunteer Developer",
+  //   duration: "Summer 2022",
+  //   description: "Built a donation tracking application for a local non-profit organization, pro bono.",
+  //   logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=TFG&font=sans-serif&shape=circle"
+  // }
 ];
 
 /**

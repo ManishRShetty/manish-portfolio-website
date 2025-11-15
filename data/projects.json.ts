@@ -41,8 +41,8 @@ export const projectsData: Project[] = [
   },
   {
     id: 3,
-    title: "Project Gamma",
-    thumbnail: "https://picsum.photos/seed/gamma/800/600",
+    title: "Envision College Event Website",
+    thumbnail: "https://i.ibb.co/TD8n386m/New-Project-3.png",
     description: "A sleek, modern marketing website designed to capture leads, with animations powered by Framer Motion.",
     stack: ["React", "Framer Motion", "UI/UX"],
     liveDemoUrl: "#",

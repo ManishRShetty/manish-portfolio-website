@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { GithubIcon, LinkedinIcon, TwitterIcon, NodeIcon, TailwindIcon, FramerIcon,  DockerIcon, AwsIcon, } from './Icons';
 // --- Inlined SVG Icons (Apple-inspired & Minimal) ---
 
 // A minimal, Apple-style Download icon
@@ -22,17 +22,135 @@ const DownloadIcon = () => (
   </svg>
 );
 
-// The original skills array, logic unchanged.
+// --- Inlined SVG Icons (Tech Stack) ---
+// These are monochrome and will inherit the text color.
+
+// const NextIcon = () => (
+//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+//     {/* Minimal Vercel/Next.js Triangle */}
+//     <path d="M12 2.163l-9.9 17.147h19.8L12 2.163zM12 4.47l7.807 13.523H4.193L12 4.47z" />
+//   </svg>
+// );
+
+const ReactIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5" // Thinner stroke for a lighter feel
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <ellipse cx="12" cy="12" rx="11" ry="4.2" />
+    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(60 12 12)" />
+    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(120 12 12)" />
+    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+  </svg>
+);
+
+// const TailwindIcon = () => (
+//   <svg
+//     width="16"
+//     height="16"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="2"
+//     strokeLinecap="round"
+//     strokeLinejoin="round"
+//   >
+//     {/* Minimal "wind" icon */}
+//     <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 11 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+//   </svg>
+// );
+
+// const FramerIcon = () => (
+//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+//     {/* Simplified Framer logo */}
+//     <path d="M12 6H6v6h6V6zM18 6h-6v6h6V6zM12 12H6v6h6v-6z" />
+//   </svg>
+// );
+
+// const NodeIcon = () => (
+//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+//     {/* Simplified Node.js Hexagon */}
+//     <path d="M12 2.16L3.17 7.08v9.84L12 21.84l8.83-4.92V7.08L12 2.16zm-1.04 15.11v-3.23H6.84v-1.59h4.12v-3.3l4.9 3.32-4.9 4.8z" />
+//   </svg>
+// );
+
+const FirebaseIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    {/* Simplified Firebase logo */}
+    <path d="M4.168 21.36l6.392-14.736 3.264 3.024-6.32 14.592zM5.76 19.416l3.336 2.88 7.392-17.064-3.264-3.024z" />
+  </svg>
+);
+
+// const DockerIcon = () => (
+//   <svg
+//     width="16"
+//     height="16"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="2"
+//     strokeLinecap="round"
+//     strokeLinejoin="round"
+//   >
+//     {/* "Package" icon as a proxy for "container" */}
+//     <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+//     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+//     <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+//     <line x1="12" y1="22.08" x2="12" y2="12"></line>
+//   </svg>
+// );
+
+// const AwsIcon = () => (
+//   <svg
+//     width="16"
+//     height="16"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="2"
+//     strokeLinecap="round"
+//     strokeLinejoin="round"
+//   >
+//     {/* Simple "cloud" icon */}
+//     <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+//   </svg>
+// );
+
+// const GithubActionsIcon = () => (
+//   <svg
+//     width="16"
+//     height="16"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="2"
+//     strokeLinecap="round"
+//     strokeLinejoin="round"
+//   >
+//     {/* "Play in circle" icon for Actions/Workflows */}
+//     <circle cx="12" cy="12" r="10" />
+//     <polygon points="10 8 16 12 10 16 10 8" />
+//   </svg>
+// );
+
+// --- Updated Skills Array ---
+// Now includes an 'icon' property
 const skills = [
-  { name: 'Next.js' },
-  { name: 'React' },
-  { name: 'Tailwind CSS' },
-  { name: 'Framer Motion' },
-  { name: 'Node.js' },
-  { name: 'Firebase' },
-  { name: 'Docker' },
-  { name: 'AWS' },
-  { name: 'GitHub Actions' },
+  // { name: 'Next.js', icon: <NextIcon /> },
+  { name: 'React', icon: <ReactIcon /> },
+  { name: 'Tailwind CSS', icon: <TailwindIcon /> },
+  { name: 'Framer Motion', icon: <FramerIcon /> },
+  { name: 'Node.js', icon: <NodeIcon /> },
+  { name: 'Firebase', icon: <FirebaseIcon /> },
+  { name: 'Docker', icon: <DockerIcon /> },
+  { name: 'AWS', icon: <AwsIcon /> },
+  { name: 'GitHub Actions', icon: <GithubIcon /> },
 ];
 
 export const About: React.FC = () => {
@@ -92,12 +210,13 @@ export const About: React.FC = () => {
         >
           {/* Description: Uses Apple secondary text color (neutral-400) */}
           <p className="text-lg text-neutral-400 leading-relaxed">
-            I'm a passionate Full Stack Developer focused on creating performant
-            and beautiful web applications. With a strong foundation in Next.js,
-            UI/UX principles, and modern DevOps practices, I thrive in
-            fast-paced startup environments where I can build, learn, and ship
-            quickly. I am actively seeking remote opportunities to contribute to
-            innovative projects.
+            I'm a dedicated Full Stack Developer & AI Engineer focused on
+            building fast, elegant, and intelligent web applications. With strong
+            expertise in Next.js, modern UI/UX, LLM integrations, and DevOps
+            workflows, I thrive in fast-paced startup environments where rapid
+            development, experimentation, and innovation matter. I'm actively
+            seeking remote opportunities to contribute to impactful, AI-driven
+            projects.
           </p>
 
           {/* CV Button: Styled as minimal, pill-shaped outline button */}
@@ -128,12 +247,15 @@ export const About: React.FC = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="py-3 px-6 bg-[#1C1C1E] rounded-full text-neutral-200 font-medium cursor-default transition-all duration-300 hover:bg-neutral-800"
+              className="flex items-center gap-2 py-3 px-6 bg-[#1C1C1E] rounded-full text-neutral-200 font-medium cursor-default transition-all duration-300 hover:bg-neutral-800"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05, duration: 0.5 }}
               viewport={{ once: true }}
             >
+              {/* Render the icon */}
+              {skill.icon}
+              {/* Render the name */}
               {skill.name}
             </motion.div>
           ))}

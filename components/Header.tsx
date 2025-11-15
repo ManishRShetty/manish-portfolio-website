@@ -1,27 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { ManishLogo } from './Icons';
 // --- Inlined SVG Icons (Apple-inspired & Minimal) ---
 
 // A minimal, plausible logo inspired by Apple's app icon design.
-const ManishLogo = () => (
-  <svg
-    width="28"
-    height="28"
-    viewBox="0 0 28 28"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="28" height="28" rx="6" fill="white" />
-    <path
-      d="M8 19V9.5L14 15.5L20 9.5V19"
-      stroke="black"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+// const ManishLogo = () => (
+//   <svg
+//     width="28"
+//     height="28"
+//     viewBox="0 0 28 28"
+//     fill="none"
+//     xmlns="http://www.w3.org/2000/svg"
+//   >
+//     <rect width="28" height="28" rx="6" fill="white" />
+//     <path
+//       d="M8 19V9.5L14 15.5L20 9.5V19"
+//       stroke="black"
+//       strokeWidth="2.5"
+//       strokeLinecap="round"
+//       strokeLinejoin="round"
+//     />
+//   </svg>
+// );
 
 // Minimal Sun icon
 const SunIcon = () => (

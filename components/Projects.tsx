@@ -219,7 +219,7 @@ const mockProjects: Project[] = [
   },
   {
     id: '3',
-    title: 'Carbon-Zero Planner',
+    title: 'Envision College Event Website',
     thumbnail: 'https://placehold.co/600x400/30D158/000000?text=Carbon-Zero',
     stack: ['SvelteKit', 'Firebase', 'Leaflet.js'],
     description: 'A progressive web app to help users track and minimize their carbon footprint through daily logging and smart suggestions.',

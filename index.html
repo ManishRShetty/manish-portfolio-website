@@ -6,46 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manish R Shetty — Full Stack Developer</title>
     <meta name="description" content="Manish R Shetty — Building fast, scalable, and user-centered web apps using Next.js & DevOps." />
-    <!-- Open Graph Tags -->
     <meta property="og:title" content="Manish R Shetty — Full Stack Developer" />
     <meta property="og:description" content="Building fast, scalable, and user-centered web apps using Next.js & DevOps." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://picsum.photos/1200/630" />
 
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
+              // This config is correct. It will now find 'Satoshi' 
+              // because you imported it above.
               sans: ['Satoshi','Inter', 'sans-serif'],
             },
-          //   colors: {
-          //     accent: {
-          //       DEFAULT: '#2563EB',
-          //       hover: '#1D4ED8',
-          //     },
-          //   },
           },
         },
       }
     </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+      {
+        "imports": {
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+        }
+      }
+    </script>
+  </head>
   <body >
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>

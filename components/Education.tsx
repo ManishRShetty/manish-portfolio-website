@@ -4,16 +4,17 @@ import { motion } from 'framer-motion';
 // --- Mock Data (from '../data/education.json') ---
 // Mock data created to match the structure of the original component
 const educationData = [
+  // {
+  //   duration: "2012 - 2016",
+  //   institution: "University of Design",
+  //   degree: "B.F.A. in Graphic Design"
+  // }
   {
-    duration: "2016 - 2018",
-    institution: "Stanford University",
-    degree: "M.S. in Human-Computer Interaction"
+    duration: "2023 - 2027",
+    institution: "Srinivas Institute of Technology, Mangalore",
+    degree: "B.E in Computer Science and Buisness Systems"
   },
-  {
-    duration: "2012 - 2016",
-    institution: "University of Design",
-    degree: "B.F.A. in Graphic Design"
-  }
+  
 ];
 
 /**
