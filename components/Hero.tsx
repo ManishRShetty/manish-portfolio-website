@@ -73,7 +73,7 @@ export const Hero: React.FC = () => {
           className="mt-4 text-2xl md:text-3xl font-medium text-blue-500"
           variants={itemVariants}
         >
-          Full Stack Developer
+          AI Product Engineer
         </motion.p>
 
         {/* Description: Uses Apple secondary text color (neutral-400) for soft contrast */}
@@ -81,8 +81,7 @@ export const Hero: React.FC = () => {
           className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-neutral-400 leading-relaxed"
           variants={itemVariants}
         >
-          Building fast, scalable, and user-centered web apps using Next.js &
-          DevOps.
+         Creating intelligent, scalable, and beautifully designed digital products with Next.js, AI, UI/UX, and DevOps.
         </motion.p>
 
         {/* Button Container: Increased margin-top for negative space */}

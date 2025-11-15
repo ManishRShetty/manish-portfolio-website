@@ -210,13 +210,7 @@ export const About: React.FC = () => {
         >
           {/* Description: Uses Apple secondary text color (neutral-400) */}
           <p className="text-lg text-neutral-400 leading-relaxed">
-            I'm a dedicated Full Stack Developer & AI Engineer focused on
-            building fast, elegant, and intelligent web applications. With strong
-            expertise in Next.js, modern UI/UX, LLM integrations, and DevOps
-            workflows, I thrive in fast-paced startup environments where rapid
-            development, experimentation, and innovation matter. I'm actively
-            seeking remote opportunities to contribute to impactful, AI-driven
-            projects.
+            I'm a dedicated Full Stack, AI, and Product Engineer with a strong foundation in Next.js, UI/UX design, and modern DevOps workflows. I build fast, elegant, and intelligent web applications that solve real user problems. I thrive in fast-paced startup environments where I can design, build, iterate, and ship impactful features quickly. I’m actively seeking remote opportunities to work on innovative, AI-driven products.
           </p>
 
           {/* CV Button: Styled as minimal, pill-shaped outline button */}
