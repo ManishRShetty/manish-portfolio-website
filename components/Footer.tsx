@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
             <LinkedinIcon />
           </a>
           <a 
-            href="#" 
+            href="https://x.com/ManishShetty017" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-[#8E8E93] hover:text-white transition-colors"

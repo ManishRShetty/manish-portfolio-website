@@ -6,11 +6,13 @@ export interface Project {
   stack: string[];
   liveDemoUrl?: string;
   codeUrl?: string;
+  
   caseStudy: {
     problem: string;
     solution: string;
     impact: string;
     screenshots: string[];
+    role?: string;
   };
 }
 
