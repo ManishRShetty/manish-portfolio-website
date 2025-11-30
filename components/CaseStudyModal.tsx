@@ -1,23 +1,6 @@
-import React, { useState } from 'react';
-// FIX: Import Variants type from framer-motion to explicitly type animation variants.
-// AnimatePresence is added to handle the 'exit' animation.
+import React from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-
-// --- Types (from '../types') ---
-// Re-created for this self-contained example
-interface CaseStudy {
-  problem: string;
-  solution: string;
-  impact: string;
-  role: string;
-  screenshots: string[];
-}
-
-interface Project {
-  title: string;
-  stack: string[];
-  caseStudy: CaseStudy;
-}
+import { Project } from '@/types';
 
 // --- Icons (from './Icons') ---
 // Re-created as inline SVG component
@@ -49,14 +32,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
   const backdropVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
-    exit: { opacity: 0 }, // Added exit variant
+    exit: { opacity: 0 },
   };
 
-  // FIX: Explicitly type `modalVariants` with `Variants`
   const modalVariants: Variants = {
     hidden: { scale: 0.9, opacity: 0 },
     visible: { scale: 1, opacity: 1, transition: { type: 'spring', stiffness: 300, damping: 30 } },
-    exit: { scale: 0.9, opacity: 0, transition: { duration: 0.15 } }, // Added exit variant
+    exit: { scale: 0.9, opacity: 0, transition: { duration: 0.15 } },
   };
 
   return (
@@ -66,7 +48,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
       variants={backdropVariants}
       initial="hidden"
       animate="visible"
-      exit="exit" // Use exit variant
+      exit="exit"
       onClick={onClose}
     >
       <motion.div
@@ -84,19 +66,19 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
         >
           <CloseIcon />
         </button>
-        
+
         {/* Content Area: Use ample padding for negative space */}
         <div className="p-8 sm:p-10 md:p-12">
-          
+
           {/* Header */}
           {/* Title: Apple-like large, bold typography */}
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-2">{project.title}</h2>
-          
+
           {/* Tech Stack: Use minimal pills */}
           <div className="flex flex-wrap gap-2 mb-8">
             {project.stack.map((tech) => (
-              <span 
-                key={tech} 
+              <span
+                key={tech}
                 className="px-2.5 py-1 bg-[#2C2C2E] text-[#8E8E93] text-xs font-medium rounded-full"
               >
                 {tech}
@@ -120,11 +102,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
               <h3 className="text-xl font-semibold text-white mb-3">The Impact</h3>
               <p className="text-[#8E8E93] leading-relaxed">{project.caseStudy.impact}</p>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-3">My Role</h3>
-              <p className="text-[#8E8E93] leading-relaxed">{project.caseStudy.role}</p>
-            </div>
-            
+            {project.caseStudy.role && (
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-3">My Role</h3>
+                <p className="text-[#8E8E93] leading-relaxed">{project.caseStudy.role}</p>
+              </div>
+            )}
+
           </div>
 
           {/* Screenshots: Add more top margin */}
@@ -132,12 +116,12 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
             <h3 className="text-xl font-semibold text-white mb-4">Screenshots</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {project.caseStudy.screenshots.map((src, index) => (
-                <img 
-                  key={index} 
-                  src={src} 
-                  alt={`Screenshot ${index + 1}`} 
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Screenshot ${index + 1}`}
                   // Use secondary surface as BG placeholder
-                  className="rounded-lg bg-[#111111]" 
+                  className="rounded-lg bg-[#111111]"
                   onError={(e) => (e.currentTarget.src = 'https://placehold.co/600x400/1C1C1E/8E8E93?text=Image+Not+Found')}
                 />
               ))}
@@ -148,56 +132,3 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
     </motion.div>
   );
 };
-
-// --- Main App Component (for demonstration) ---
-
-// Mock Data
-// const mockProject: Project = {
-//   title: 'QuantumOS Interface',
-//   stack: ['React', 'TypeScript', 'Framer Motion', 'Tailwind'],
-//   caseStudy: {
-//     problem: 'Traditional desktop operating systems feel static and uninspiring. User engagement drops during complex tasks due to cluttered interfaces and jarring transitions.',
-//     solution: 'We designed QuantumOS, a conceptual operating system focused on fluid motion and contextual awareness. By using a physics-based animation system and a minimalist, adaptive UI, the system anticipates user needs, reduces cognitive load, and makes interactions feel responsive and natural.',
-//     impact: 'Early prototypes showed a 30% reduction in time-on-task and a 50% increase in positive user feedback compared to baseline systems. The design principles are now being adapted for our next-generation product suite.',
-//     screenshots: [
-//       'https://placehold.co/600x400/0A84FF/000000?text=Dashboard+View',
-//       'https://placehold.co/600x400/1C1C1E/FFFFFF?text=File+Explorer',
-//     ],
-//   },
-// };
-
-/**
- * Main App component to render and toggle the modal
- */
-// export default function App() {
-//   const [modalOpen, setModalOpen] = useState(false);
-  
-//   const openModal = () => setModalOpen(true);
-//   const closeModal = () => setModalOpen(false);
-
-//   return (
-//     // Set the pure black primary background
-//     <main className="bg-black text-white min-h-screen font-sans antialiased flex items-center justify-center">
-      
-//       {/* Demo Button: Apple-like accent button */}
-//       <motion.button
-//         onClick={openModal}
-//         className="px-6 py-3 bg-[#0A84FF] text-white text-lg font-semibold rounded-lg shadow-lg shadow-blue-500/30"
-//         whileHover={{ scale: 1.05, shadow: "0 0 25px rgba(10, 132, 255, 0.5)" }}
-//         transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-//       >
-//         Open Case Study
-//       </motion.button>
-
-//       {/* AnimatePresence is required for 'exit' animations to work */}
-//       <AnimatePresence>
-//         {modalOpen && (
-//           <CaseStudyModal 
-//             project={mockProject} 
-//             onClose={closeModal} 
-//           />
-//         )}
-//       </AnimatePresence>
-//     </main>
-//   );
-// }

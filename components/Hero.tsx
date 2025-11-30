@@ -81,7 +81,7 @@ export const Hero: React.FC = () => {
           className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-neutral-400 leading-relaxed"
           variants={itemVariants}
         >
-         Creating intelligent, scalable, and beautifully designed digital products with Next.js, AI, UI/UX, and DevOps.
+          Creating intelligent, scalable, and beautifully designed digital products with Next.js, AI, UI/UX, and DevOps.
         </motion.p>
 
         {/* Button Container: Increased margin-top for negative space */}
