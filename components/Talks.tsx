@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 // Mock data created to match the structure of the original component
 const talksData = [
   { 
-    title: "State Management in Modern React", 
-    event: "React Conference 2024", 
+    title: "Git/GitHub Hands-on Workshop",  
     date: "March 2024", 
     url: "#" 
   },

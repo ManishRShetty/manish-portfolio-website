@@ -2,25 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { GithubIcon, LinkedinIcon, TwitterIcon, NodeIcon, TailwindIcon, FramerIcon,  DockerIcon, AwsIcon, } from './Icons';
 // --- Inlined SVG Icons (Apple-inspired & Minimal) ---
-
+import { FaDocker, FaNodeJs, FaAws, FaPython } from "react-icons/fa";
+import { SiFramer, SiFirebase, SiKubernetes, SiGooglecloud, SiN8N } from "react-icons/si";
+import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
+import { MdOutlineFileDownload } from "react-icons/md";
 // A minimal, Apple-style Download icon
-const DownloadIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-    <polyline points="7 10 12 15 17 10" />
-    <line x1="12" y1="15" y2="3" />
-  </svg>
-);
+// const DownloadIcon = () => (
+//   <svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     width="16"
+//     height="16"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="2"
+//     strokeLinecap="round"
+//     strokeLinejoin="round"
+//   >
+//     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+//     <polyline points="7 10 12 15 17 10" />
+//     <line x1="12" y1="15" y2="3" />
+//   </svg>
+// );
 
 // --- Inlined SVG Icons (Tech Stack) ---
 // These are monochrome and will inherit the text color.
@@ -80,12 +83,13 @@ const ReactIcon = () => (
 //   </svg>
 // );
 
-const FirebaseIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-    {/* Simplified Firebase logo */}
-    <path d="M4.168 21.36l6.392-14.736 3.264 3.024-6.32 14.592zM5.76 19.416l3.336 2.88 7.392-17.064-3.264-3.024z" />
-  </svg>
-);
+// const FirebaseIcon = () => (
+//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+//     {/* Simplified Firebase logo */}
+
+//     <path d="M4.168 21.36l6.392-14.736 3.264 3.024-6.32 14.592zM5.76 19.416l3.336 2.88 7.392-17.064-3.264-3.024z" />
+//   </svg>
+// );
 
 // const DockerIcon = () => (
 //   <svg
@@ -143,14 +147,21 @@ const FirebaseIcon = () => (
 // Now includes an 'icon' property
 const skills = [
   // { name: 'Next.js', icon: <NextIcon /> },
+  { name: 'NextJS', icon: <RiNextjsFill /> },
   { name: 'React', icon: <ReactIcon /> },
-  { name: 'Tailwind CSS', icon: <TailwindIcon /> },
-  { name: 'Framer Motion', icon: <FramerIcon /> },
-  { name: 'Node.js', icon: <NodeIcon /> },
-  { name: 'Firebase', icon: <FirebaseIcon /> },
-  { name: 'Docker', icon: <DockerIcon /> },
-  { name: 'AWS', icon: <AwsIcon /> },
+  { name: 'Tailwind CSS', icon: <RiTailwindCssFill /> },
+  { name: 'Python', icon: <FaPython /> },
+  
+  {name: 'Kubernetes', icon:<SiKubernetes />},
+  
+  { name: 'Firebase', icon: <SiFirebase /> },
+  { name: 'Docker', icon: <FaDocker /> },
+  { name: 'AWS', icon: <FaAws /> },
+  {name: 'Google Cloud', icon:<SiGooglecloud />},
   { name: 'GitHub Actions', icon: <GithubIcon /> },
+  { name: 'n8n', icon: <SiN8N /> },
+  { name: 'Node.js', icon: <FaNodeJs /> },
+  { name: 'Framer Motion', icon: <SiFramer /> },
 ];
 
 export const About: React.FC = () => {
@@ -193,7 +204,7 @@ export const About: React.FC = () => {
         >
           <img
             // Using a professional, dark placeholder
-            src="https://placehold.co/400x400/1C1C1E/FFFFFF?text=MR&font=sans-serif"
+            src="/Manish.png"
             alt="Manish R Shetty"
             className="rounded-full w-full h-full object-cover shadow-lg"
             onError={(e) => {
@@ -215,11 +226,11 @@ export const About: React.FC = () => {
 
           {/* CV Button: Styled as minimal, pill-shaped outline button */}
           <a
-            href="/placeholder-cv.pdf"
+            href="/Resume.pdf"
             download
             className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-blue-500 bg-transparent border border-blue-500 rounded-full hover:bg-blue-500/10 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-black"
           >
-            <DownloadIcon />
+            <MdOutlineFileDownload />
             Download CV
           </a>
         </motion.div>

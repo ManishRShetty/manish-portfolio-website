@@ -1,7 +1,7 @@
 import React from 'react';
 // Import Variants type from framer-motion to explicitly type animation variants.
 import { motion, Variants } from 'framer-motion';
-
+import { MdOutlineFileDownload } from "react-icons/md";
 // A minimal, Apple-style Download icon to replace the external import.
 // This is inspired by modern icon sets and keeps the component self-contained.
 const DownloadIcon = () => (
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
             download
             className="w-full sm:w-auto px-6 py-3 inline-flex items-center justify-center gap-2 text-base font-medium text-blue-500 bg-transparent border border-blue-500 rounded-full hover:bg-blue-500/10 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-black"
           >
-            <DownloadIcon />
+            <MdOutlineFileDownload />
             Download Resume
           </a>
         </motion.div>
