@@ -1786,6 +1786,7 @@ const mockProjects = [
     {
         id: 1,
         title: 'QuantumOS Interface',
+        logo: 'https://placehold.co/100x100/0A84FF/FFFFFF?text=Q',
         thumbnail: 'https://placehold.co/600x400/0A84FF/000000?text=QuantumOS',
         stack: [
             'React',
@@ -1801,6 +1802,7 @@ const mockProjects = [
     {
         id: 2,
         title: 'Echo-Sphere Analytics',
+        logo: 'https://placehold.co/100x100/1C1C1E/FFFFFF?text=E',
         thumbnail: 'https://placehold.co/600x400/1C1C1E/FFFFFF?text=Echo-Sphere',
         stack: [
             'Next.js',
@@ -1816,6 +1818,7 @@ const mockProjects = [
     {
         id: 3,
         title: 'Envision College Event Website',
+        logo: 'https://placehold.co/100x100/30D158/000000?text=C',
         thumbnail: 'https://placehold.co/600x400/30D158/000000?text=Carbon-Zero',
         stack: [
             'SvelteKit',
@@ -1830,6 +1833,7 @@ const mockProjects = [
     {
         id: 4,
         title: 'Nova-Bank Admin',
+        logo: 'https://placehold.co/100x100/FF9500/000000?text=N',
         thumbnail: 'https://placehold.co/600x400/FF9500/000000?text=Nova-Bank',
         stack: [
             'Vue.js',
@@ -1844,6 +1848,7 @@ const mockProjects = [
     {
         id: 5,
         title: 'Aura Weather',
+        logo: 'https://placehold.co/100x100/5E5CE6/FFFFFF?text=A',
         thumbnail: 'https://placehold.co/600x400/5E5CE6/FFFFFF?text=Aura',
         stack: [
             'React Native',
@@ -1858,6 +1863,7 @@ const mockProjects = [
     {
         id: 6,
         title: 'Syntax.dev Blog',
+        logo: 'https://placehold.co/100x100/FF3B30/FFFFFF?text=S',
         thumbnail: 'https://placehold.co/600x400/FF3B30/FFFFFF?text=Syntax.dev',
         stack: [
             'Astro',
@@ -1883,12 +1889,12 @@ function App() {
             onProjectClick: handleProjectClick
         }, void 0, false, {
             fileName: "[project]/components/Projects.tsx",
-            lineNumber: 299,
+            lineNumber: 305,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/Projects.tsx",
-        lineNumber: 298,
+        lineNumber: 304,
         columnNumber: 5
     }, this));
 }
@@ -2092,7 +2098,7 @@ const communityData = [
         role: "Vice-President",
         duration: "From August 2024",
         description: "Leading a team of 60+ members to organize tech talks, hackathons, and community service events for over 200 club members.",
-        logoUrl: "https://placehold.co/64x64/1C1C1E/0A84FF?text=NEXUS&font=sans-serif&shape=circle"
+        logoUrl: "https://www.nexusclubs.in/logo.png"
     }
 ];
 const Community = ()=>{
@@ -2813,9 +2819,12 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fa/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/si/index.mjs [app-ssr] (ecmascript)");
 ;
 ;
-// --- Icons (from './Icons') ---
+;
+;
 // Re-created as inline SVG component
 const CloseIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -2829,12 +2838,12 @@ const CloseIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
             clipRule: "evenodd"
         }, void 0, false, {
             fileName: "[project]/components/CaseStudyModal.tsx",
-            lineNumber: 15,
+            lineNumber: 16,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/CaseStudyModal.tsx",
-        lineNumber: 8,
+        lineNumber: 9,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const CaseStudyModal = ({ project, onClose })=>{
@@ -2892,38 +2901,208 @@ const CaseStudyModal = ({ project, onClose })=>{
                     "aria-label": "Close modal",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CloseIcon, {}, void 0, false, {
                         fileName: "[project]/components/CaseStudyModal.tsx",
-                        lineNumber: 67,
+                        lineNumber: 68,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/components/CaseStudyModal.tsx",
-                    lineNumber: 60,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "p-8 sm:p-10 md:p-12",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-4xl md:text-5xl font-bold tracking-tight text-white mb-2",
-                            children: project.title
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-4 mb-6",
+                            children: [
+                                project.logo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: project.logo,
+                                    alt: `${project.title} logo`,
+                                    className: "w-16 h-16 rounded-xl object-cover shadow-lg"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/CaseStudyModal.tsx",
+                                    lineNumber: 77,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-4xl md:text-5xl font-bold tracking-tight text-white",
+                                    children: project.title
+                                }, void 0, false, {
+                                    fileName: "[project]/components/CaseStudyModal.tsx",
+                                    lineNumber: 84,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/CaseStudyModal.tsx",
                             lineNumber: 75,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-wrap gap-2 mb-8",
-                            children: project.stack.map((tech)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "px-2.5 py-1 bg-[#2C2C2E] text-[#8E8E93] text-xs font-medium rounded-full",
-                                    children: tech
-                                }, tech, false, {
+                            className: "flex flex-wrap gap-4 mb-8",
+                            children: project.stack.map((tech)=>{
+                                const getTechIcon = (techName)=>{
+                                    const lower = techName.toLowerCase();
+                                    if (lower.includes('react native')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaReact"], {
+                                        className: "w-5 h-5 text-[#61DAFB]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 92,
+                                        columnNumber: 60
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('react')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaReact"], {
+                                        className: "w-5 h-5 text-[#61DAFB]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 93,
+                                        columnNumber: 53
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('next')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiNextdotjs"], {
+                                        className: "w-5 h-5 text-white"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 94,
+                                        columnNumber: 52
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('tailwind')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiTailwindcss"], {
+                                        className: "w-5 h-5 text-[#06B6D4]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 95,
+                                        columnNumber: 56
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('node')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaNodeJs"], {
+                                        className: "w-5 h-5 text-[#339933]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 96,
+                                        columnNumber: 52
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('firebase')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiFirebase"], {
+                                        className: "w-5 h-5 text-[#FFCA28]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 97,
+                                        columnNumber: 56
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('docker')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaDocker"], {
+                                        className: "w-5 h-5 text-[#2496ED]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 98,
+                                        columnNumber: 54
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('aws')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaAws"], {
+                                        className: "w-5 h-5 text-[#FF9900]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 99,
+                                        columnNumber: 51
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('framer')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiFramer"], {
+                                        className: "w-5 h-5 text-white"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 100,
+                                        columnNumber: 54
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('typescript')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiTypescript"], {
+                                        className: "w-5 h-5 text-[#3178C6]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 101,
+                                        columnNumber: 58
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('svelte')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiSvelte"], {
+                                        className: "w-5 h-5 text-[#FF3E00]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 102,
+                                        columnNumber: 54
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('vue')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiVuedotjs"], {
+                                        className: "w-5 h-5 text-[#4FC08D]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 103,
+                                        columnNumber: 51
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('postgres')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiPostgresql"], {
+                                        className: "w-5 h-5 text-[#4169E1]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 104,
+                                        columnNumber: 56
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('leaflet')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiLeaflet"], {
+                                        className: "w-5 h-5 text-[#199900]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 105,
+                                        columnNumber: 55
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('expo')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiExpo"], {
+                                        className: "w-5 h-5 text-white"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 106,
+                                        columnNumber: 52
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('astro')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiAstro"], {
+                                        className: "w-5 h-5 text-[#FF5D01]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 107,
+                                        columnNumber: 53
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    if (lower.includes('mdx')) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$si$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiMdx"], {
+                                        className: "w-5 h-5 text-[#F9AC00]"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/CaseStudyModal.tsx",
+                                        lineNumber: 108,
+                                        columnNumber: 51
+                                    }, ("TURBOPACK compile-time value", void 0));
+                                    // Fallback for unknown
+                                    return null;
+                                };
+                                const icon = getTechIcon(tech);
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-2 bg-[#2C2C2E] px-3 py-1.5 rounded-full",
+                                    title: tech,
+                                    children: [
+                                        icon ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "",
+                                            children: icon
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/CaseStudyModal.tsx",
+                                            lineNumber: 119,
+                                            columnNumber: 21
+                                        }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-[#8E8E93] text-xs font-medium",
+                                            children: tech
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/CaseStudyModal.tsx",
+                                            lineNumber: 121,
+                                            columnNumber: 21
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        icon && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-[#8E8E93] text-xs font-medium",
+                                            children: tech
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/CaseStudyModal.tsx",
+                                            lineNumber: 123,
+                                            columnNumber: 28
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, tech, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 80,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)))
+                                    lineNumber: 117,
+                                    columnNumber: 17
+                                }, ("TURBOPACK compile-time value", void 0));
+                            })
                         }, void 0, false, {
                             fileName: "[project]/components/CaseStudyModal.tsx",
-                            lineNumber: 78,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2948,19 +3127,19 @@ const CaseStudyModal = ({ project, onClose })=>{
                                                 d: "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/CaseStudyModal.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 139,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 138,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Live Demo"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 132,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 project.codeUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2982,25 +3161,25 @@ const CaseStudyModal = ({ project, onClose })=>{
                                                 d: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/CaseStudyModal.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 152,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 151,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Code"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 105,
+                                    lineNumber: 145,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/CaseStudyModal.tsx",
-                            lineNumber: 90,
+                            lineNumber: 130,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3013,7 +3192,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "The Problem"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 163,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3021,13 +3200,13 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.problem
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 165,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3037,7 +3216,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "The Solution"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 128,
+                                            lineNumber: 168,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3045,13 +3224,13 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.solution
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 169,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 167,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3061,7 +3240,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "The Impact"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 172,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3069,13 +3248,13 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.impact
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 133,
+                                            lineNumber: 173,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 171,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 project.caseStudy.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3085,7 +3264,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "My Role"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 137,
+                                            lineNumber: 177,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3093,19 +3272,19 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.role
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 138,
+                                            lineNumber: 178,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 176,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/CaseStudyModal.tsx",
-                            lineNumber: 120,
+                            lineNumber: 160,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3116,7 +3295,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                     children: "Screenshots"
                                 }, void 0, false, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 186,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3129,35 +3308,35 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             onError: (e)=>e.currentTarget.src = 'https://placehold.co/600x400/1C1C1E/8E8E93?text=Image+Not+Found'
                                         }, index, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 149,
+                                            lineNumber: 189,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 187,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/CaseStudyModal.tsx",
-                            lineNumber: 145,
+                            lineNumber: 185,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/CaseStudyModal.tsx",
-                    lineNumber: 71,
+                    lineNumber: 72,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/components/CaseStudyModal.tsx",
-            lineNumber: 54,
+            lineNumber: 55,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/CaseStudyModal.tsx",
-        lineNumber: 45,
+        lineNumber: 46,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

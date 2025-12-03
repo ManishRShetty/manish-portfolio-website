@@ -9,7 +9,7 @@ const communityData = [
     role: "Vice-President",
     duration: "From August 2024",
     description: "Leading a team of 60+ members to organize tech talks, hackathons, and community service events for over 200 club members.",
-    logoUrl: "https://placehold.co/64x64/1C1C1E/0A84FF?text=NEXUS&font=sans-serif&shape=circle"
+    logoUrl: "https://www.nexusclubs.in/logo.png"
   },
   // {
   //   organization: "OpenSource Collective",
@@ -57,7 +57,7 @@ export const Community: React.FC = () => {
       <h2 className="text-5xl sm:text-7xl font-bold tracking-tight text-center text-white mb-16 sm:mb-24">
         Community Involvement
       </h2>
-      
+
       {/* Grid Container */}
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {communityData.map((item, index) => (
@@ -85,13 +85,13 @@ export const Community: React.FC = () => {
             <div className="flex-grow">
               {/* Organization: Primary Text color, strong hierarchy */}
               <h3 className="text-xl font-semibold text-white">{item.organization}</h3>
-              
+
               {/* Role: Use Accent color for emphasis */}
               <p className="font-semibold text-[#0A84FF] my-1">{item.role}</p>
 
               {/* Duration: Use Secondary Text color */}
               <p className="text-sm text-[#8E8E93] mb-4">{item.duration}</p>
-              
+
               {/* Description: Use Secondary Text color for body copy */}
               <p className="text-base text-[#8E8E93]">{item.description}</p>
             </div>
