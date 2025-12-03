@@ -1,56 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-// --- Inlined SVG Icons (Apple-inspired & Minimal) ---
 
-// Minimal Sun icon
-const SunIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="5" />
-    <line x1="12" y1="1" x2="12" y2="3" />
-    <line x1="12" y1="21" x2="12" y2="23" />
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-    <line x1="1" y1="12" x2="3" y2="12" />
-    <line x1="21" y1="12" x2="23" y2="12" />
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-  </svg>
-);
-
-// Minimal Moon icon
-const MoonIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-  </svg>
-);
-
-// --- Component Interface ---
-
-interface HeaderProps {
-}
-
-// --- Redesigned Header Component ---
+interface HeaderProps { }
 
 export const Header: React.FC<HeaderProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -63,34 +15,39 @@ export const Header: React.FC<HeaderProps> = () => {
   ];
 
   return (
-    // Header: Sticky, Z-index 50, Apple frosted-glass effect (black base, 70% opacity, large blur)
-    // Subtle bottom border uses the specified divider color (#2C2C2E -> neutral-800)
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full bg-black/70 backdrop-blur-lg border-b border-neutral-800"
+      // Header stays sticky at the top
+      className="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-neutral-800"
     >
-      {/* Container: Constrains width with ample padding */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Layout: Flexbox, centered, fixed height for consistency */}
-        <div className="flex items-center justify-between h-16">
-          {/* Logo: Primary text color */}
+        <div className="flex items-center h-16">
+
+          {/* LOGO */}
           <a
-            href="#"
-            className="flex items-center gap-2 text-lg font-bold text-white"
+            href="/"
+            className="flex items-center gap-2 text-lg font-bold text-white shrink-0"
             aria-label="Homepage"
           >
-            <Image src="/Logo.svg" alt="Manish Logo" width={90} height={90} />
+            <div className="relative w-24 h-24">
+              <Image
+                src="/Logo.svg"
+                alt="Manish Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </a>
 
-          {/* Navigation: Hidden on mobile, flex on desktop */}
-          <nav className="hidden md:flex items-center space-x-6">
+          {/* DESKTOP NAV - Changed ml-8 to ml-auto to push to right */}
+          <nav className="hidden md:flex items-center space-x-8 ml-auto">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                // Links: Secondary text color (#8E8E93 -> neutral-400), transitions to white on hover
                 className="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-300"
               >
                 {link.name}
@@ -98,9 +55,9 @@ export const Header: React.FC<HeaderProps> = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE TOGGLE BUTTON */}
           <button
-            className="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none relative left-32"
+            className="md:hidden ml-auto p-2 text-neutral-400 hover:text-white focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -117,28 +74,24 @@ export const Header: React.FC<HeaderProps> = () => {
               </svg>
             )}
           </button>
-
-          {/* Theme Toggle: Minimal button */}
-          <div className="flex items-center">
-          </div>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* MOBILE MENU OVERLAY */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-neutral-800 overflow-hidden"
+            className="absolute top-16 left-0 w-full md:hidden border-b border-neutral-800 bg-black/95 backdrop-blur-xl overflow-hidden shadow-2xl"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2">
+            <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block px-3 py-3 text-base font-medium text-neutral-300 hover:text-white hover:bg-neutral-800/50 rounded-lg transition-colors"
+                  className="block text-lg font-medium text-neutral-300 hover:text-white"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -152,5 +105,4 @@ export const Header: React.FC<HeaderProps> = () => {
   );
 };
 
-// Default export
 export default Header;
