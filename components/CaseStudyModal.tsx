@@ -86,6 +86,36 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
             ))}
           </div>
 
+          {/* Project Links */}
+          <div className="flex flex-wrap gap-4 mb-8">
+            {project.liveDemoUrl && (
+              <a
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-[#0A84FF] text-white text-sm font-medium rounded-lg hover:bg-[#007AFF] transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Live Demo
+              </a>
+            )}
+            {project.codeUrl && (
+              <a
+                href={project.codeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-[#2C2C2E] text-white text-sm font-medium rounded-lg hover:bg-[#3A3A3C] transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                Code
+              </a>
+            )}
+          </div>
+
           {/* Body Content: Increase spacing for cleaner layout */}
           <div className="space-y-8">
             <div>

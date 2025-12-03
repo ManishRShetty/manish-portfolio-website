@@ -350,6 +350,22 @@ img, video {
   top: 1.25rem;
 }
 
+.left-2 {
+  left: .5rem;
+}
+
+.left-16 {
+  left: 4rem;
+}
+
+.left-24 {
+  left: 6rem;
+}
+
+.left-32 {
+  left: 8rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -920,6 +936,11 @@ img, video {
   padding-bottom: .75rem;
 }
 
+.py-2 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -1269,6 +1290,11 @@ img, video {
 
 .hover\:bg-neutral-800\/50:hover {
   background-color: #26262680;
+}
+
+.hover\:bg-\[\#007AFF\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 122 255 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-\[\#0A84FF\]:hover {

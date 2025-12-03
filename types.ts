@@ -1,12 +1,13 @@
 export interface Project {
   id: number;
   title: string;
+  logo?: string;
   thumbnail: string;
   description: string;
   stack: string[];
   liveDemoUrl?: string;
   codeUrl?: string;
-  
+
   caseStudy: {
     problem: string;
     solution: string;

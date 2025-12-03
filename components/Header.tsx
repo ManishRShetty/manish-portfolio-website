@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = () => {
             className="flex items-center gap-2 text-lg font-bold text-white"
             aria-label="Homepage"
           >
-            <Image src="/Logo.svg" alt="Manish Logo" width={28} height={28} />
+            <Image src="/Logo.svg" alt="Manish Logo" width={90} height={90} />
           </a>
 
           {/* Navigation: Hidden on mobile, flex on desktop */}
@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none"
+            className="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none relative left-32"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >

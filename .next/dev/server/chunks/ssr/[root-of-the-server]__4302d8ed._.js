@@ -204,8 +204,8 @@ const Header = ()=>{
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 src: "/Logo.svg",
                                 alt: "Manish Logo",
-                                width: 28,
-                                height: 28
+                                width: 90,
+                                height: 90
                             }, void 0, false, {
                                 fileName: "[project]/components/Header.tsx",
                                 lineNumber: 84,
@@ -234,7 +234,7 @@ const Header = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none",
+                            className: "md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none relative left-32",
                             onClick: ()=>setIsMobileMenuOpen(!isMobileMenuOpen),
                             "aria-label": "Toggle mobile menu",
                             children: isMobileMenuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -2927,6 +2927,83 @@ const CaseStudyModal = ({ project, onClose })=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-wrap gap-4 mb-8",
+                            children: [
+                                project.liveDemoUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: project.liveDemoUrl,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "flex items-center gap-2 px-4 py-2 bg-[#0A84FF] text-white text-sm font-medium rounded-lg hover:bg-[#007AFF] transition-colors",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            xmlns: "http://www.w3.org/2000/svg",
+                                            className: "h-4 w-4",
+                                            fill: "none",
+                                            viewBox: "0 0 24 24",
+                                            stroke: "currentColor",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                strokeWidth: 2,
+                                                d: "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/CaseStudyModal.tsx",
+                                                lineNumber: 99,
+                                                columnNumber: 19
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/CaseStudyModal.tsx",
+                                            lineNumber: 98,
+                                            columnNumber: 17
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        "Live Demo"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/CaseStudyModal.tsx",
+                                    lineNumber: 92,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                project.codeUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: project.codeUrl,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "flex items-center gap-2 px-4 py-2 bg-[#2C2C2E] text-white text-sm font-medium rounded-lg hover:bg-[#3A3A3C] transition-colors",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            xmlns: "http://www.w3.org/2000/svg",
+                                            className: "h-4 w-4",
+                                            fill: "none",
+                                            viewBox: "0 0 24 24",
+                                            stroke: "currentColor",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                strokeWidth: 2,
+                                                d: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/CaseStudyModal.tsx",
+                                                lineNumber: 112,
+                                                columnNumber: 19
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/CaseStudyModal.tsx",
+                                            lineNumber: 111,
+                                            columnNumber: 17
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        "Code"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/CaseStudyModal.tsx",
+                                    lineNumber: 105,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/CaseStudyModal.tsx",
+                            lineNumber: 90,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "space-y-8",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2936,7 +3013,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "The Problem"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 123,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2944,13 +3021,13 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.problem
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 95,
+                                            lineNumber: 125,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 121,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2960,7 +3037,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "The Solution"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 128,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2968,13 +3045,13 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.solution
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 99,
+                                            lineNumber: 129,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 97,
+                                    lineNumber: 127,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2984,7 +3061,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "The Impact"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 102,
+                                            lineNumber: 132,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2992,13 +3069,13 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.impact
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 133,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 131,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 project.caseStudy.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3008,7 +3085,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: "My Role"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 107,
+                                            lineNumber: 137,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3016,19 +3093,19 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             children: project.caseStudy.role
                                         }, void 0, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 108,
+                                            lineNumber: 138,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 106,
+                                    lineNumber: 136,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/CaseStudyModal.tsx",
-                            lineNumber: 90,
+                            lineNumber: 120,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3039,7 +3116,7 @@ const CaseStudyModal = ({ project, onClose })=>{
                                     children: "Screenshots"
                                 }, void 0, false, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 116,
+                                    lineNumber: 146,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3052,18 +3129,18 @@ const CaseStudyModal = ({ project, onClose })=>{
                                             onError: (e)=>e.currentTarget.src = 'https://placehold.co/600x400/1C1C1E/8E8E93?text=Image+Not+Found'
                                         }, index, false, {
                                             fileName: "[project]/components/CaseStudyModal.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 149,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/components/CaseStudyModal.tsx",
-                                    lineNumber: 117,
+                                    lineNumber: 147,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/CaseStudyModal.tsx",
-                            lineNumber: 115,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
