@@ -1,119 +1,141 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
-// --- Mock Data (from '../data/workExperience.json') ---
-// Mock data created to match the structure of the original component
+// --- Data (Included locally for stability) ---
 const workExperienceData = [
   {
-    duration: "August 2025 - October 2025",
+    duration: "Aug 2025 - Oct 2025",
     role: "Frontend Developer Intern",
-    company: "MyDBLink, Cassablanca, Morocco [Remote]",
+    company: "MyDBLink",
+    location: "Casablanca, Morocco (Remote)",
     tasks: [
-      "Contributed to the redesign of a major production-level web application, improving overall user experience and visual consistency.",
-
-"Implemented responsive UI components using modern frontend best practices, significantly enhancing usability across mobile and tablet devices.",
-
-"Optimized frontend performance through code refactoring and asset optimization, achieving noticeable reductions in page load times (≈20%)."
+      "Redesigned a production-level web application, enhancing visual consistency and reducing bounce rates.",
+      "Engineered responsive UI components using React and Tailwind, ensuring 100% mobile compatibility.",
+      "Refactored legacy codebases, achieving a ~20% reduction in page load times through asset optimization."
     ]
   },
   {
-    duration: "October 2025 - Present",
-    role: "Full Stack Technical Developer & Trainer",
-    company: "Thaniya Technologies, Mangalore, India",
+    duration: "Oct 2025 - Present",
+    role: "Full Stack Developer",
+    company: "Thaniya Technologies",
+    location: "Mangalore, India",
     tasks: [
-      "Developed high-fidelity prototypes for mobile and web applications.",
-      "Conducted user research and usability testing sessions.",
-      "Collaborated with developers to ensure pixel-perfect implementation."
+      "Architecting high-fidelity prototypes for enterprise mobile and web solutions.",
+      "Leading user research and usability testing sessions to drive product decisions.",
+      "Bridging the gap between design and engineering to ensure pixel-perfect implementation."
     ]
-  },
-  // {
-  //   duration: "2018 - 2020",
-  //   role: "Junior Designer",
-  //   company: "Creative Solutions",
-  //   tasks: [
-  //     "Assisted senior designers with asset creation and wireframing.",
-  //     "Learned and applied user-centric design principles."
-  //   ]
-  // }
+  }
 ];
 
-/**
- * Redesigned WorkExperience component with an Apple-like dark theme
- */
+// --- Physics Engine ---
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemBlurVariant: Variants = {
+  hidden: { opacity: 0, x: -20, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: 'blur(0px)',
+    transition: springPhysics
+  },
+};
+
+const lineVariant: Variants = {
+  hidden: { scaleY: 0, originY: 0 },
+  visible: {
+    scaleY: 1,
+    transition: { duration: 1, ease: "circOut" }
+  }
+};
+
 export const WorkExperience: React.FC = () => {
-  // Original animation variants are preserved
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } }
-  };
-  
   return (
-    <motion.section 
-      id="experience" 
-      // Use large padding for ample negative space
-      className="py-24 sm:py-32 px-6 lg:px-8"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
-    >
-      {/* Section Title: 
-        Apply Apple-like large, bold, tracking-tight typography.
-        Use Primary Text color (#FFFFFF).
-      */}
-      <h2 className="text-5xl sm:text-7xl font-bold tracking-tight text-center text-white mb-16 sm:mb-24">
-        Work Experience
-      </h2>
-      
-      {/* Timeline Container:
-        Use Divider color (#2C2C2E) for the vertical timeline bar.
-      */}
-      <div className="relative max-w-2xl mx-auto border-l-2 border-[#2C2C2E]">
-        
-        {workExperienceData.map((job, index) => (
-          // Timeline Item: Increase margin for more negative space
-          <div key={index} className="mb-16 pl-8 relative">
-            
-            {/* Timeline Dot:
-              Use Accent color (#0A84FF) for the dot.
-              Use Primary Background color (#000000) for the dot's border to "punch it out"
-              from the timeline.
-            */}
-            <div className="absolute -left-[11px] top-1 w-5 h-5 bg-[#0A84FF] rounded-full border-4 border-black"></div>
-            
-            {/* Motion container for content fade-in */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              {/* Duration: Use Accent color (#0A84FF) for emphasis */}
-              <p className="text-sm font-medium text-[#0A84FF]">{job.duration}</p>
-              
-              {/* Role: Use Primary Text color (#FFFFFF) and larger font for hierarchy */}
-              <h3 className="text-2xl font-bold mt-1 text-white">{job.role}</h3>
-              
-              {/* Company: Use Secondary Text color (#8E8E93) */}
-              <p className="font-semibold text-[#8E8E93]">{job.company}</p>
-              
-              {/* Tasks List:
-                Use Secondary Text color (#8E8E93).
-                Replace default list-disc with minimal-style hyphens for a cleaner,
-                more Apple-like aesthetic.
-              */}
-              <ul className="mt-4 space-y-2 text-[#8E8E93]">
-                {job.tasks.map((task, i) => (
-                  <li key={i} className="flex gap-x-3">
-                    <span className="text-[#8E8E93]">-</span>
-                    <span className="flex-1">{task}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+    <section id="experience" className="py-32 bg-black text-white px-6 overflow-hidden">
+      <motion.div
+        className="max-w-4xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        {/* Header */}
+        <div className="mb-24 text-center md:text-left">
+          <motion.h2
+            variants={itemBlurVariant}
+            className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6"
+          >
+            Experience
+          </motion.h2>
+          <motion.p
+            variants={itemBlurVariant}
+            className="text-neutral-400 text-lg max-w-xl leading-relaxed"
+          >
+            A timeline of my professional trajectory and the impact I've delivered.
+          </motion.p>
+        </div>
+
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* The Timeline Line: A subtle gradient instead of a hard border */}
+          <motion.div
+            variants={lineVariant}
+            className="absolute left-0 top-2 bottom-0 w-[2px] bg-gradient-to-b from-white/20 via-white/5 to-transparent origin-top md:left-4"
+          />
+
+          <div className="space-y-16">
+            {workExperienceData.map((job, index) => (
+              <motion.div
+                key={index}
+                variants={itemBlurVariant}
+                className="relative pl-8 md:pl-16 group"
+              >
+                {/* The "Dot" - Now a glowing beacon */}
+                <div className="absolute left-[-5px] top-2 md:left-[11px] w-3 h-3 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)] ring-4 ring-black z-10 group-hover:scale-125 transition-transform duration-300" />
+
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors duration-300">
+                    {job.role}
+                  </h3>
+                  <span className="text-sm font-mono text-neutral-500 mt-1 sm:mt-0">
+                    {job.duration}
+                  </span>
+                </div>
+
+                <div className="mb-6">
+                  <div className="text-lg text-neutral-300 font-medium mb-1">
+                    {job.company}
+                  </div>
+                  <div className="text-sm text-neutral-500 font-light">
+                    {job.location}
+                  </div>
+                </div>
+
+                {/* Tasks - Clean typography, no heavy bullets */}
+                <ul className="space-y-3">
+                  {job.tasks.map((task, i) => (
+                    <li key={i} className="flex items-start gap-3 text-neutral-400 text-base leading-relaxed group-hover:text-neutral-300 transition-colors duration-300">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 flex-shrink-0" />
+                      <span>{task}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
-        ))}
-      </div>
-    </motion.section>
+        </div>
+      </motion.div>
+    </section>
   );
 };
+
+export default WorkExperience;

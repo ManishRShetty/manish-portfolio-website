@@ -1,91 +1,136 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
+import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 
-// --- Mock Data (from '../data/education.json') ---
-// Mock data created to match the structure of the original component
+// --- Data (Included locally for stability) ---
 const educationData = [
-  // {
-  //   duration: "2012 - 2016",
-  //   institution: "University of Design",
-  //   degree: "B.F.A. in Graphic Design"
-  // }
   {
     duration: "2023 - 2027",
-    institution: "Srinivas Institute of Technology, Mangalore",
-    degree: "B.E in Computer Science and Buisness Systems"
+    institution: "Srinivas Institute of Technology",
+    location: "Mangalore, India",
+    degree: "B.E in Computer Science and Business Systems",
+    description: "Specializing in the intersection of software engineering and business logic. Core coursework includes Algorithms, System Design, and Enterprise Architecture."
   },
-  
+  // You can add more entries here if needed
+  // {
+  //   duration: "2021 - 2023",
+  //   institution: "Pre-University College",
+  //   location: "Mangalore, India",
+  //   degree: "Science (PCMC)",
+  //   description: "Foundation in Physics, Chemistry, Mathematics, and Computer Science."
+  // }
 ];
 
-/**
- * Redesigned Education component with an Apple-like dark theme
- */
-export const Education: React.FC = () => {
-  // Original animation variants are preserved
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } }
-  };
+// --- Physics Engine ---
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemBlurVariant: Variants = {
+  hidden: { opacity: 0, x: -20, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: 'blur(0px)',
+    transition: springPhysics
+  },
+};
+
+const lineVariant: Variants = {
+  hidden: { scaleY: 0, originY: 0 },
+  visible: {
+    scaleY: 1,
+    transition: { duration: 1, ease: "circOut" }
+  }
+};
+
+export const Education: React.FC = () => {
   return (
-    <motion.section
-      id="education"
-      // Use large padding for ample negative space, match other sections
-      className="py-24 sm:py-32 px-6 lg:px-8"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
-    >
-      {/* Section Title: 
-        Apply Apple-like large, bold, tracking-tight typography.
-        Use Primary Text color (#FFFFFF).
-      */}
-      <h2 className="text-5xl sm:text-7xl font-bold tracking-tight text-center text-white mb-16 sm:mb-24">
-        Education
-      </h2>
-      
-      {/* Timeline Container:
-        Use Divider color (#2C2C2E) for the vertical timeline bar.
-      */}
-      <div className="relative max-w-2xl mx-auto border-l-2 border-[#2C2C2E]">
-        
-        {educationData.map((edu, index) => (
-          // Timeline Item: Increase margin for more negative space
-          <div key={index} className="mb-16 pl-8 relative">
-            
-            {/* Timeline Dot:
-              Use Accent color (#0A84FF) for the dot.
-              Use Primary Background color (#000000) for the dot's border to "punch it out"
-              from the timeline.
-            */}
-            <div className="absolute -left-[11px] top-1 w-5 h-5 bg-[#0A84FF] rounded-full border-4 border-black"></div>
-            
-            {/* Motion container for content fade-in */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              {/* Duration: Use Accent color (#0A84FF) for emphasis */}
-              <p className="text-sm font-medium text-[#0A84FF]">{edu.duration}</p>
-              
-              {/* Institution: Use Primary Text color (#FFFFFF) and larger font for hierarchy */}
-              <h3 className="text-2xl font-bold mt-1 text-white">{edu.institution}</h3>
-              
-              {/* Degree: Use Secondary Text color (#8E8E93) */}
-              <p className="font-semibold text-[#8E8E93]">{edu.degree}</p>
-            </motion.div>
+    <section id="education" className="py-32 bg-black text-white px-6 overflow-hidden">
+      <motion.div
+        className="max-w-4xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        {/* Header */}
+        <div className="mb-24 text-center md:text-left">
+          <motion.div variants={itemBlurVariant} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-blue-400 text-xs font-mono mb-6">
+            <GraduationCap size={14} />
+            <span>ACADEMIC BACKGROUND</span>
+          </motion.div>
+
+          <motion.h2
+            variants={itemBlurVariant}
+            className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6"
+          >
+            Education
+          </motion.h2>
+          <motion.p
+            variants={itemBlurVariant}
+            className="text-neutral-400 text-lg max-w-xl leading-relaxed"
+          >
+            The theoretical foundation that powers my engineering practice.
+          </motion.p>
+        </div>
+
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* The Timeline Line: Gradient Fade */}
+          <motion.div
+            variants={lineVariant}
+            className="absolute left-0 top-2 bottom-0 w-[2px] bg-gradient-to-b from-blue-500/50 via-white/10 to-transparent origin-top md:left-4"
+          />
+
+          <div className="space-y-16">
+            {educationData.map((edu, index) => (
+              <motion.div
+                key={index}
+                variants={itemBlurVariant}
+                className="relative pl-8 md:pl-16 group"
+              >
+                {/* The "Dot" - Glowing Beacon */}
+                <div className="absolute left-[-5px] top-2 md:left-[11px] w-3 h-3 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)] ring-4 ring-black z-10 group-hover:scale-125 transition-transform duration-300" />
+
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                  <h3 className="text-2xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors duration-300">
+                    {edu.institution}
+                  </h3>
+                  <div className="flex items-center gap-2 text-sm font-mono text-neutral-500 mt-1 sm:mt-0">
+                    <Calendar size={12} />
+                    <span>{edu.duration}</span>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <div className="text-lg text-neutral-200 font-medium mb-1">
+                    {edu.degree}
+                  </div>
+                  <div className="flex items-center gap-1 text-sm text-neutral-500 font-light">
+                    <MapPin size={12} />
+                    {edu.location}
+                  </div>
+                </div>
+
+                <p className="text-neutral-400 text-base leading-relaxed max-w-2xl">
+                  {edu.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        ))}
-      </div>
-    </motion.section>
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
-// --- Main App Component (for demonstration) ---
-
-/**
- * Main App component to render the redesigned Education section
- */
+export default Education;

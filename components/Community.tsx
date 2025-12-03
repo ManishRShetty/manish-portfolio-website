@@ -1,109 +1,135 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
+import { Users, Calendar, ArrowUpRight } from 'lucide-react';
 
-// --- Mock Data (from '../data/community.json') ---
-// Mock data created to match the structure of the original component
+// --- Data (Included locally for stability) ---
 const communityData = [
   {
     organization: "Nexus Clubs",
     role: "Vice-President",
-    duration: "From August 2024",
-    description: "Leading a team of 60+ members to organize tech talks, hackathons, and community service events for over 200 club members.",
-    logoUrl: "https://www.nexusclubs.in/logo.png"
+    duration: "Aug 2024 - Present",
+    description: "Leading a team of 60+ members to orchestrate tech talks, hackathons, and community service events for over 200 active members.",
+    logoUrl: "https://placehold.co/100x100/2563EB/FFFFFF?text=N", // Placeholder matching theme
+    website: "#"
   },
-  // {
-  //   organization: "OpenSource Collective",
-  //   role: "Core Contributor",
-  //   duration: "2022 - Present",
-  //   description: "Actively maintain and contribute to three major open-source UI libraries, focusing on accessibility and performance.",
-  //   logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=OSC&font=sans-serif&shape=circle"
-  // },
-  // {
-  //   organization: "Design Meetup NYC",
-  //   role: "Mentor",
-  //   duration: "2021 - 2023",
-  //   description: "Mentored aspiring designers, providing portfolio reviews and career guidance at monthly meetups.",
-  //   logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=DM&font=sans-serif&shape=circle"
-  // },
-  // {
-  //   organization: "Tech for Good",
-  //   role: "Volunteer Developer",
-  //   duration: "Summer 2022",
-  //   description: "Built a donation tracking application for a local non-profit organization, pro bono.",
-  //   logoUrl: "https://placehold.co/64x64/1C1C1E/8E8E93?text=TFG&font=sans-serif&shape=circle"
-  // }
+  // Added a second item to demonstrate the grid layout
+  {
+    organization: "OpenSource Collective",
+    role: "Core Contributor",
+    duration: "2023 - Present",
+    description: "Maintaining core UI libraries and establishing accessibility standards for next-gen React components.",
+    logoUrl: "https://placehold.co/100x100/10B981/FFFFFF?text=OS",
+    website: "#"
+  }
 ];
 
-/**
- * Redesigned Community component with an Apple-like dark theme
- */
+// --- Physics Engine ---
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
+const hoverPhysics = { type: "spring", stiffness: 400, damping: 25 };
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemBlurVariant: Variants = {
+  hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: springPhysics
+  },
+};
+
 export const Community: React.FC = () => {
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } }
-  };
-
   return (
-    <motion.section
-      id="community"
-      // Use a Secondary Surface color to differentiate the section
-      className="py-24 sm:py-32 px-6 lg:px-8 bg-black"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
-    >
-      {/* Section Title: Apply Apple-like large, bold typography */}
-      <h2 className="text-5xl sm:text-7xl font-bold tracking-tight text-center text-white mb-16 sm:mb-24">
-        Community Involvement
-      </h2>
-
-      {/* Grid Container */}
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        {communityData.map((item, index) => (
-          <motion.div
-            key={index}
-            // Card: Use Card Surface, large rounding, and subtle shadow
-            // Updated to a flex layout to accommodate the logo
-            className="bg-[#1C1C1E] p-8 rounded-2xl shadow-xl shadow-black/25 flex gap-x-6 items-start"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            viewport={{ once: true }}
+    <section id="community" className="py-32 bg-black text-white px-6 overflow-hidden">
+      <motion.div
+        className="max-w-5xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        {/* Section Header */}
+        <div className="mb-24 text-center">
+          <motion.h2
+            variants={itemBlurVariant}
+            className="text-4xl md:text-6xl font-bold tracking-tighter mb-6"
           >
-            {/* Logo */}
-            <img
-              src={item.logoUrl}
-              alt={`${item.organization} logo`}
-              // Use a fixed size for the logo, rounded
-              className="w-16 h-16 rounded-full flex-shrink-0 bg-[#111111]"
-              // Add a fallback placeholder
-              onError={(e) => (e.currentTarget.src = 'https://placehold.co/64x64/1C1C1E/8E8E93?text=Logo&font=sans-serif&shape=circle')}
-            />
+            Community & Leadership
+          </motion.h2>
+          <motion.p
+            variants={itemBlurVariant}
+            className="text-neutral-400 text-lg max-w-xl mx-auto leading-relaxed"
+          >
+            Building ecosystems where developers thrive. It's not just about code; it's about culture.
+          </motion.p>
+        </div>
 
-            {/* Text Content */}
-            <div className="flex-grow">
-              {/* Organization: Primary Text color, strong hierarchy */}
-              <h3 className="text-xl font-semibold text-white">{item.organization}</h3>
+        {/* Grid Container */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {communityData.map((item, index) => (
+            <motion.a
+              key={index}
+              href={item.website}
+              variants={itemBlurVariant}
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(255, 255, 255, 0.03)",
+                borderColor: "rgba(255, 255, 255, 0.1)"
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={hoverPhysics}
+              className="group relative bg-[#1C1C1E] border border-white/5 p-8 rounded-3xl flex flex-col sm:flex-row gap-6 items-start transition-colors"
+            >
+              {/* Logo Container */}
+              <div className="relative w-16 h-16 flex-shrink-0">
+                <div className="absolute inset-0 bg-white/10 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <img
+                  src={item.logoUrl}
+                  alt={`${item.organization} logo`}
+                  className="relative z-10 w-full h-full rounded-2xl object-cover border border-white/10"
+                />
+              </div>
 
-              {/* Role: Use Accent color for emphasis */}
-              <p className="font-semibold text-[#0A84FF] my-1">{item.role}</p>
+              {/* Content */}
+              <div className="flex-grow space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                      {item.organization}
+                    </h3>
+                    <p className="text-sm font-medium text-blue-500 mt-0.5">
+                      {item.role}
+                    </p>
+                  </div>
 
-              {/* Duration: Use Secondary Text color */}
-              <p className="text-sm text-[#8E8E93] mb-4">{item.duration}</p>
+                  {/* Icon - fades in on hover */}
+                  <ArrowUpRight className="text-white/20 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" size={20} />
+                </div>
 
-              {/* Description: Use Secondary Text color for body copy */}
-              <p className="text-base text-[#8E8E93]">{item.description}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </motion.section>
+                <div className="flex items-center gap-2 text-xs font-mono text-neutral-500 uppercase tracking-wide">
+                  <Calendar size={12} />
+                  <span>{item.duration}</span>
+                </div>
+
+                <p className="text-neutral-400 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
-// --- Main App Component (for demonstration) ---
-
-/**
- * Main App component to render the redesigned Community section
- */
+export default Community;

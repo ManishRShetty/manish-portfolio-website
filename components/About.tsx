@@ -1,51 +1,13 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { GithubIcon, LinkedinIcon, TwitterIcon, NodeIcon, TailwindIcon, FramerIcon,  DockerIcon, AwsIcon, } from './Icons';
-// --- Inlined SVG Icons (Apple-inspired & Minimal) ---
-import { FaDocker, FaNodeJs, FaAws, FaPython } from "react-icons/fa";
+import { motion, Variants } from 'framer-motion';
+import { FaDocker, FaNodeJs, FaAws, FaPython, FaGithub } from "react-icons/fa";
 import { SiFramer, SiFirebase, SiKubernetes, SiGooglecloud, SiN8N } from "react-icons/si";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { MdOutlineFileDownload } from "react-icons/md";
-// A minimal, Apple-style Download icon
-// const DownloadIcon = () => (
-//   <svg
-//     xmlns="http://www.w3.org/2000/svg"
-//     width="16"
-//     height="16"
-//     viewBox="0 0 24 24"
-//     fill="none"
-//     stroke="currentColor"
-//     strokeWidth="2"
-//     strokeLinecap="round"
-//     strokeLinejoin="round"
-//   >
-//     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-//     <polyline points="7 10 12 15 17 10" />
-//     <line x1="12" y1="15" y2="3" />
-//   </svg>
-// );
 
-// --- Inlined SVG Icons (Tech Stack) ---
-// These are monochrome and will inherit the text color.
-
-// const NextIcon = () => (
-//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-//     {/* Minimal Vercel/Next.js Triangle */}
-//     <path d="M12 2.163l-9.9 17.147h19.8L12 2.163zM12 4.47l7.807 13.523H4.193L12 4.47z" />
-//   </svg>
-// );
-
+// --- Minimal React Icon ---
 const ReactIcon = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5" // Thinner stroke for a lighter feel
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <ellipse cx="12" cy="12" rx="11" ry="4.2" />
     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(60 12 12)" />
     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(120 12 12)" />
@@ -53,222 +15,150 @@ const ReactIcon = () => (
   </svg>
 );
 
-// const TailwindIcon = () => (
-//   <svg
-//     width="16"
-//     height="16"
-//     viewBox="0 0 24 24"
-//     fill="none"
-//     stroke="currentColor"
-//     strokeWidth="2"
-//     strokeLinecap="round"
-//     strokeLinejoin="round"
-//   >
-//     {/* Minimal "wind" icon */}
-//     <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 11 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
-//   </svg>
-// );
-
-// const FramerIcon = () => (
-//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-//     {/* Simplified Framer logo */}
-//     <path d="M12 6H6v6h6V6zM18 6h-6v6h6V6zM12 12H6v6h6v-6z" />
-//   </svg>
-// );
-
-// const NodeIcon = () => (
-//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-//     {/* Simplified Node.js Hexagon */}
-//     <path d="M12 2.16L3.17 7.08v9.84L12 21.84l8.83-4.92V7.08L12 2.16zm-1.04 15.11v-3.23H6.84v-1.59h4.12v-3.3l4.9 3.32-4.9 4.8z" />
-//   </svg>
-// );
-
-// const FirebaseIcon = () => (
-//   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-//     {/* Simplified Firebase logo */}
-
-//     <path d="M4.168 21.36l6.392-14.736 3.264 3.024-6.32 14.592zM5.76 19.416l3.336 2.88 7.392-17.064-3.264-3.024z" />
-//   </svg>
-// );
-
-// const DockerIcon = () => (
-//   <svg
-//     width="16"
-//     height="16"
-//     viewBox="0 0 24 24"
-//     fill="none"
-//     stroke="currentColor"
-//     strokeWidth="2"
-//     strokeLinecap="round"
-//     strokeLinejoin="round"
-//   >
-//     {/* "Package" icon as a proxy for "container" */}
-//     <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
-//     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-//     <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-//     <line x1="12" y1="22.08" x2="12" y2="12"></line>
-//   </svg>
-// );
-
-// const AwsIcon = () => (
-//   <svg
-//     width="16"
-//     height="16"
-//     viewBox="0 0 24 24"
-//     fill="none"
-//     stroke="currentColor"
-//     strokeWidth="2"
-//     strokeLinecap="round"
-//     strokeLinejoin="round"
-//   >
-//     {/* Simple "cloud" icon */}
-//     <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-//   </svg>
-// );
-
-// const GithubActionsIcon = () => (
-//   <svg
-//     width="16"
-//     height="16"
-//     viewBox="0 0 24 24"
-//     fill="none"
-//     stroke="currentColor"
-//     strokeWidth="2"
-//     strokeLinecap="round"
-//     strokeLinejoin="round"
-//   >
-//     {/* "Play in circle" icon for Actions/Workflows */}
-//     <circle cx="12" cy="12" r="10" />
-//     <polygon points="10 8 16 12 10 16 10 8" />
-//   </svg>
-// );
-
-// --- Updated Skills Array ---
-// Now includes an 'icon' property
 const skills = [
-  // { name: 'Next.js', icon: <NextIcon /> },
   { name: 'NextJS', icon: <RiNextjsFill /> },
   { name: 'React', icon: <ReactIcon /> },
-  { name: 'Tailwind CSS', icon: <RiTailwindCssFill /> },
+  { name: 'Tailwind', icon: <RiTailwindCssFill /> },
   { name: 'Python', icon: <FaPython /> },
-  
-  {name: 'Kubernetes', icon:<SiKubernetes />},
-  
+  { name: 'Kubernetes', icon: <SiKubernetes /> },
   { name: 'Firebase', icon: <SiFirebase /> },
   { name: 'Docker', icon: <FaDocker /> },
   { name: 'AWS', icon: <FaAws /> },
-  {name: 'Google Cloud', icon:<SiGooglecloud />},
-  { name: 'GitHub Actions', icon: <GithubIcon /> },
+  { name: 'GCP', icon: <SiGooglecloud /> },
+  { name: 'GitHub', icon: <FaGithub /> },
   { name: 'n8n', icon: <SiN8N /> },
   { name: 'Node.js', icon: <FaNodeJs /> },
-  { name: 'Framer Motion', icon: <SiFramer /> },
+  { name: 'Framer', icon: <SiFramer /> },
 ];
 
-export const About: React.FC = () => {
-  // Original animation variants - logic remains identical.
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, staggerChildren: 0.2 },
+// --- Physics & Variants ---
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
+
+// A tighter spring for hover interactions to make them feel responsive
+const hoverPhysics = { type: "spring", stiffness: 400, damping: 25 };
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
-  };
+  },
+};
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
+const itemBlurVariant: Variants = {
+  hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: springPhysics
+  },
+};
 
+export const About: React.FC = () => {
   return (
-    // Section: Pure black background, white text, increased padding for negative space
-    <motion.section
-      id="about"
-      className="py-24 md:py-32 bg-black text-white font-sans"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
-    >
-      {/* Main Heading: Large, bold, tight tracking (Apple-style) */}
-      <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-center mb-16 md:mb-20">
-        About Me
-      </h2>
+    <section id="about" className="py-32 bg-black text-white font-sans overflow-hidden">
+      <motion.div
+        className="max-w-5xl mx-auto px-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
 
-      {/* Profile Section: Centered, max-width, with generous gaps */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Profile Image */}
-        <motion.div
-          className="w-48 h-48 md:w-56 md:h-56 flex-shrink-0"
-          variants={itemVariants}
-        >
-          <img
-            // Using a professional, dark placeholder
-            src="/Manish.png"
-            alt="Manish R Shetty"
-            className="rounded-full w-full h-full object-cover shadow-lg"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src =
-                'https://placehold.co/400x400/1C1C1E/FFFFFF?text=MR&font=sans-serif';
-            }}
-          />
+        {/* Header - Masked Reveal */}
+        <motion.div variants={itemBlurVariant} className="mb-20 text-center">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white/90">
+            About Me.
+          </h2>
         </motion.div>
 
-        {/* Profile Text Content */}
-        <motion.div
-          className="max-w-lg text-center md:text-left"
-          variants={itemVariants}
-        >
-          {/* Description: Uses Apple secondary text color (neutral-400) */}
-          <p className="text-lg text-neutral-400 leading-relaxed">
-            I'm a dedicated Full Stack, AI, and Product Engineer with a strong foundation in Next.js, UI/UX design, and modern DevOps workflows. I build fast, elegant, and intelligent web applications that solve real user problems. I thrive in fast-paced startup environments where I can design, build, iterate, and ship impactful features quickly. I’m actively seeking remote opportunities to work on innovative, AI-driven products.
-          </p>
+        {/* Content Layout */}
+        <div className="flex flex-col md:flex-row items-start justify-between gap-12 md:gap-24">
 
-          {/* CV Button: Styled as minimal, pill-shaped outline button */}
-          <a
-            href="/Resume.pdf"
-            download
-            className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-blue-500 bg-transparent border border-blue-500 rounded-full hover:bg-blue-500/10 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-black"
+          {/* Profile Image - Subtle Parallax Feel */}
+          <motion.div
+            variants={itemBlurVariant}
+            className="w-full md:w-1/3 flex justify-center md:justify-start"
           >
-            <MdOutlineFileDownload />
-            Download CV
-          </a>
-        </motion.div>
-      </div>
+            <div className="relative w-64 h-64 md:w-72 md:h-72 group">
+              {/* Subtle Glow behind image (Apple Dark Mode style) */}
+              <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-      {/* Tech Stack Section: Increased top margin for separation */}
-      <div className="max-w-4xl mx-auto mt-24 md:mt-32 px-4 sm:px-6 lg:px-8">
-        {/* Tech Stack Heading: Secondary heading style */}
-        <h3 className="text-3xl font-semibold text-center mb-12">
-          My Tech Stack
-        </h3>
+              <img
+                src="/Manish.png"
+                alt="Manish R Shetty"
+                className="relative z-10 rounded-full w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-out border border-white/10"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    'https://placehold.co/400x400/1C1C1E/FFFFFF?text=MR&font=sans-serif';
+                }}
+              />
+            </div>
+          </motion.div>
 
-        {/* Skills "Tags" Layout: 
-          Replaced the icon grid with a minimal, clean flex-wrap layout.
-          Each "tag" uses the Apple "Card Surface" color (#1C1C1E).
-          This is cleaner and more elegant than a grid of logos.
-        */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              className="flex items-center gap-2 py-3 px-6 bg-[#1C1C1E] rounded-full text-neutral-200 font-medium cursor-default transition-all duration-300 hover:bg-neutral-800"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              {/* Render the icon */}
-              {skill.icon}
-              {/* Render the name */}
-              {skill.name}
+          {/* Text Content */}
+          <motion.div className="w-full md:w-2/3 space-y-8" variants={containerVariants}>
+            <motion.p variants={itemBlurVariant} className="text-xl md:text-2xl text-neutral-400 font-light leading-relaxed">
+              I'm a dedicated <span className="text-white font-medium">Full Stack & AI Engineer</span> building intelligent, elegant web applications.
+              I thrive in high-velocity environments where design, performance, and engineering converge.
+            </motion.p>
+
+            <motion.p variants={itemBlurVariant} className="text-lg text-neutral-500 leading-relaxed">
+              Currently focused on Next.js, Agentic AI, and scalable DevOps workflows. I don't just write code; I craft experiences that solve actual problems.
+            </motion.p>
+
+            {/* Buttons Row */}
+            <motion.div variants={itemBlurVariant} className="pt-4 flex flex-wrap gap-4">
+              <a
+                href="/Resume.pdf"
+                download
+                className="group relative inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full text-sm font-semibold tracking-wide hover:bg-neutral-200 transition-colors duration-300"
+              >
+                <MdOutlineFileDownload className="text-lg" />
+                <span>Resume</span>
+              </a>
             </motion.div>
-          ))}
+          </motion.div>
         </div>
-      </div>
-    </motion.section>
+
+        {/* Tech Stack - "Floating Cloud" */}
+        <motion.div
+          className="mt-32 pt-16 border-t border-white/5"
+          variants={containerVariants}
+        >
+          <motion.h3 variants={itemBlurVariant} className="text-2xl font-semibold text-center mb-10 text-neutral-200">
+            Technical Arsenal
+          </motion.h3>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {skills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                variants={itemBlurVariant}
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(255, 255, 255, 0.15)",
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                  color: "#FFFFFF", // Brighten text/icon on hover
+                  transition: hoverPhysics // Use snappy spring physics
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2.5 px-5 py-3 bg-[#1C1C1E] border border-white/5 rounded-full text-neutral-400 cursor-default backdrop-blur-sm"
+              >
+                <span className="text-lg opacity-80">{skill.icon}</span>
+                <span className="text-sm font-medium tracking-wide">{skill.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+      </motion.div>
+    </section>
   );
 };
 
-// Default export
 export default About;

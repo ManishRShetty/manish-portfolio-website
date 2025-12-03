@@ -1,124 +1,122 @@
 import React from 'react';
-// Import Variants type from framer-motion to explicitly type animation variants.
 import { motion, Variants } from 'framer-motion';
-import { MdOutlineFileDownload } from "react-icons/md";
-// A minimal, Apple-style Download icon to replace the external import.
-// This is inspired by modern icon sets and keeps the component self-contained.
-const DownloadIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-    <polyline points="7 10 12 15 17 10" />
-    <line x1="12" y1="15" y2="3" />
-  </svg>
-);
+import { Download, ArrowRight } from 'lucide-react';
+
+// --- Physics Engine (Consistent with About Section) ---
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
+
+// Staggered Container
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+// The "Apple Blur" Reveal
+const itemBlurVariant: Variants = {
+  hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: springPhysics
+  },
+};
 
 export const Hero: React.FC = () => {
-  // Original animation variants - logic remains identical.
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  // Explicitly typed itemVariants.
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
-
   return (
-    // Section: Full-screen, pure black background, flex-centered.
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-black text-white font-sans py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-black text-white font-sans overflow-hidden px-6"
     >
-      {/* Content Container: Centered text, increased max-width for better spacing */}
+      {/* Background Ambience - Subtle "Aurora" Mesh */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/20 rounded-[100%] blur-[120px] opacity-20 pointer-events-none" />
+
       <motion.div
-        className="max-w-4xl mx-auto text-center"
+        className="relative z-10 max-w-4xl mx-auto text-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Heading 1: Large, bold, tight tracking (Apple-style) */}
+        {/* Badge / Pill */}
+        <motion.div variants={itemBlurVariant} className="flex justify-center mb-8">
+          <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-medium text-neutral-300 tracking-wide uppercase">
+            Available for new opportunities
+          </div>
+        </motion.div>
+
+        {/* Heading 1: Massive, tight tracking, confident */}
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-tight"
-          variants={itemVariants}
+          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-6"
+          variants={itemBlurVariant}
         >
           Manish R Shetty
         </motion.h1>
 
-        {/* Subheading (Title): Uses Apple Blue accent color */}
+        {/* Subheading: Gradient Text for subtle flair */}
         <motion.p
-          className="mt-4 text-2xl md:text-3xl font-medium text-blue-500"
-          variants={itemVariants}
+          className="text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60 mb-8"
+          variants={itemBlurVariant}
         >
           AI Product Engineer
         </motion.p>
 
-        {/* Description: Uses Apple secondary text color (neutral-400) for soft contrast */}
+        {/* Description: Clean, constrained width for readability */}
         <motion.p
-          className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-neutral-400 leading-relaxed"
-          variants={itemVariants}
+          className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-400 leading-relaxed font-light mb-12"
+          variants={itemBlurVariant}
         >
-          Creating intelligent, scalable, and beautifully designed digital products with Next.js, AI, UI/UX, and DevOps.
+          I architect intelligent digital products. Bridging the gap between
+          <span className="text-neutral-200 font-normal"> complex AI systems</span> and
+          <span className="text-neutral-200 font-normal"> intuitive user experiences</span>.
         </motion.p>
 
-        {/* Button Container: Increased margin-top for negative space */}
+        {/* Action Buttons: Simplified Hierarchy */}
         <motion.div
-          className="mt-12 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
-          variants={itemVariants}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          variants={itemBlurVariant}
         >
-          {/* Button 1 (Filled, Pill-shaped) */}
-          <a
+          {/* Primary Action - Solid White */}
+          <motion.a
             href="#projects"
-            className="w-full sm:w-auto px-6 py-3 text-base font-medium text-white bg-blue-500 rounded-full shadow-lg shadow-blue-500/20 hover:bg-blue-600 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-black"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-semibold text-base tracking-tight transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2"
           >
             View Projects
-          </a>
+            <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-300 w-5 h-5" />
+          </motion.a>
 
-          {/* Button 2 (Outline, Pill-shaped) */}
-          <a
-            href="#contact"
-            className="w-full sm:w-auto px-6 py-3 text-base font-medium text-blue-500 bg-transparent border border-blue-500 rounded-full hover:bg-blue-500/10 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-black"
-          >
-            Contact Me
-          </a>
-
-          {/* Button 3 (Outline, Pill-shaped, with Icon) */}
-          <a
-            href="/placeholder-cv.pdf"
+          {/* Secondary Action - Glass/Ghost */}
+          <motion.a
+            href="/Resume.pdf"
             download
-            className="w-full sm:w-auto px-6 py-3 inline-flex items-center justify-center gap-2 text-base font-medium text-blue-500 bg-transparent border border-blue-500 rounded-full hover:bg-blue-500/10 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-black"
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+            whileTap={{ scale: 0.95 }}
+            className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-sm text-white rounded-full font-medium text-base tracking-tight transition-all flex items-center justify-center gap-2"
           >
-            <MdOutlineFileDownload />
-            Download Resume
-          </a>
+            <Download className="w-5 h-5 opacity-70" />
+            Resume
+          </motion.a>
         </motion.div>
+      </motion.div>
+
+      {/* Scroll Indicator - Minimal */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      >
+        <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
       </motion.div>
     </section>
   );
 };
 
-// Default export for lazy loading or other imports
 export default Hero;

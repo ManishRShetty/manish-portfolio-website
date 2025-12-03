@@ -1,311 +1,184 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Project } from '@/types';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { ExternalLink, Github, ChevronDown } from 'lucide-react';
 
-// --- Icons (from './Icons') ---
-// Re-created as inline SVG components for this single-file example
+// UNCOMMENT THIS IN YOUR LOCAL ENVIRONMENT
+import { projectsData } from '@/data/projects.json';
 
-/**
- * Simple inline SVG for the External Link icon
- */
-const ExternalLinkIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    className="w-4 h-4"
-    aria-hidden="true"
-  >
-    <path
-      fillRule="evenodd"
-      d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
-      clipRule="evenodd"
-    />
-    <path
-      fillRule="evenodd"
-      d="M6.19 5.19a.75.75 0 01.99-.16l.07.05L15 9.25l.04.06a.75.75 0 01.1 1.03l-.06.07-7.75 7.75a.75.75 0 11-1.06-1.06L13.44 10 6.19 6.25a.75.75 0 01.0-1.06z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
-
-/**
- * Simple inline SVG for the Code icon
- */
-const CodeIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    className="w-4 h-4"
-    aria-hidden="true"
-  >
-    <path
-      fillRule="evenodd"
-      d="M6.28 5.22a.75.75 0 010 1.06L2.56 10l3.72 3.72a.75.75 0 01-1.06 1.06L.97 10.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0zm7.44 0a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 010-1.06z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
-
-// --- ProjectCard Component (from './ProjectCard') ---
-
-interface ProjectCardProps {
-  project: Project;
-  onProjectClick: (project: Project) => void;
-  index: number;
+// --- Types ---
+export interface Project {
+  id: number;
+  title: string;
+  thumbnail: string;
+  stack: string[];
+  description: string;
+  liveDemoUrl?: string;
+  codeUrl?: string;
 }
 
-/**
- * Redesigned ProjectCard with an Apple-like dark theme
- */
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, index }) => {
+// --- Physics Engine (Shared) ---
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+// The "Apple Blur" Reveal
+const itemBlurVariant: Variants = {
+  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: springPhysics
+  },
+};
+
+// --- Project Card Component ---
+const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <motion.div
-      // MODIFICATION: Removed w-80 and flex-shrink-0 to let the grid control the size
-      className="bg-[#1C1C1E] rounded-2xl overflow-hidden shadow-xl shadow-black/25 cursor-pointer flex flex-col group"
-      onClick={() => onProjectClick(project)}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
-      viewport={{ once: true }}
-      // Use a subtle scale for the premium hover effect
-      whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+      variants={itemBlurVariant}
+      className="group relative flex flex-col bg-[#1C1C1E] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-500"
     >
-      {/* Image: Use a subtle secondary surface BG as a loading fallback */}
-      <div className="w-full h-56 bg-[#111111] overflow-hidden">
-        <img
+      {/* Image Container - Aspect Ratio 16:9 */}
+      <div className="relative aspect-video overflow-hidden">
+        <div className="absolute inset-0 bg-neutral-800 animate-pulse" /> {/* Loading Skeleton */}
+        <motion.img
           src={project.thumbnail}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-          onError={(e) => (e.currentTarget.src = 'https://placehold.co/600x400/1C1C1E/8E8E93?text=Image+Not+Found')}
+          className="relative z-10 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          onError={(e) => (e.currentTarget.src = 'https://placehold.co/600x400/1C1C1E/3A3A3C?text=Project+Preview')}
         />
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1E] via-transparent to-transparent opacity-60" />
       </div>
 
-      {/* Content Area */}
-      <div className="p-6 flex flex-col flex-grow">
-        {/* Title: Primary Text color */}
-        <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
+      {/* Content */}
+      <div className="flex flex-col flex-grow p-6">
+        <div className="flex justify-between items-start mb-3">
+          <h3 className="text-xl font-semibold text-white tracking-tight group-hover:text-blue-400 transition-colors duration-300">
+            {project.title}
+          </h3>
+          <div className="flex gap-3">
+            {project.codeUrl && (
+              <a
+                href={project.codeUrl}
+                className="text-neutral-500 hover:text-white transition-colors"
+                title="View Code"
+              >
+                <Github size={18} />
+              </a>
+            )}
+            {project.liveDemoUrl && (
+              <a
+                href={project.liveDemoUrl}
+                className="text-neutral-500 hover:text-white transition-colors"
+                title="Live Demo"
+              >
+                <ExternalLink size={18} />
+              </a>
+            )}
+          </div>
+        </div>
 
-        {/* Description: Secondary Text color, with more negative space */}
-        <p className="text-[#8E8E93] text-sm mb-5 flex-grow">{project.description}</p>
+        <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
+          {project.description}
+        </p>
 
-        {/* Tech Stack: Use subtle "pill" styling */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        {/* Tech Stack Pills */}
+        <div className="flex flex-wrap gap-2 mt-auto">
           {project.stack.map((tech) => (
             <span
               key={tech}
-              // Use Divider color for pill BG and Secondary Text for text
-              className="px-2.5 py-1 bg-[#2C2C2E] text-[#8E8E93] text-xs font-medium rounded-full"
+              className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[11px] font-medium text-neutral-300 tracking-wide"
             >
               {tech}
             </span>
           ))}
-        </div>
-
-        {/* Links: Pushed to bottom. Use Divider color and Accent color */}
-        <div className="mt-auto pt-5 border-t border-[#2C2C2E] flex justify-end items-center gap-5">
-          {project.liveDemoUrl && (
-            <a
-              href={project.liveDemoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              // Use Accent color for links, with a subtle hover
-              className="flex items-center gap-1.5 text-sm font-medium text-[#0A84FF] hover:opacity-75 transition-opacity"
-            >
-              <ExternalLinkIcon /> Live Demo
-            </a>
-          )}
-          {project.codeUrl && (
-            <a
-              href={project.codeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              // Use Secondary text for non-primary link, hover to Accent
-              className="flex items-center gap-1.5 text-sm font-medium text-[#8E8E93] hover:text-[#0A84FF] transition-colors"
-            >
-              <CodeIcon /> Code
-            </a>
-          )}
         </div>
       </div>
     </motion.div>
   );
 };
 
+// --- Main Projects Section ---
+export const Projects: React.FC = () => {
+  const [visibleCount, setVisibleCount] = useState(3);
 
-// --- Projects Component (from './Projects') ---
-
-interface ProjectsProps {
-  projects: Project[];
-  onProjectClick: (project: Project) => void;
-}
-
-// Initial number of projects to show
-const INITIAL_PROJECT_COUNT = 3;
-
-/**
- * Redesigned Projects section with Apple-like dark theme hero typography
- */
-export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) => {
-  // MODIFICATION: Add state to control the number of visible projects
-  const [visibleProjects, setVisibleProjects] = useState(INITIAL_PROJECT_COUNT);
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } }
+  // Toggle Logic
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev >= Projects.length ? 3 : Projects.length);
   };
 
-  // MODIFICATION: Function to show all projects
-  const showMoreProjects = () => {
-    setVisibleProjects(projects.length);
-  };
+  const isExpanded = visibleCount >= Projects.length;
 
   return (
-    <motion.section
-      id="projects"
-      // MODIFICATION: Added horizontal padding back
-      className="py-24 sm:py-32 px-6 lg:px-8"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Title: Apply Apple-like large, bold, tracking-tight typography */}
-        <h2 className="text-5xl sm:text-7xl font-bold tracking-tight text-center text-white mb-16 sm:mb-24">
-          Featured Projects
-        </h2>
-
-        {/* MODIFICATION: Reverted to the 3-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* MODIFICATION: Slice the projects array */}
-          {projects.slice(0, visibleProjects).map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onProjectClick={onProjectClick}
-              index={index}
-            />
-          ))}
+    <section id="projects" className="py-32 bg-black text-white px-6">
+      <motion.div
+        className="max-w-7xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <motion.h2
+            variants={itemBlurVariant}
+            className="text-4xl md:text-6xl font-bold tracking-tighter mb-6"
+          >
+            Selected Works
+          </motion.h2>
+          <motion.p
+            variants={itemBlurVariant}
+            className="text-neutral-400 text-lg max-w-xl mx-auto"
+          >
+            A collection of robust applications focusing on AI integration, real-time data, and seamless user experiences.
+          </motion.p>
         </div>
 
-        {/* MODIFICATION: Add "View More" button */}
-        {projects.length > visibleProjects && (
-          <div className="text-center mt-16">
-            <motion.button
-              onClick={showMoreProjects}
-              className="bg-[#2C2C2E] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#3A3A3C] transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <AnimatePresence mode="popLayout">
+            {projectsData.slice(0, visibleCount).map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {/* Show More / Less Button */}
+        {Projects.length > 3 && (
+          <motion.div
+            variants={itemBlurVariant}
+            className="flex justify-center"
+          >
+            <button
+              onClick={handleShowMore}
+              className="group flex items-center gap-2 px-6 py-3 bg-[#1C1C1E] hover:bg-[#2C2C2E] text-white rounded-full font-medium transition-all duration-300 border border-white/5 hover:border-white/10"
             >
-              View More
-            </motion.button>
-          </div>
+              <span>{isExpanded ? 'View Less' : 'View All Projects'}</span>
+              <motion.div
+                animate={{ rotate: isExpanded ? 180 : 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <ChevronDown size={16} className="opacity-60" />
+              </motion.div>
+            </button>
+          </motion.div>
         )}
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 
-// --- Main App Component (for demonstration) ---
+// --- DATA: Included locally for preview. Replace with import in production. ---
 
-const mockCaseStudy = {
-  problem: 'Mock problem',
-  solution: 'Mock solution',
-  impact: 'Mock impact',
-  screenshots: []
-};
 
-// Mock Data (6 projects to demonstrate the "View More" button)
-const mockProjects: Project[] = [
-  {
-    id: 1,
-    title: 'QuantumOS Interface',
-    logo: 'https://placehold.co/100x100/0A84FF/FFFFFF?text=Q',
-    thumbnail: 'https://placehold.co/600x400/0A84FF/000000?text=QuantumOS',
-    stack: ['React', 'TypeScript', 'Framer Motion', 'Tailwind'],
-    description: 'A futuristic OS interface built to explore advanced motion design principles and component-based architecture.',
-    liveDemoUrl: '#',
-    codeUrl: '#',
-    caseStudy: mockCaseStudy,
-  },
-  {
-    id: 2,
-    title: 'Echo-Sphere Analytics',
-    logo: 'https://placehold.co/100x100/1C1C1E/FFFFFF?text=E',
-    thumbnail: 'https://placehold.co/600x400/1C1C1E/FFFFFF?text=Echo-Sphere',
-    stack: ['Next.js', 'D3.js', 'PostgreSQL', 'Auth.js'],
-    description: 'Real-time data visualization dashboard for global audio trends, featuring interactive charts and secure user authentication.',
-    liveDemoUrl: '#',
-    codeUrl: '#',
-    caseStudy: mockCaseStudy,
-  },
-  {
-    id: 3,
-    title: 'Envision College Event Website',
-    logo: 'https://placehold.co/100x100/30D158/000000?text=C',
-    thumbnail: 'https://placehold.co/600x400/30D158/000000?text=Carbon-Zero',
-    stack: ['SvelteKit', 'Firebase', 'Leaflet.js'],
-    description: 'A progressive web app to help users track and minimize their carbon footprint through daily logging and smart suggestions.',
-    liveDemoUrl: '#',
-    codeUrl: '#',
-    caseStudy: mockCaseStudy,
-  },
-  {
-    id: 4,
-    title: 'Nova-Bank Admin',
-    logo: 'https://placehold.co/100x100/FF9500/000000?text=N',
-    thumbnail: 'https://placehold.co/600x400/FF9500/000000?text=Nova-Bank',
-    stack: ['Vue.js', 'Vite', 'Pinia'],
-    description: 'Internal admin panel for a fintech startup, focusing on data-heavy tables and secure role-based access control.',
-    liveDemoUrl: '#',
-    codeUrl: '#',
-    caseStudy: mockCaseStudy,
-  },
-  {
-    id: 5,
-    title: 'Aura Weather',
-    logo: 'https://placehold.co/100x100/5E5CE6/FFFFFF?text=A',
-    thumbnail: 'https://placehold.co/600x400/5E5CE6/FFFFFF?text=Aura',
-    stack: ['React Native', 'Expo', 'OpenWeatherAPI'],
-    description: 'A minimal, gesture-based mobile weather application designed for clarity and ease of use.',
-    liveDemoUrl: '#',
-    codeUrl: '#',
-    caseStudy: mockCaseStudy,
-  },
-  {
-    id: 6,
-    title: 'Syntax.dev Blog',
-    logo: 'https://placehold.co/100x100/FF3B30/FFFFFF?text=S',
-    thumbnail: 'https://placehold.co/600x400/FF3B30/FFFFFF?text=Syntax.dev',
-    stack: ['Astro', 'MDX', 'Tailwind'],
-    description: 'A content-focused, static-generated blog for developers with a focus on performance and accessibility.',
-    liveDemoUrl: '#',
-    codeUrl: '#',
-    caseStudy: mockCaseStudy,
-  },
-];
-
-/**
- * Main App component to render the redesigned Projects section
- */
-export default function App() {
-
-  const handleProjectClick = (project: Project) => {
-    console.log('Project clicked:', project.title);
-    // In a real app, this would open a modal or navigate to a details page
-  };
-
-  return (
-    // Set the pure black primary background and default text color
-    <main className="bg-black text-white min-h-screen font-sans antialiased">
-      <Projects
-        projects={mockProjects}
-        onProjectClick={handleProjectClick}
-      />
-    </main>
-  );
-}
+export default Projects;
