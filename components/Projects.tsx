@@ -224,6 +224,7 @@ const mockProjects: Project[] = [
   {
     id: 1,
     title: 'QuantumOS Interface',
+    logo: 'https://placehold.co/100x100/0A84FF/FFFFFF?text=Q',
     thumbnail: 'https://placehold.co/600x400/0A84FF/000000?text=QuantumOS',
     stack: ['React', 'TypeScript', 'Framer Motion', 'Tailwind'],
     description: 'A futuristic OS interface built to explore advanced motion design principles and component-based architecture.',
@@ -234,6 +235,7 @@ const mockProjects: Project[] = [
   {
     id: 2,
     title: 'Echo-Sphere Analytics',
+    logo: 'https://placehold.co/100x100/1C1C1E/FFFFFF?text=E',
     thumbnail: 'https://placehold.co/600x400/1C1C1E/FFFFFF?text=Echo-Sphere',
     stack: ['Next.js', 'D3.js', 'PostgreSQL', 'Auth.js'],
     description: 'Real-time data visualization dashboard for global audio trends, featuring interactive charts and secure user authentication.',
@@ -244,6 +246,7 @@ const mockProjects: Project[] = [
   {
     id: 3,
     title: 'Envision College Event Website',
+    logo: 'https://placehold.co/100x100/30D158/000000?text=C',
     thumbnail: 'https://placehold.co/600x400/30D158/000000?text=Carbon-Zero',
     stack: ['SvelteKit', 'Firebase', 'Leaflet.js'],
     description: 'A progressive web app to help users track and minimize their carbon footprint through daily logging and smart suggestions.',
@@ -254,6 +257,7 @@ const mockProjects: Project[] = [
   {
     id: 4,
     title: 'Nova-Bank Admin',
+    logo: 'https://placehold.co/100x100/FF9500/000000?text=N',
     thumbnail: 'https://placehold.co/600x400/FF9500/000000?text=Nova-Bank',
     stack: ['Vue.js', 'Vite', 'Pinia'],
     description: 'Internal admin panel for a fintech startup, focusing on data-heavy tables and secure role-based access control.',
@@ -264,6 +268,7 @@ const mockProjects: Project[] = [
   {
     id: 5,
     title: 'Aura Weather',
+    logo: 'https://placehold.co/100x100/5E5CE6/FFFFFF?text=A',
     thumbnail: 'https://placehold.co/600x400/5E5CE6/FFFFFF?text=Aura',
     stack: ['React Native', 'Expo', 'OpenWeatherAPI'],
     description: 'A minimal, gesture-based mobile weather application designed for clarity and ease of use.',
@@ -274,6 +279,7 @@ const mockProjects: Project[] = [
   {
     id: 6,
     title: 'Syntax.dev Blog',
+    logo: 'https://placehold.co/100x100/FF3B30/FFFFFF?text=S',
     thumbnail: 'https://placehold.co/600x400/FF3B30/FFFFFF?text=Syntax.dev',
     stack: ['Astro', 'MDX', 'Tailwind'],
     description: 'A content-focused, static-generated blog for developers with a focus on performance and accessibility.',

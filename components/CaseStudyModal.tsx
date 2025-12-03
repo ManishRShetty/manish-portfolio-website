@@ -1,8 +1,9 @@
 import React from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Project } from '@/types';
+import { FaReact, FaNodeJs, FaDocker, FaAws } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiFirebase, SiFramer, SiTypescript, SiSvelte, SiVuedotjs, SiPostgresql, SiLeaflet, SiExpo, SiAstro, SiMdx } from 'react-icons/si';
 
-// --- Icons (from './Icons') ---
 // Re-created as inline SVG component
 const CloseIcon = () => (
   <svg
@@ -71,19 +72,58 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
         <div className="p-8 sm:p-10 md:p-12">
 
           {/* Header */}
-          {/* Title: Apple-like large, bold typography */}
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-2">{project.title}</h2>
+          <div className="flex items-center gap-4 mb-6">
+            {project.logo && (
+              <img
+                src={project.logo}
+                alt={`${project.title} logo`}
+                className="w-16 h-16 rounded-xl object-cover shadow-lg"
+              />
+            )}
+            {/* Title: Apple-like large, bold typography */}
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">{project.title}</h2>
+          </div>
 
-          {/* Tech Stack: Use minimal pills */}
-          <div className="flex flex-wrap gap-2 mb-8">
-            {project.stack.map((tech) => (
-              <span
-                key={tech}
-                className="px-2.5 py-1 bg-[#2C2C2E] text-[#8E8E93] text-xs font-medium rounded-full"
-              >
-                {tech}
-              </span>
-            ))}
+          {/* Tech Stack: Use icons */}
+          <div className="flex flex-wrap gap-4 mb-8">
+            {project.stack.map((tech) => {
+              const getTechIcon = (techName: string) => {
+                const lower = techName.toLowerCase();
+                if (lower.includes('react native')) return <FaReact className="w-5 h-5 text-[#61DAFB]" />;
+                if (lower.includes('react')) return <FaReact className="w-5 h-5 text-[#61DAFB]" />;
+                if (lower.includes('next')) return <SiNextdotjs className="w-5 h-5 text-white" />;
+                if (lower.includes('tailwind')) return <SiTailwindcss className="w-5 h-5 text-[#06B6D4]" />;
+                if (lower.includes('node')) return <FaNodeJs className="w-5 h-5 text-[#339933]" />;
+                if (lower.includes('firebase')) return <SiFirebase className="w-5 h-5 text-[#FFCA28]" />;
+                if (lower.includes('docker')) return <FaDocker className="w-5 h-5 text-[#2496ED]" />;
+                if (lower.includes('aws')) return <FaAws className="w-5 h-5 text-[#FF9900]" />;
+                if (lower.includes('framer')) return <SiFramer className="w-5 h-5 text-white" />;
+                if (lower.includes('typescript')) return <SiTypescript className="w-5 h-5 text-[#3178C6]" />;
+                if (lower.includes('svelte')) return <SiSvelte className="w-5 h-5 text-[#FF3E00]" />;
+                if (lower.includes('vue')) return <SiVuedotjs className="w-5 h-5 text-[#4FC08D]" />;
+                if (lower.includes('postgres')) return <SiPostgresql className="w-5 h-5 text-[#4169E1]" />;
+                if (lower.includes('leaflet')) return <SiLeaflet className="w-5 h-5 text-[#199900]" />;
+                if (lower.includes('expo')) return <SiExpo className="w-5 h-5 text-white" />;
+                if (lower.includes('astro')) return <SiAstro className="w-5 h-5 text-[#FF5D01]" />;
+                if (lower.includes('mdx')) return <SiMdx className="w-5 h-5 text-[#F9AC00]" />;
+
+                // Fallback for unknown
+                return null;
+              };
+
+              const icon = getTechIcon(tech);
+
+              return (
+                <div key={tech} className="flex items-center gap-2 bg-[#2C2C2E] px-3 py-1.5 rounded-full" title={tech}>
+                  {icon ? (
+                    <span className="">{icon}</span>
+                  ) : (
+                    <span className="text-[#8E8E93] text-xs font-medium">{tech}</span>
+                  )}
+                  {icon && <span className="text-[#8E8E93] text-xs font-medium">{tech}</span>}
+                </div>
+              );
+            })}
           </div>
 
           {/* Project Links */}
