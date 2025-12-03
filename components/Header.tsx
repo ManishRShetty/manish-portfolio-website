@@ -1,27 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ManishLogo } from './Icons';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 // --- Inlined SVG Icons (Apple-inspired & Minimal) ---
-
-// A minimal, plausible logo inspired by Apple's app icon design.
-// const ManishLogo = () => (
-//   <svg
-//     width="28"
-//     height="28"
-//     viewBox="0 0 28 28"
-//     fill="none"
-//     xmlns="http://www.w3.org/2000/svg"
-//   >
-//     <rect width="28" height="28" rx="6" fill="white" />
-//     <path
-//       d="M8 19V9.5L14 15.5L20 9.5V19"
-//       stroke="black"
-//       strokeWidth="2.5"
-//       strokeLinecap="round"
-//       strokeLinejoin="round"
-//     />
-//   </svg>
-// );
 
 // Minimal Sun icon
 const SunIcon = () => (
@@ -73,6 +53,7 @@ interface HeaderProps {
 // --- Redesigned Header Component ---
 
 export const Header: React.FC<HeaderProps> = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
@@ -100,7 +81,7 @@ export const Header: React.FC<HeaderProps> = () => {
             className="flex items-center gap-2 text-lg font-bold text-white"
             aria-label="Homepage"
           >
-            <ManishLogo />
+            <Image src="/Logo.svg" alt="Manish Logo" width={28} height={28} />
           </a>
 
           {/* Navigation: Hidden on mobile, flex on desktop */}
@@ -117,11 +98,56 @@ export const Header: React.FC<HeaderProps> = () => {
             ))}
           </nav>
 
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            )}
+          </button>
+
           {/* Theme Toggle: Minimal button */}
           <div className="flex items-center">
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-neutral-800 overflow-hidden"
+          >
+            <div className="px-4 pt-2 pb-6 space-y-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block px-3 py-3 text-base font-medium text-neutral-300 hover:text-white hover:bg-neutral-800/50 rounded-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };

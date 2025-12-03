@@ -1,14 +1,24 @@
-import React from 'react';
 import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-    title: 'Manish R Shetty — Full Stack Developer',
-    description: 'Manish R Shetty — Building fast, scalable, and user-centered web apps using Next.js & DevOps.',
+    title: 'Manish R Shetty | AI Product Engineer',
+    description: 'Building autonomous AI agents and scalable SaaS platforms. Expert in Next.js, Generative AI, and DevOps.',
+
     openGraph: {
-        title: 'Manish R Shetty — Full Stack Developer',
-        description: 'Building fast, scalable, and user-centered web apps using Next.js & DevOps.',
+        title: 'Manish R Shetty | AI Product Engineer',
+        description: 'Building autonomous AI agents and scalable SaaS platforms.',
         type: 'website',
-        images: ['https://picsum.photos/1200/630'],
+        url: 'https://manish.dev',
+        siteName: 'Manish R Shetty Portfolio',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Manish R Shetty - AI Engineer',
+            },
+        ],
     },
 };
 
@@ -21,29 +31,15 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-                <script src="https://cdn.tailwindcss.com"></script>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-              tailwind.config = {
-                darkMode: 'class',
-                theme: {
-                  extend: {
-                    fontFamily: {
-                      sans: ['Satoshi','Inter', 'sans-serif'],
-                    },
-                  },
-                },
-              }
-            `,
-                    }}
-                />
+
             </head>
-            <body>{children}</body>
+
+            <body className="font-sans antialiased bg-black text-white selection:bg-purple-500 selection:text-white">
+                {children}
+            </body>
         </html>
     );
 }

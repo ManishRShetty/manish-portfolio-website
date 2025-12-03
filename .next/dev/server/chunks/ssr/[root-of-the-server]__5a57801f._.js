@@ -29,8 +29,6 @@ __turbopack_context__.s([
     ()=>LinkedinIcon,
     "Logo",
     ()=>Logo,
-    "ManishLogo",
-    ()=>ManishLogo,
     "MoonIcon",
     ()=>MoonIcon,
     "NodeIcon",
@@ -123,12 +121,12 @@ const ExternalLinkIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
             lineNumber: 24,
-            columnNumber: 9
+            columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
         lineNumber: 23,
-        columnNumber: 5
+        columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const CodeIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -144,12 +142,12 @@ const CodeIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$projec
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
             lineNumber: 30,
-            columnNumber: 9
+            columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
         lineNumber: 29,
-        columnNumber: 5
+        columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const LinkedinIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -168,7 +166,7 @@ const LinkedinIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
                 lineNumber: 39,
-                columnNumber: 220
+                columnNumber: 218
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
                 x: "2",
@@ -178,7 +176,7 @@ const LinkedinIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
                 lineNumber: 39,
-                columnNumber: 316
+                columnNumber: 314
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                 cx: "4",
@@ -187,13 +185,13 @@ const LinkedinIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
                 lineNumber: 39,
-                columnNumber: 363
+                columnNumber: 361
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/Icons.tsx",
         lineNumber: 39,
-        columnNumber: 5
+        columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const TwitterIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -211,12 +209,12 @@ const TwitterIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pro
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
             lineNumber: 43,
-            columnNumber: 219
+            columnNumber: 217
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
         lineNumber: 43,
-        columnNumber: 5
+        columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const DownloadIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -232,12 +230,12 @@ const DownloadIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
             lineNumber: 48,
-            columnNumber: 9
+            columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
         lineNumber: 47,
-        columnNumber: 5
+        columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const GithubIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -259,44 +257,6 @@ const GithubIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proj
         lineNumber: 54,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
-const ManishLogo = ()=>{
-    // CSS styles from the original <style> tag are
-    // converted to a JavaScript style object.
-    const textStyle = {
-        fontSize: '300px',
-        fill: '#fff',
-        textAnchor: 'middle',
-        fontFamily: 'Hathama'
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        width: "100",
-        height: "30",
-        viewBox: "0 0 2357 767",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-            id: "Manish",
-            style: textStyle,
-            transform: "matrix(1.687, 0, 0, 1.687, 1174.479, 506.68)",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tspan", {
-                x: "0",
-                children: "Manish"
-            }, void 0, false, {
-                fileName: "[project]/components/Icons.tsx",
-                lineNumber: 90,
-                columnNumber: 9
-            }, ("TURBOPACK compile-time value", void 0))
-        }, void 0, false, {
-            fileName: "[project]/components/Icons.tsx",
-            lineNumber: 85,
-            columnNumber: 7
-        }, ("TURBOPACK compile-time value", void 0))
-    }, void 0, false, {
-        fileName: "[project]/components/Icons.tsx",
-        lineNumber: 83,
-        columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
-};
-ManishLogo;
 const NodeIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         ...props,
         viewBox: "0 0 256 272",
@@ -307,12 +267,12 @@ const NodeIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
             d: "M128.081 0L15.053 64v144l113.028 64 112.966-64V64L128.081 0zm56.977 201.6c0 24.497-14.353 35.815-35.693 35.815-19.108 0-30.191-9.906-35.528-21.977l19.332-11.385c3.727 6.597 7.128 12.209 15.333 12.209 7.834 0 12.817-3.066 12.817-15.002V122h23.739v79.6zm-47.232-66.047h23.673v66.047h-23.673V135.553z"
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
-            lineNumber: 170,
+            lineNumber: 133,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
-        lineNumber: 163,
+        lineNumber: 126,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const TailwindIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -324,12 +284,12 @@ const TailwindIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$
             d: "M27 0C20.4 0 16.2 3.3 14.4 9.9C17.1 6.6 20.25 5.325 23.85 6.075C25.858 6.48 27.342 7.902 28.986 9.57C31.674 12.3 34.86 15.6 41.4 15.6C48 15.6 52.2 12.3 54 5.7C51.3 9 48.15 10.275 44.55 9.525C42.543 9.12 41.058 7.698 39.414 6.03C36.726 3.3 33.54 0 27 0ZM14.4 15.6C7.8 15.6 3.6 18.9 1.8 25.5C4.5 22.2 7.65 20.925 11.25 21.675C13.257 22.08 14.742 23.502 16.386 25.17C19.074 27.9 22.26 31.2 28.8 31.2C35.4 31.2 39.6 27.9 41.4 21.3C38.7 24.6 35.55 25.875 31.95 25.125C29.943 24.72 28.458 23.298 26.814 21.63C24.126 18.9 20.94 15.6 14.4 15.6Z"
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
-            lineNumber: 181,
+            lineNumber: 144,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
-        lineNumber: 175,
+        lineNumber: 138,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const AwsIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -343,14 +303,14 @@ const AwsIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
                 d: "M54.94 75.24a12.57 12.57 0 0112.52-12.52h21.45c6.91 0 12.51 5.6 12.51 12.52V125.3c0 6.92-5.6 12.52-12.51 12.52H67.46c-6.92 0-12.52-5.6-12.52-12.52z"
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
-                lineNumber: 193,
+                lineNumber: 156,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M142.06 75.24c0-6.92-5.6-12.52-12.52-12.52H108.1c-6.91 0-12.51 5.6-12.51 12.52V125.3c0 6.92 5.6 12.52 12.51 12.52h21.44c6.92 0 12.52-5.6 12.52-12.52z"
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
-                lineNumber: 194,
+                lineNumber: 157,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -360,13 +320,13 @@ const AwsIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
                 fill: "none"
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
-                lineNumber: 195,
+                lineNumber: 158,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/Icons.tsx",
-        lineNumber: 186,
+        lineNumber: 149,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const DockerIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -379,12 +339,12 @@ const DockerIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b
             d: "M298.28 40.44h40.44v40.44h-40.44zM238.28 40.44h40.44v40.44h-40.44zM178.28 40.44h40.44v40.44h-40.44zM118.28 40.44h40.44v40.44h-40.44zM298.28 100.44h40.44v40.44h-40.44zM238.28 100.44h40.44v40.44h-40.44zM178.28 100.44h40.44v40.44h-40.44zM118.28 100.44h40.44v40.44h-40.44zM58.28 160.44h40.44v40.44H58.28zM118.28 160.44h40.44v40.44h-40.44zM178.28 160.44h40.44v40.44h-40.44zM238.28 160.44h40.44v40.44h-40.44zM298.28 160.44h40.44v40.44h-40.44zM410 160c20 0 40 10 50 30 10 20 10 50-5 70-17 22-46 31-80 31H80c-20 0-40-10-50-30-10-20-10-50 5-70 17-22 46-31 80-31z"
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
-            lineNumber: 207,
+            lineNumber: 170,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
-        lineNumber: 200,
+        lineNumber: 163,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const FramerIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -396,12 +356,12 @@ const FramerIcon = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b
             d: "M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
-            lineNumber: 218,
+            lineNumber: 181,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
-        lineNumber: 212,
+        lineNumber: 175,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const Logo = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -419,12 +379,12 @@ const Logo = (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
             children: "Manish"
         }, void 0, false, {
             fileName: "[project]/components/Icons.tsx",
-            lineNumber: 230,
+            lineNumber: 193,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Icons.tsx",
-        lineNumber: 223,
+        lineNumber: 186,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const ReactIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -437,7 +397,7 @@ const ReactIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                 children: "React"
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
-                lineNumber: 245,
+                lineNumber: 208,
                 columnNumber: 130
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -445,13 +405,13 @@ const ReactIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                 fill: "currentColor"
             }, void 0, false, {
                 fileName: "[project]/components/Icons.tsx",
-                lineNumber: 245,
+                lineNumber: 208,
                 columnNumber: 150
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/Icons.tsx",
-        lineNumber: 245,
+        lineNumber: 208,
         columnNumber: 33
     }, ("TURBOPACK compile-time value", void 0)); //export const TailwindIcon = () => (<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-full h-full"><title>Tailwind CSS</title><path d="M12.001 0C5.373 0 0 5.373 0 12s5.373 12 12.001 12C18.628 24 24 18.627 24 12S18.628 0 12.001 0zM7.55 10.425c0-1.23.996-2.226 2.226-2.226s2.226.996 2.226 2.226c0 1.23-.996 2.226-2.226 2.226s-2.226-.996-2.226-2.226zm8.89 0c0-1.23.996-2.226 2.226-2.226s2.226.996 2.226 2.226c0 1.23-.996 2.226-2.226 2.226s-2.226-.996-2.226-2.226zm-4.444 4.14c0-1.23.996-2.226 2.226-2.226s2.226.996 2.226 2.226c0 1.23-.996 2.226-2.226 2.226s-2.226-.996-2.226-2.226z" fill="currentColor"/></svg>);
  //export const FramerMotionIcon = () => (<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-full h-full"><title>Framer</title><path d="M12 0L24 12H12V0ZM12 12l12 12H0L12 12ZM0 12L12 0H0v12Z" fill="currentColor"/></svg>);
@@ -2402,7 +2362,7 @@ const Contact = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/components/Contact.tsx",
                         lineNumber: 89,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "mt-6 text-lg text-[#8E8E93]",
@@ -2410,13 +2370,13 @@ const Contact = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/components/Contact.tsx",
                         lineNumber: 93,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Contact.tsx",
                 lineNumber: 87,
-                columnNumber: 13
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-16 max-w-xl mx-auto",
@@ -2433,7 +2393,7 @@ const Contact = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/Contact.tsx",
                                     lineNumber: 102,
-                                    columnNumber: 25
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                     type: "text",
@@ -2447,13 +2407,13 @@ const Contact = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/Contact.tsx",
                                     lineNumber: 103,
-                                    columnNumber: 25
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Contact.tsx",
                             lineNumber: 101,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: [
@@ -2464,7 +2424,7 @@ const Contact = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/Contact.tsx",
                                     lineNumber: 117,
-                                    columnNumber: 25
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                     type: "email",
@@ -2476,13 +2436,13 @@ const Contact = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/Contact.tsx",
                                     lineNumber: 118,
-                                    columnNumber: 25
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Contact.tsx",
                             lineNumber: 116,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: [
@@ -2493,7 +2453,7 @@ const Contact = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/Contact.tsx",
                                     lineNumber: 130,
-                                    columnNumber: 25
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                                     name: "message",
@@ -2505,13 +2465,13 @@ const Contact = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/Contact.tsx",
                                     lineNumber: 131,
-                                    columnNumber: 25
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Contact.tsx",
                             lineNumber: 129,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "text-center pt-4",
@@ -2521,7 +2481,7 @@ const Contact = ()=>{
                                 // Apple-like soft glow hover
                                 whileHover: {
                                     scale: 1.05,
-                                    shadow: "0 0 25px rgba(10, 132, 255, 0.5)"
+                                    boxShadow: "0 0 25px rgba(10, 132, 255, 0.5)"
                                 },
                                 transition: {
                                     type: 'spring',
@@ -2532,12 +2492,12 @@ const Contact = ()=>{
                             }, void 0, false, {
                                 fileName: "[project]/components/Contact.tsx",
                                 lineNumber: 145,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/Contact.tsx",
                             lineNumber: 144,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         status && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-center pt-4 text-[#8E8E93]",
@@ -2545,24 +2505,24 @@ const Contact = ()=>{
                         }, void 0, false, {
                             fileName: "[project]/components/Contact.tsx",
                             lineNumber: 160,
-                            columnNumber: 23
+                            columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Contact.tsx",
                     lineNumber: 99,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/Contact.tsx",
                 lineNumber: 98,
-                columnNumber: 13
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/Contact.tsx",
         lineNumber: 78,
-        columnNumber: 9
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 }; // --- Main App Component (for demonstration) ---
  /**
