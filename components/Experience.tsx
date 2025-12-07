@@ -28,7 +28,7 @@ const workExperienceData = [
 ];
 
 // --- Physics Engine ---
-const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },

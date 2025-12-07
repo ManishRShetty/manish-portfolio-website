@@ -16,6 +16,13 @@ import { Footer } from '@/components/Footer';
 import { CaseStudyModal } from '@/components/CaseStudyModal';
 import { projectsData } from '@/data/projects.json';
 import type { Project } from '@/types';
+import DotGrid from '@/components/DotGrid';
+
+// Debug: Check if all projects are being imported
+console.log('=== DEBUG: projectsData in page.tsx ===');
+console.log('Total projects imported:', projectsData.length);
+console.log('Project IDs:', projectsData.map(p => p.id));
+console.log('Project titles:', projectsData.map(p => p.title));
 
 const App: React.FC = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -47,8 +54,19 @@ const App: React.FC = () => {
     return (
         <div className="min-h-screen bg-black bg-red text-gray-900 font-sans">
 
-            <Header />
+            {/* <Header /> */}
             <main className="container bg-black mx-auto px-4 sm:px-6 lg:px-8">
+                {/* <DotGrid
+                    dotSize={10}
+                    gap={15}
+                    baseColor="#616161ff"
+                    activeColor="#5227FF"
+                    proximity={120}
+                    shockRadius={250}
+                    shockStrength={5}
+                    resistance={750}
+                    returnDuration={1.5}
+                /> */}
                 <Hero />
                 <About />
                 <Projects projects={projectsData} onProjectClick={openModal} />

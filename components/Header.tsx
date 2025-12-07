@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
@@ -9,11 +10,12 @@ export const Header: React.FC<HeaderProps> = () => {
   const shouldReduceMotion = useReducedMotion();
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Experience', href: '/#experience' },
+    { name: 'Education', href: '/#education' },
+    { name: 'Contact', href: '/#contact' },
+    { name: 'Blogs', href: '/blogs' },
   ];
 
   return (

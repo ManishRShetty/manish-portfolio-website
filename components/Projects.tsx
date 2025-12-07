@@ -1,35 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { ExternalLink, Github, ChevronDown } from 'lucide-react';
+import type { Project } from '@/types';
 
-// UNCOMMENT THIS IN YOUR LOCAL ENVIRONMENT
-import { projectsData } from '@/data/projects.json';
-
-// --- Types ---
-export interface Project {
-  id: number;
-  title: string;
-  thumbnail: string;
-  stack: string[];
-  description: string;
-  liveDemoUrl?: string;
-  codeUrl?: string;
+// --- Props Interface ---
+interface ProjectsProps {
+  projects: Project[];
+  onProjectClick?: (project: Project) => void;
 }
 
-// --- Physics Engine (Shared) ---
-const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
+// --- Physics Engine ---
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
-// The "Apple Blur" Reveal
 const itemBlurVariant: Variants = {
   hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
   visible: {
@@ -38,29 +28,38 @@ const itemBlurVariant: Variants = {
     filter: 'blur(0px)',
     transition: springPhysics
   },
+  exit: {
+    opacity: 0,
+    scale: 0.9,
+    filter: 'blur(10px)',
+    transition: { duration: 0.2 }
+  }
 };
 
-// --- Project Card Component ---
-const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+// --- Project Card (Kept mostly the same, just optimized) ---
+const ProjectCard: React.FC<{ project: Project; onClick?: (project: Project) => void }> = ({ project, onClick }) => {
   return (
     <motion.div
+      layout // CRITICAL: Allows card to move smoothly when siblings are removed
       variants={itemBlurVariant}
-      className="group relative flex flex-col bg-[#1C1C1E] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-500"
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="group relative flex flex-col bg-[#1C1C1E] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-500 cursor-pointer"
+      onClick={() => onClick?.(project)}
     >
-      {/* Image Container - Aspect Ratio 16:9 */}
       <div className="relative aspect-video overflow-hidden">
-        <div className="absolute inset-0 bg-neutral-800 animate-pulse" /> {/* Loading Skeleton */}
-        <motion.img
+        <div className="absolute inset-0 bg-neutral-800 animate-pulse" />
+        <img
           src={project.thumbnail}
           alt={project.title}
+          loading="lazy"
           className="relative z-10 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           onError={(e) => (e.currentTarget.src = 'https://placehold.co/600x400/1C1C1E/3A3A3C?text=Project+Preview')}
         />
-        {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1E] via-transparent to-transparent opacity-60" />
       </div>
 
-      {/* Content */}
       <div className="flex flex-col flex-grow p-6">
         <div className="flex justify-between items-start mb-3">
           <h3 className="text-xl font-semibold text-white tracking-tight group-hover:text-blue-400 transition-colors duration-300">
@@ -68,37 +67,23 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           </h3>
           <div className="flex gap-3">
             {project.codeUrl && (
-              <a
-                href={project.codeUrl}
-                className="text-neutral-500 hover:text-white transition-colors"
-                title="View Code"
-              >
+              <a href={project.codeUrl} onClick={(e) => e.stopPropagation()} className="text-neutral-500 hover:text-white transition-colors">
                 <Github size={18} />
               </a>
             )}
             {project.liveDemoUrl && (
-              <a
-                href={project.liveDemoUrl}
-                className="text-neutral-500 hover:text-white transition-colors"
-                title="Live Demo"
-              >
+              <a href={project.liveDemoUrl} onClick={(e) => e.stopPropagation()} className="text-neutral-500 hover:text-white transition-colors">
                 <ExternalLink size={18} />
               </a>
             )}
           </div>
         </div>
-
         <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
           {project.description}
         </p>
-
-        {/* Tech Stack Pills */}
         <div className="flex flex-wrap gap-2 mt-auto">
           {project.stack.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[11px] font-medium text-neutral-300 tracking-wide"
-            >
+            <span key={tech} className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[11px] font-medium text-neutral-300 tracking-wide">
               {tech}
             </span>
           ))}
@@ -109,15 +94,26 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 };
 
 // --- Main Projects Section ---
-export const Projects: React.FC = () => {
-  const [visibleCount, setVisibleCount] = useState(3);
+export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) => {
+  const DEFAULT_VIEW_COUNT = 3;
+  const [visibleCount, setVisibleCount] = useState(DEFAULT_VIEW_COUNT);
 
-  // Toggle Logic
-  const handleShowMore = () => {
-    setVisibleCount(prev => prev >= Projects.length ? 3 : Projects.length);
+  // Ref for smooth scrolling back to top of grid when collapsing
+  const gridTopRef = useRef<HTMLDivElement>(null);
+
+  const isExpanded = visibleCount > DEFAULT_VIEW_COUNT;
+
+  const handleToggle = () => {
+    if (isExpanded) {
+      // Logic: Collapse
+      setVisibleCount(DEFAULT_VIEW_COUNT);
+      // UX Fix: Scroll back to the top of the grid so user isn't lost
+      gridTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      // Logic: Expand
+      setVisibleCount(projects.length);
+    }
   };
-
-  const isExpanded = visibleCount >= Projects.length;
 
   return (
     <section id="projects" className="py-32 bg-black text-white px-6">
@@ -128,39 +124,41 @@ export const Projects: React.FC = () => {
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        {/* Section Header */}
         <div className="text-center mb-20">
-          <motion.h2
-            variants={itemBlurVariant}
-            className="text-4xl md:text-6xl font-bold tracking-tighter mb-6"
-          >
+          <motion.h2 variants={itemBlurVariant} className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
             Selected Works
           </motion.h2>
-          <motion.p
-            variants={itemBlurVariant}
-            className="text-neutral-400 text-lg max-w-xl mx-auto"
-          >
+          <motion.p variants={itemBlurVariant} className="text-neutral-400 text-lg max-w-xl mx-auto mb-4">
             A collection of robust applications focusing on AI integration, real-time data, and seamless user experiences.
           </motion.p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Scroll Anchor */}
+        <div ref={gridTopRef} className="scroll-mt-32" />
+
+        {/* CRITICAL FIX: 
+            1. layout prop on the grid container handles the height resizing animation.
+            2. mode="popLayout" ensures exiting items don't break the flow.
+        */}
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+        >
           <AnimatePresence mode="popLayout">
-            {projectsData.slice(0, visibleCount).map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {projects.slice(0, visibleCount).map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onClick={onProjectClick}
+              />
             ))}
           </AnimatePresence>
-        </div>
+        </motion.div>
 
-        {/* Show More / Less Button */}
-        {Projects.length > 3 && (
-          <motion.div
-            variants={itemBlurVariant}
-            className="flex justify-center"
-          >
+        {projects.length > DEFAULT_VIEW_COUNT && (
+          <motion.div variants={itemBlurVariant} className="flex justify-center">
             <button
-              onClick={handleShowMore}
+              onClick={handleToggle}
               className="group flex items-center gap-2 px-6 py-3 bg-[#1C1C1E] hover:bg-[#2C2C2E] text-white rounded-full font-medium transition-all duration-300 border border-white/5 hover:border-white/10"
             >
               <span>{isExpanded ? 'View Less' : 'View All Projects'}</span>
@@ -177,8 +175,5 @@ export const Projects: React.FC = () => {
     </section>
   );
 };
-
-// --- DATA: Included locally for preview. Replace with import in production. ---
-
 
 export default Projects;

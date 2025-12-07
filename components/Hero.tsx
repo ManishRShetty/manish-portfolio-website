@@ -3,7 +3,7 @@ import { motion, Variants } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
 
 // --- Physics Engine (Consistent with About Section) ---
-const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
 
 // Staggered Container
 const containerVariants: Variants = {

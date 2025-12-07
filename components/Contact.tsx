@@ -3,8 +3,8 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Send, Mail, MessageSquare, User, Github, Linkedin, Twitter, CheckCircle2 } from 'lucide-react';
 
 // --- Physics Engine ---
-const springPhysics = { type: "spring", stiffness: 100, damping: 20 };
-const focusPhysics = { type: "spring", stiffness: 300, damping: 25 };
+const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
+const focusPhysics = { type: "spring", stiffness: 300, damping: 25 } as const;
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },

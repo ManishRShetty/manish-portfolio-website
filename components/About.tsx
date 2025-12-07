@@ -15,27 +15,27 @@ const ReactIcon = () => (
   </svg>
 );
 
+// --- Enhanced Data Structure with URLs and Brand Colors ---
+// If a color is too dark for your background, I've adjusted it to a visible shade.
 const skills = [
-  { name: 'NextJS', icon: <RiNextjsFill /> },
-  { name: 'React', icon: <ReactIcon /> },
-  { name: 'Tailwind', icon: <RiTailwindCssFill /> },
-  { name: 'Python', icon: <FaPython /> },
-  { name: 'Kubernetes', icon: <SiKubernetes /> },
-  { name: 'Firebase', icon: <SiFirebase /> },
-  { name: 'Docker', icon: <FaDocker /> },
-  { name: 'AWS', icon: <FaAws /> },
-  { name: 'GCP', icon: <SiGooglecloud /> },
-  { name: 'GitHub', icon: <FaGithub /> },
-  { name: 'n8n', icon: <SiN8N /> },
-  { name: 'Node.js', icon: <FaNodeJs /> },
-  { name: 'Framer', icon: <SiFramer /> },
+  { name: 'NextJS', icon: <RiNextjsFill />, href: 'https://nextjs.org', color: '#FFFFFF' },
+  { name: 'React', icon: <ReactIcon />, href: 'https://react.dev', color: '#61DAFB' },
+  { name: 'Tailwind', icon: <RiTailwindCssFill />, href: 'https://tailwindcss.com', color: '#38B2AC' },
+  { name: 'Python', icon: <FaPython />, href: 'https://www.python.org', color: '#3776AB' },
+  { name: 'Kubernetes', icon: <SiKubernetes />, href: 'https://kubernetes.io', color: '#326CE5' },
+  { name: 'Firebase', icon: <SiFirebase />, href: 'https://firebase.google.com', color: '#FFCA28' },
+  { name: 'Docker', icon: <FaDocker />, href: 'https://www.docker.com', color: '#2496ED' },
+  { name: 'AWS', icon: <FaAws />, href: 'https://aws.amazon.com', color: '#FF9900' },
+  { name: 'GCP', icon: <SiGooglecloud />, href: 'https://cloud.google.com', color: '#4285F4' },
+  { name: 'GitHub', icon: <FaGithub />, href: 'https://github.com', color: '#FFFFFF' },
+  { name: 'n8n', icon: <SiN8N />, href: 'https://n8n.io', color: '#FF6584' },
+  { name: 'Node.js', icon: <FaNodeJs />, href: 'https://nodejs.org', color: '#339933' },
+  { name: 'Framer', icon: <SiFramer />, href: 'https://www.framer.com/motion/', color: '#0055FF' },
 ];
 
 // --- Physics & Variants ---
-const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
-
-// A tighter spring for hover interactions to make them feel responsive
-const hoverPhysics = { type: "spring", stiffness: 400, damping: 25 };
+const springPhysics = { type: "spring" as const, stiffness: 100, damping: 20 };
+const hoverPhysics = { type: "spring" as const, stiffness: 400, damping: 25 };
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -79,17 +79,15 @@ export const About: React.FC = () => {
         {/* Content Layout */}
         <div className="flex flex-col md:flex-row items-start justify-between gap-12 md:gap-24">
 
-          {/* Profile Image - Subtle Parallax Feel */}
+          {/* Profile Image */}
           <motion.div
             variants={itemBlurVariant}
             className="w-full md:w-1/3 flex justify-center md:justify-start"
           >
             <div className="relative w-64 h-64 md:w-72 md:h-72 group">
-              {/* Subtle Glow behind image (Apple Dark Mode style) */}
               <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
               <img
-                src="/Manish.png"
+                src="/Manish.webp"
                 alt="Manish R Shetty"
                 className="relative z-10 rounded-full w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-out border border-white/10"
                 onError={(e) => {
@@ -136,22 +134,26 @@ export const About: React.FC = () => {
 
           <div className="flex flex-wrap justify-center gap-3">
             {skills.map((skill) => (
-              <motion.div
+              <motion.a
                 key={skill.name}
+                href={skill.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={itemBlurVariant}
                 whileHover={{
                   scale: 1.05,
-                  backgroundColor: "rgba(255, 255, 255, 0.15)",
-                  borderColor: "rgba(255, 255, 255, 0.2)",
-                  color: "#FFFFFF", // Brighten text/icon on hover
-                  transition: hoverPhysics // Use snappy spring physics
+                  backgroundColor: "rgba(255, 255, 255, 0.1)", // Slightly more transparent
+                  borderColor: skill.color, // Border takes the brand color
+                  color: skill.color,       // Text/Icon takes the brand color
+                  boxShadow: `0 0 15px ${skill.color}20`, // Subtle glow of brand color
+                  transition: hoverPhysics
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2.5 px-5 py-3 bg-[#1C1C1E] border border-white/5 rounded-full text-neutral-400 cursor-default backdrop-blur-sm"
+                className="flex items-center gap-2.5 px-5 py-3 bg-[#1C1C1E] border border-white/5 rounded-full text-neutral-400 cursor-pointer backdrop-blur-sm transition-colors"
               >
                 <span className="text-lg opacity-80">{skill.icon}</span>
                 <span className="text-sm font-medium tracking-wide">{skill.name}</span>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>
