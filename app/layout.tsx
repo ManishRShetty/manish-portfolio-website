@@ -15,11 +15,11 @@ export const metadata: Metadata = {
         title: 'Manish R Shetty | AI Product Engineer',
         description: 'Building autonomous AI agents and scalable SaaS platforms.',
         type: 'website',
-        url: 'https://manish.dev',
+        url: 'https://manishshetty.dev',
         siteName: 'Manish R Shetty Portfolio',
         images: [
             {
-                url: '/og-image.png',
+                url: '/Manish.webp',
                 width: 1200,
                 height: 630,
                 alt: 'Manish R Shetty - AI Engineer',

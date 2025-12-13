@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
           <SocialButton
             href="https://github.com/ManishRShetty"
             label="GitHub Profile"
-            icon={({ className }) => <GithubIcon className={className} />} // Adjust if GithubIcon doesn't take props, otherwise straightforward
+            icon={GithubIcon}
           />
           <SocialButton
             href="https://www.linkedin.com/in/manishrshetty/"

@@ -94,7 +94,7 @@ export const Hero: React.FC = () => {
 
           {/* Secondary Action - Glass/Ghost */}
           <motion.a
-            href="/Resume.pdf"
+            href="/manishshetty-resume.pdf"
             download
             whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}

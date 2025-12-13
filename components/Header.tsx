@@ -15,7 +15,7 @@ export const Header: React.FC<HeaderProps> = () => {
     { name: 'Experience', href: '/#experience' },
     { name: 'Education', href: '/#education' },
     { name: 'Contact', href: '/#contact' },
-    { name: 'Blogs', href: '/blogs' },
+    // { name: 'Blogs', href: '/blogs' },
   ];
 
   return (
@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = () => {
           >
             <div className="relative w-24 h-24">
               <Image
-                src="/Logo.svg"
+                src="/logo.svg"
                 alt="Manish Logo"
                 fill
                 className="object-contain"

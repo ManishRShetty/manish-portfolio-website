@@ -89,7 +89,7 @@ export const About: React.FC = () => {
               <img
                 src="/Manish.webp"
                 alt="Manish R Shetty"
-                className="relative z-10 rounded-full w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-out border border-white/10"
+                className="relative z-10 rounded-full w-full h-full object-cover  hover:grayscale-0 transition-all duration-500 ease-out border border-white/10"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
                     'https://placehold.co/400x400/1C1C1E/FFFFFF?text=MR&font=sans-serif';
@@ -112,7 +112,7 @@ export const About: React.FC = () => {
             {/* Buttons Row */}
             <motion.div variants={itemBlurVariant} className="pt-4 flex flex-wrap gap-4">
               <a
-                href="/Resume.pdf"
+                href="/manishshetty-resume.pdf"
                 download
                 className="group relative inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full text-sm font-semibold tracking-wide hover:bg-neutral-200 transition-colors duration-300"
               >

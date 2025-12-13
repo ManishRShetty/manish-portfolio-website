@@ -77,7 +77,7 @@ const App: React.FC = () => {
                 {/* <Achievements /> */}
                 <Contact />
             </main>
-            <Footer />
+            {/* <Footer /> */}
             <AnimatePresence>
                 {selectedProject && (
                     <CaseStudyModal project={selectedProject} onClose={closeModal} />

@@ -87,7 +87,7 @@ export const Contact: React.FC = () => {
                   name="name"
                   id="name"
                   required
-                  placeholder="John Doe"
+                  placeholder="Elon Musk"
                   className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/5 rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 focus:border-white/20 transition-all duration-300"
                 />
               </div>
@@ -103,7 +103,7 @@ export const Contact: React.FC = () => {
                   name="email"
                   id="email"
                   required
-                  placeholder="john@example.com"
+                  placeholder="elon@example.com"
                   className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/5 rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 focus:border-white/20 transition-all duration-300"
                 />
               </div>

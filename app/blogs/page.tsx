@@ -21,7 +21,7 @@ const FADE_IN_UP = {
 const BLOG_POSTS = [
     {
         id: '1',
-        title: 'Interface as Ambient Light',
+        title: 'Blogs Coming Soon',
         excerpt: 'Redefining the screen not as a container, but as a light source. The shift to ambient computing.',
         category: 'Design',
         readTime: '5 min',
@@ -31,7 +31,7 @@ const BLOG_POSTS = [
     },
     {
         id: '2',
-        title: 'Fluid Gestures',
+        title: 'Blogs Coming Soon',
         excerpt: 'Physics-based interactions in React. Making digital objects feel heavy and real.',
         category: 'Engineering',
         readTime: '8 min',
@@ -40,7 +40,7 @@ const BLOG_POSTS = [
     },
     {
         id: '3',
-        title: 'Dark Mode Psychology',
+        title: 'Blogs Coming Soon',
         excerpt: 'Contrast ratios and melatonin. Why true black isn\'t always the answer.',
         category: 'Research',
         readTime: '4 min',
@@ -49,7 +49,7 @@ const BLOG_POSTS = [
     },
     {
         id: '4',
-        title: 'Server Actions',
+        title: 'Blogs Coming Soon',
         excerpt: 'The death of the API route. Structuring logic where it belongs.',
         category: 'Engineering',
         readTime: '12 min',
