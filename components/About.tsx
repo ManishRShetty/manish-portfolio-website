@@ -87,13 +87,13 @@ export const About: React.FC = () => {
             <div className="relative w-64 h-64 md:w-72 md:h-72 group">
               <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <img
-                src="/Manish.webp"
+                src="/manish.webp"
                 alt="Manish R Shetty"
                 className="relative z-10 rounded-full w-full h-full object-cover  hover:grayscale-0 transition-all duration-500 ease-out border border-white/10"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    'https://placehold.co/400x400/1C1C1E/FFFFFF?text=MR&font=sans-serif';
-                }}
+              // onError={(e) => {
+              //   (e.target as HTMLImageElement).src =
+              //     'https://placehold.co/400x400/1C1C1E/FFFFFF?text=MR&font=sans-serif';
+              // }}
               />
             </div>
           </motion.div>

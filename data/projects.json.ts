@@ -5,7 +5,7 @@ export const projectsData: Project[] = [
   {
     id: 6,
     title: "AtLast: The Infinite, Self-Validating Trivia Engine (Currently in Development)",
-    thumbnail: "/projects/atlas-agents/AtlastAgentsCover.webp",
+    thumbnail: "/projects/atlas-agents/atlastagentscover.webp",
     description:
       "🚧 Currently in Development 🚧 | A competitive 'Where in the World' game powered by a multi-agent AI system that generates real-time trivia questions, validates accuracy, and adapts difficulty based on player behavior—optimizing for both fun and fact-checking.",
     stack: [
@@ -77,7 +77,7 @@ export const projectsData: Project[] = [
   {
     id: 2,
     title: "Nexus Club Website",
-    thumbnail: "/projects/nexusclubs/NexusClubsCover.webp",
+    thumbnail: "/projects/nexusclubs/nexusclubscover.webp",
     description:
       "End-to-end development of the Nexus Club website — designed and built from front-end to back-end to support the tech club’s online presence, member engagement, events listing, and resource hub.",
     stack: [
@@ -111,7 +111,7 @@ export const projectsData: Project[] = [
   {
     id: 4,
     title: "AquaLedger",
-    thumbnail: "https://picsum.photos/seed/aqualedger/800/600",
+    thumbnail: "/projects/aqualedger/aqualedgercover.webp",
     description:
       "AquaLedger is an AI-driven fisheries platform engineered with a product-first mindset—combining AI, full-stack thinking, and UX strategy to deliver a fast, intelligent and user-centric offline-first experience for fishermen and buyers.",
     stack: [
@@ -187,6 +187,24 @@ export const projectsData: Project[] = [
         "/projects/webpwizard/Screenshot1.webp",
         "/projects/webpwizard/Screenshot2.webp",
         "/projects/webpwizard/Screenshot3.webp"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Arena - Experimental Game Lab",
+    "thumbnail": "https://i.ibb.co/TD8n386m/New-Project-3.png",
+    "description": "A modular Progressive Web App (PWA) serving as a centralized runtime environment for browser-based mini-games, featuring unified state management and performance analytics.",
+    "stack": ["Next.js", "TypeScript", "HTML5 Canvas", "Zustand", "Framer Motion"],
+    "liveDemoUrl": "https://arena.manishshetty.dev",
+    "codeUrl": "https://github.com/ManishRShetty/arena",
+    "caseStudy": {
+      "problem": "Developing distinct deployments for experimental game mechanics creates portfolio clutter and introduces maintenance fatigue, fragmenting the user experience.",
+      "solution": "Architected a scalable 'arcade' container. I built a unified core system that handles shared resources (audio, global state, user preferences) and asset pre-loading. This allows individual games to be injected as modular components, drastically reducing code duplication.",
+      "role": "Full-stack Engineer & Game Mechanic Designer.",
+      "impact": "Consolidated distinct interactive projects into a single high-performance SPA, reducing deployment overhead by 80% and demonstrating complex state logic handling beyond standard CRUD apps.",
+      "screenshots": [
+        "https://picsum.photos/seed/gamma-ss1/1200/800"
       ]
     }
   }
