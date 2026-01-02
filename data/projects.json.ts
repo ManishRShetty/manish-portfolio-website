@@ -54,7 +54,7 @@ export const projectsData: Project[] = [
       "OpenStreetMap",
       "Custom Blockchain (PoW)"
     ],
-    liveDemoUrl: "#",
+    liveDemoUrl: "https://folkspace.manishshetty.dev",
     codeUrl: "https://github.com/ManishRShetty/FolkSpace",
     caseStudy: {
       problem:
@@ -66,9 +66,9 @@ export const projectsData: Project[] = [
       impact:
         "Received appreciation from multiple mentors for being one of the most complete and research-backed solutions. Improved stocking accuracy and pricing intelligence by combining sales data, weather history, and seasonal trends.",
       screenshots: [
-        "https://picsum.photos/seed/folkspace-ss1/1200/800",
-        "https://picsum.photos/seed/folkspace-ss2/1200/800",
-        "https://picsum.photos/seed/folkspace-ss3/1200/800"
+        "/projects/folkspace/folkspace1.webp",
+        "/projects/folkspace/folkspace2.webp",
+
       ]
     },
 
@@ -101,9 +101,10 @@ export const projectsData: Project[] = [
       impact:
         "Delivered a fast, mobile-friendly site; improved engagement among students, simplified event update workflows for club admins; created a scalable foundation for future features like hackathon portals and member analytics.",
       screenshots: [
-        "https://picsum.photos/seed/nexusclubsite-ss1/1200/800",
-        "https://picsum.photos/seed/nexusclubsite-ss2/1200/800",
-        "https://picsum.photos/seed/nexusclubsite-ss3/1200/800"
+        "/projects/nexusclubs/nexus1.webp",
+        "/projects/nexusclubs/nexus2.webp",
+        "/projects/nexusclubs/nexus3.webp",
+        "/projects/nexusclubs/nexus4.webp"
       ]
     },
 
@@ -132,9 +133,6 @@ export const projectsData: Project[] = [
       impact:
         "The redesigned experience reduced data-entry effort by 50%, achieved a 98% task-success rate, lowered input errors by 70%, and boosted sustainability-metric comprehension by 85%. Iterative usability testing refined search and filtering flows, resulting in a 45% faster time to locate specific catch records.",
       screenshots: [
-        "https://picsum.photos/seed/aqualedger-ss1/1200/800",
-        "https://picsum.photos/seed/aqualedger-ss2/1200/800",
-        "https://picsum.photos/seed/aqualedger-ss3/1200/800"
       ]
     }
   },
@@ -144,7 +142,7 @@ export const projectsData: Project[] = [
     thumbnail: "https://i.ibb.co/TD8n386m/New-Project-3.png",
     description: "A sleek, modern marketing website designed to capture leads, with animations powered by Framer Motion.",
     stack: ["React", "Framer Motion", "UI/UX"],
-    liveDemoUrl: "#",
+    liveDemoUrl: "https://envision.manishshetty.dev",
     codeUrl: "#",
     caseStudy: {
       problem: "A startup needed a visually appealing landing page that could clearly communicate its value proposition and convert visitors into leads.",
@@ -152,7 +150,9 @@ export const projectsData: Project[] = [
       role: "Lead designer and front-end developer responsible for design, development, and deployment.",
       impact: "The new design led to a 40% increase in user engagement and a 25% higher conversion rate on the contact form.",
       screenshots: [
-        "https://picsum.photos/seed/gamma-ss1/1200/800"
+        "/projects/envision/envision1.webp",
+        "/projects/envision/envision2.webp",
+        "/projects/envision/envision3.webp"
       ]
     }
   },
@@ -193,7 +193,7 @@ export const projectsData: Project[] = [
   {
     "id": 6,
     "title": "Arena - Experimental Game Lab",
-    "thumbnail": "https://i.ibb.co/TD8n386m/New-Project-3.png",
+    "thumbnail": "/projects/arena/arenacover.webp",
     "description": "A modular Progressive Web App (PWA) serving as a centralized runtime environment for browser-based mini-games, featuring unified state management and performance analytics.",
     "stack": ["Next.js", "TypeScript", "HTML5 Canvas", "Zustand", "Framer Motion"],
     "liveDemoUrl": "https://arena.manishshetty.dev",
@@ -204,7 +204,8 @@ export const projectsData: Project[] = [
       "role": "Full-stack Engineer & Game Mechanic Designer.",
       "impact": "Consolidated distinct interactive projects into a single high-performance SPA, reducing deployment overhead by 80% and demonstrating complex state logic handling beyond standard CRUD apps.",
       "screenshots": [
-        "https://picsum.photos/seed/gamma-ss1/1200/800"
+        "/projects/arena/arena1.webp",
+
       ]
     }
   }
