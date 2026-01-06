@@ -1,9 +1,8 @@
-
 import type { Project } from '../types';
 
 export const projectsData: Project[] = [
   {
-    id: 6,
+    id: 1,
     title: "AtLast: The Infinite, Self-Validating Trivia Engine (Currently in Development)",
     thumbnail: "/projects/atlas-agents/atlastagentscover.webp",
     description:
@@ -38,7 +37,29 @@ export const projectsData: Project[] = [
     }
   },
   {
-    id: 1,
+    id: 4,
+    title: "AquaLedger",
+    thumbnail: "/projects/aqualedger/aqualedgercover.webp",
+    description: "An offline-first, hands-free fisheries platform engineered for zero-connectivity zones. Features a custom conflict-free sync engine and on-device voice parsing to enable rapid, reliable data entry in harsh marine environments.",
+    stack: [
+      "Next.js 14",
+      "Dexie.js (IndexedDB)",
+      "TanStack Query",
+      "Web Speech API",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    liveDemoUrl: "https://aqualedger.manishshetty.dev",
+    codeUrl: "https://github.com/ManishRShetty/AquaLedger",
+    caseStudy: {
+      problem: "Fishermen operate in wet, unstable environments where standard touch interfaces fail and internet is non-existent. Traditional cloud-first apps cause data loss during long offshore trips, and paper logs create a 48-hour lag in market pricing.",
+      solution: "I architected a 'Local-First' PWA using Dexie.js to guarantee 100% uptime without internet. I engineered a custom sync queue with optimistic UI updates that caches mutations offline and automatically resolves conflicts when connectivity is restored. To solve the 'wet hands' friction, I built a hands-free voice logger using the Web Speech API and a custom regex parser that normalizes natural language (e.g., '20kg Tuna') into structured data.",
+      impact: "Eliminated data loss via the persistent sync queue architecture. Reduced data entry time by ~60% using the hands-free voice mode compared to traditional forms. The system now supports full 'Apple-Dark' aesthetic visuals while running completely offline on low-end mobile hardware.",
+      screenshots: []
+    }
+  },
+  {
+    id: 2,
     title: "FolkSpace",
     thumbnail: "/projects/folkspace/FolkSpaceCover.webp",
     description:
@@ -67,97 +88,33 @@ export const projectsData: Project[] = [
         "Received appreciation from multiple mentors for being one of the most complete and research-backed solutions. Improved stocking accuracy and pricing intelligence by combining sales data, weather history, and seasonal trends.",
       screenshots: [
         "/projects/folkspace/folkspace1.webp",
-        "/projects/folkspace/folkspace2.webp",
-
-      ]
-    },
-
-  },
-
-  {
-    id: 2,
-    title: "Nexus Club Website",
-    thumbnail: "/projects/nexusclubs/nexusclubscover.webp",
-    description:
-      "End-to-end development of the Nexus Club website — designed and built from front-end to back-end to support the tech club’s online presence, member engagement, events listing, and resource hub.",
-    stack: [
-      "Next.js",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "API integration",
-      "Hosting & Deployment"
-    ],
-    liveDemoUrl: "https://www.nexusclubs.in",
-
-    caseStudy: {
-      problem:
-        "The club needed a modern, responsive website that could handle event listings, membership info, dynamic content updates and be scalable as the club grows.",
-      solution:
-        "Built a robust full-stack application: Next.js + Tailwind for the UI; Node.js/Express + MongoDB for the back-end; designed modular components, admin dashboard for event uploads, and optimized for performance and SEO.",
-      role:
-        "Sole developer responsible for full-stack development, system design, UI/UX, deployment, and ongoing maintenance.",
-      impact:
-        "Delivered a fast, mobile-friendly site; improved engagement among students, simplified event update workflows for club admins; created a scalable foundation for future features like hackathon portals and member analytics.",
-      screenshots: [
-        "/projects/nexusclubs/nexus1.webp",
-        "/projects/nexusclubs/nexus2.webp",
-        "/projects/nexusclubs/nexus3.webp",
-        "/projects/nexusclubs/nexus4.webp"
-      ]
-    },
-
-  },
-  {
-    id: 4,
-    title: "AquaLedger",
-    thumbnail: "/projects/aqualedger/aqualedgercover.webp",
-    description:
-      "AquaLedger is an AI-driven fisheries platform engineered with a product-first mindset—combining AI, full-stack thinking, and UX strategy to deliver a fast, intelligent and user-centric offline-first experience for fishermen and buyers.",
-    stack: [
-      "AI Product Design",
-      "Next.js",
-      "UI/UX",
-      "Figma",
-      "System Architecture",
-      "Human-Centered Design"
-    ],
-    liveDemoUrl: "https://aqualedger.manishshetty.dev",
-    codeUrl: "https://github.com/ManishRShetty/AquaLedger",
-    caseStudy: {
-      problem:
-        "Traditional fisheries workflows depended on paper logs and unstable connectivity. These limitations led to inaccurate data, slow decision-making, and poor visibility into sustainability metrics generated by AI models.",
-      solution:
-        "As an AI Product Engineer, I led the end-to-end product and UX direction—conducting field research with 15+ fishermen and buyers, uncovering the need for an offline-first architecture, and designing a component-based catch-logging system optimized for speed, clarity, and low cognitive load. I also transformed complex AI sustainability outputs into a simple color-coded scoring interface that users could interpret in seconds.",
-      impact:
-        "The redesigned experience reduced data-entry effort by 50%, achieved a 98% task-success rate, lowered input errors by 70%, and boosted sustainability-metric comprehension by 85%. Iterative usability testing refined search and filtering flows, resulting in a 45% faster time to locate specific catch records.",
-      screenshots: [
-      ]
-    }
-  },
-  {
-    id: 3,
-    title: "Envision College Event Website",
-    thumbnail: "https://i.ibb.co/TD8n386m/New-Project-3.png",
-    description: "A sleek, modern marketing website designed to capture leads, with animations powered by Framer Motion.",
-    stack: ["React", "Framer Motion", "UI/UX"],
-    liveDemoUrl: "https://envision.manishshetty.dev",
-    codeUrl: "#",
-    caseStudy: {
-      problem: "A startup needed a visually appealing landing page that could clearly communicate its value proposition and convert visitors into leads.",
-      solution: "A user-centric design process was followed to create an intuitive layout. The site was built in React, with subtle, engaging animations from Framer Motion to guide the user's attention. A Formspree-integrated contact form was included for lead capture.",
-      role: "Lead designer and front-end developer responsible for design, development, and deployment.",
-      impact: "The new design led to a 40% increase in user engagement and a 25% higher conversion rate on the contact form.",
-      screenshots: [
-        "/projects/envision/envision1.webp",
-        "/projects/envision/envision2.webp",
-        "/projects/envision/envision3.webp"
+        "/projects/folkspace/folkspace2.webp"
       ]
     }
   },
   {
     id: 5,
+    title: "Srinathon 2.0 Official Platform",
+    thumbnail: "/projects/srinathon/cover.webp",
+    description: "A gamified, high-performance event platform for Mangalore's largest 24-hour hackathon. Features a unique 'Card Deck' UI paradigm and real-time event scheduling.",
+    stack: [
+      "Next.js",
+      "Framer Motion (3D Card Flip)",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vercel"
+    ],
+    liveDemoUrl: "https://srinathon.nexusclubs.in/",
+    codeUrl: "https://github.com/ManishRShetty/Srinathon-2.0",
+    caseStudy: {
+      problem: "Hackathon portals are usually static and boring, failing to capture the high-energy 'Game On' spirit of a 24-hour coding marathon. Additionally, organizing a multi-track event (Hardware, Software, Open Innovation) required a dynamic way to reveal problem statements without overwhelming the user.",
+      solution: "I engineered a 'Gamified' user experience centered around a Casino/Card theme. I built a custom 3D Card Flip interface using Framer Motion to interactively reveal Problem Statements, reducing cognitive load while increasing user time-on-site. The site features a responsive 'Live Timeline' that guided 500+ participants through the 24-hour sprint with zero downtime.",
+      impact: "The gamified interface led to a 3x increase in social sharing and successfully handled peak traffic during the 'Problem Statement Reveal' window. The platform served as the central command center for logistics, effectively showcasing 15+ sponsors and managing the flow of the 24-hour event.",
+      screenshots: []
+    }
+  },
+  {
+    id: 7,
     title: "WebP Wizard",
     thumbnail: "/projects/webpwizard/WebpWizardCover.webp",
     description:
@@ -191,21 +148,78 @@ export const projectsData: Project[] = [
     }
   },
   {
-    "id": 6,
-    "title": "Arena - Experimental Game Lab",
-    "thumbnail": "/projects/arena/arenacover.webp",
-    "description": "A modular Progressive Web App (PWA) serving as a centralized runtime environment for browser-based mini-games, featuring unified state management and performance analytics.",
-    "stack": ["Next.js", "TypeScript", "HTML5 Canvas", "Zustand", "Framer Motion"],
-    "liveDemoUrl": "https://arena.manishshetty.dev",
-    "codeUrl": "https://github.com/ManishRShetty/arena",
-    "caseStudy": {
-      "problem": "Developing distinct deployments for experimental game mechanics creates portfolio clutter and introduces maintenance fatigue, fragmenting the user experience.",
-      "solution": "Architected a scalable 'arcade' container. I built a unified core system that handles shared resources (audio, global state, user preferences) and asset pre-loading. This allows individual games to be injected as modular components, drastically reducing code duplication.",
-      "role": "Full-stack Engineer & Game Mechanic Designer.",
-      "impact": "Consolidated distinct interactive projects into a single high-performance SPA, reducing deployment overhead by 80% and demonstrating complex state logic handling beyond standard CRUD apps.",
-      "screenshots": [
-        "/projects/arena/arena1.webp",
-
+    id: 3,
+    title: "Nexus Club Website",
+    thumbnail: "/projects/nexusclubs/nexusclubscover.webp",
+    description:
+      "End-to-end development of the Nexus Club website — designed and built from front-end to back-end to support the tech club’s online presence, member engagement, events listing, and resource hub.",
+    stack: [
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "API integration",
+      "Hosting & Deployment"
+    ],
+    liveDemoUrl: "https://www.nexusclubs.in",
+    codeUrl: "",
+    caseStudy: {
+      problem:
+        "The club needed a modern, responsive website that could handle event listings, membership info, dynamic content updates and be scalable as the club grows.",
+      solution:
+        "Built a robust full-stack application: Next.js + Tailwind for the UI; Node.js/Express + MongoDB for the back-end; designed modular components, admin dashboard for event uploads, and optimized for performance and SEO.",
+      role:
+        "Sole developer responsible for full-stack development, system design, UI/UX, deployment, and ongoing maintenance.",
+      impact:
+        "Delivered a fast, mobile-friendly site; improved engagement among students, simplified event update workflows for club admins; created a scalable foundation for future features like hackathon portals and member analytics.",
+      screenshots: [
+        "/projects/nexusclubs/nexus1.webp",
+        "/projects/nexusclubs/nexus2.webp",
+        "/projects/nexusclubs/nexus3.webp",
+        "/projects/nexusclubs/nexus4.webp"
+      ]
+    }
+  },
+  {
+    id: 6,
+    title: "Envision 2025 Official Platform",
+    thumbnail: "https://i.ibb.co/TD8n386m/New-Project-3.png",
+    description: "The official digital hub for Srinivas Institute of Technology's National Level Tech Fest. A high-performance, immersive web experience designed to showcase events and drive student registrations.",
+    stack: [
+      "React",
+      "Framer Motion",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    liveDemoUrl: "https://envision.manishshetty.dev",
+    codeUrl: "#",
+    caseStudy: {
+      problem: "Organizing a national-level tech fest like Envision 2025 involves coordinating 20+ events across multiple departments. Relying on static PDFs and Instagram posts resulted in information fragmentation and a poor attendee experience for students trying to find schedules and rules.",
+      solution: "I designed and developed the official event portal using React and Framer Motion. The focus was on 'Digital Hype'—using scroll-linked animations, a premium dark-mode aesthetic, and a Bento-grid layout to present event details excitingly. I prioritized mobile responsiveness to ensure students could access live schedules on the go.",
+      impact: "Served as the central source of truth for the entire festival. The site successfully centralized registration links and rulebooks, eliminating the need for manual PDF sharing. The high-performance animations created a strong brand identity, setting a professional tone for the event before it even started.",
+      screenshots: [
+        "/projects/envision/envision1.webp",
+        "/projects/envision/envision2.webp",
+        "/projects/envision/envision3.webp"
+      ]
+    }
+  },
+  {
+    id: 8,
+    title: "Arena - Experimental Game Lab",
+    thumbnail: "/projects/arena/arenacover.webp",
+    description: "A modular Progressive Web App (PWA) serving as a centralized runtime environment for browser-based mini-games, featuring unified state management and performance analytics.",
+    stack: ["Next.js", "TypeScript", "HTML5 Canvas", "Zustand", "Framer Motion"],
+    liveDemoUrl: "https://arena.manishshetty.dev",
+    codeUrl: "https://github.com/ManishRShetty/arena",
+    caseStudy: {
+      problem: "Developing distinct deployments for experimental game mechanics creates portfolio clutter and introduces maintenance fatigue, fragmenting the user experience.",
+      solution: "Architected a scalable 'arcade' container. I built a unified core system that handles shared resources (audio, global state, user preferences) and asset pre-loading. This allows individual games to be injected as modular components, drastically reducing code duplication.",
+      role: "Full-stack Engineer & Game Mechanic Designer.",
+      impact: "Consolidated distinct interactive projects into a single high-performance SPA, reducing deployment overhead by 80% and demonstrating complex state logic handling beyond standard CRUD apps.",
+      screenshots: [
+        "/projects/arena/arena1.webp"
       ]
     }
   }
