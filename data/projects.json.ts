@@ -4,7 +4,7 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: "AtLast: The Infinite, Self-Validating Trivia Engine (Currently in Development)",
-    thumbnail: "/projects/atlas-agents/atlastagentscover.webp",
+    thumbnail: "/projects/atlas-agents/atlastcover.webp",
     description:
       "🚧 Currently in Development 🚧 | A competitive 'Where in the World' game powered by a multi-agent AI system that generates real-time trivia questions, validates accuracy, and adapts difficulty based on player behavior—optimizing for both fun and fact-checking.",
     stack: [
@@ -95,7 +95,7 @@ export const projectsData: Project[] = [
   {
     id: 5,
     title: "Srinathon 2.0 Official Platform",
-    thumbnail: "/projects/srinathon/cover.webp",
+    thumbnail: "/projects/srinathon/srinathon.webp",
     description: "A gamified, high-performance event platform for Mangalore's largest 24-hour hackathon. Features a unique 'Card Deck' UI paradigm and real-time event scheduling.",
     stack: [
       "Next.js",
@@ -105,12 +105,19 @@ export const projectsData: Project[] = [
       "Vercel"
     ],
     liveDemoUrl: "https://srinathon.nexusclubs.in/",
-    codeUrl: "https://github.com/ManishRShetty/Srinathon-2.0",
+    codeUrl: "https://github.com/ManishRShetty/srinathon",
     caseStudy: {
       problem: "Hackathon portals are usually static and boring, failing to capture the high-energy 'Game On' spirit of a 24-hour coding marathon. Additionally, organizing a multi-track event (Hardware, Software, Open Innovation) required a dynamic way to reveal problem statements without overwhelming the user.",
       solution: "I engineered a 'Gamified' user experience centered around a Casino/Card theme. I built a custom 3D Card Flip interface using Framer Motion to interactively reveal Problem Statements, reducing cognitive load while increasing user time-on-site. The site features a responsive 'Live Timeline' that guided 500+ participants through the 24-hour sprint with zero downtime.",
       impact: "The gamified interface led to a 3x increase in social sharing and successfully handled peak traffic during the 'Problem Statement Reveal' window. The platform served as the central command center for logistics, effectively showcasing 15+ sponsors and managing the flow of the 24-hour event.",
-      screenshots: []
+      screenshots: [
+        "/projects/srinathon/1.webp",
+        "/projects/srinathon/2.webp",
+        "/projects/srinathon/3.webp", 
+        "/projects/srinathon/4.webp",
+        "/projects/srinathon/5.webp",
+        "/projects/srinathon/6.webp"
+      ]
     }
   },
   {
