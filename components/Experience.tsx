@@ -16,7 +16,7 @@ const workExperienceData = [
   },
   {
     duration: "Oct 2025 - Present",
-    role: "Full Stack Developer",
+    role: "Full Stack Trainer",
     company: "Thaniya Technologies",
     location: "Mangalore, India",
     tasks: [
