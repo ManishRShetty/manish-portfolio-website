@@ -37,6 +37,34 @@ export const projectsData: Project[] = [
     }
   },
   {
+    "id": 2,
+    "title": "CandleCrush: Gamified Trading Simulator with AI Mentor",
+    "thumbnail": "/projects/candlecrush/candlecrushcover.webp",
+    "description": "A gamified trading simulator that transforms financial education through interactive gameplay, featuring an animated cat mentor, real-time historical chart playback, competitive leagues, and an emotional-safe learning environment designed to teach technical analysis and trading discipline without financial risk.",
+    "stack": [
+      "TypeScript",
+      "React 19",
+      "Express.js",
+      "Vite",
+      "Zustand",
+      "Framer Motion",
+      "Recharts",
+      "Tailwind CSS",
+      "Lucide React",
+      "Yahoo Finance 2 API",
+      "Node.js"
+    ],
+    "liveDemoUrl": "https://candlecrush.nexusclubs.in/",
+    "codeUrl": "https://github.com/Nexus-SIT/CandleCrush",
+    "caseStudy": {
+      "problem": "Traditional financial education is passive, intimidating, and disconnected from real-world application. Existing trading simulators focus solely on P&L metrics without addressing the psychological aspects of trading (FOMO, panic selling), and novice investors struggle to learn technical analysis in a meaningful, risk-free environment before investing real capital.",
+      "solution": "Built CandleCrush, a pixel-art RPG-styled trading simulator that gamifies financial learning by combining three core innovations: (1) Zero-Latency Learning Loop—users immediately apply concepts (e.g., recognizing chart patterns) within task-based puzzles rather than passively reading; (2) Psychological Safe-Box—the Contest Arena simulates real trading emotions in a consequence-free environment, teaching emotional regulation through gamified P&L swings; (3) Disarming Aesthetic—pixel-art styling transforms technical analysis from intimidating to game-like (Stardew Valley-inspired), making it instantly accessible to Gen Z. Features include an animated cat mentor with word-by-word typing animations, real-time historical chart playback, guided learning modules (8 progressive difficulty levels), immediate task application, and competitive ranking systems.",
+      "role": "Lead Designer and Full Stack Developer. Architected the entire application from concept through deployment. Designed the gamification framework, user experience flow, and visual identity (pixel-art RPG aesthetic). Developed the React + TypeScript frontend with Framer Motion for smooth 60fps animations, Zustand for state management, and Recharts for candlestick visualizations. Built the Express.js backend API handling user data persistence, trading simulations, and market data integration with Yahoo Finance 2. Engineered the animated cat mentor system with responsive positioning (left/center/right contexts) and word-by-word animation (40ms per character). Implemented responsive design ensuring mobile accessibility while maintaining premium feel with spring physics and staggered animations.",
+      "impact": "Created an innovative educational platform that makes technical analysis and trading fundamentals engaging for students and novice investors. Demonstrated ability to synthesize game design psychology with financial education, producing a product that prioritizes user behavior correction (discipline, patience, stop-loss discipline) over gambling-like trading. Showcased full-stack expertise across frontend animation systems, state management, backend API design, and responsive UX. The pixel-art aesthetic and gamification approach achieved rapid adoption within the Nexus community, establishing a blueprint for fintech education products targeting digital natives.",
+      "screenshots": []
+    }
+  },
+  {
     id: 4,
     title: "AquaLedger",
     thumbnail: "/projects/aqualedger/aqualedgercover.webp",
@@ -113,7 +141,7 @@ export const projectsData: Project[] = [
       screenshots: [
         "/projects/srinathon/1.webp",
         "/projects/srinathon/2.webp",
-        "/projects/srinathon/3.webp", 
+        "/projects/srinathon/3.webp",
         "/projects/srinathon/4.webp",
         "/projects/srinathon/5.webp",
         "/projects/srinathon/6.webp"
