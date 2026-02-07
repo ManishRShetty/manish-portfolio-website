@@ -33,7 +33,9 @@ export const projectsData: Project[] = [
         "Architected the entire multi-agent system using LangGraph for agent orchestration. Designed the agentic loop between Creative and Adversary agents to ensure content quality. Built the backend infrastructure with FastAPI, implemented the Redis queueing system for instant question delivery, and deployed on Kubernetes for scalable agent pools. Developed the frontend with Next.js, integrated Mapbox GL JS for cyberpunk-aesthetic 3D globe visualization, and implemented real-time agent thought streaming for technical transparency.",
       impact:
         "Created an infinitely scalable trivia system that generates verified, unique questions on-demand with zero manual content creation. Achieved sub-second question delivery through predictive caching despite complex LLM chains. Demonstrated advanced DevOps skills with Kubernetes-based agent scaling and content-as-code versioning. The project showcases expertise in agentic workflows, tool use, RAG systems, and production-grade AI infrastructure—making it a compelling portfolio piece for AI Product Engineer roles.",
-      screenshots: []
+      screenshots: [
+
+      ]
     }
   },
   {
@@ -61,7 +63,12 @@ export const projectsData: Project[] = [
       "solution": "Built CandleCrush, a pixel-art RPG-styled trading simulator that gamifies financial learning by combining three core innovations: (1) Zero-Latency Learning Loop—users immediately apply concepts (e.g., recognizing chart patterns) within task-based puzzles rather than passively reading; (2) Psychological Safe-Box—the Contest Arena simulates real trading emotions in a consequence-free environment, teaching emotional regulation through gamified P&L swings; (3) Disarming Aesthetic—pixel-art styling transforms technical analysis from intimidating to game-like (Stardew Valley-inspired), making it instantly accessible to Gen Z. Features include an animated cat mentor with word-by-word typing animations, real-time historical chart playback, guided learning modules (8 progressive difficulty levels), immediate task application, and competitive ranking systems.",
       "role": "Lead Designer and Full Stack Developer. Architected the entire application from concept through deployment. Designed the gamification framework, user experience flow, and visual identity (pixel-art RPG aesthetic). Developed the React + TypeScript frontend with Framer Motion for smooth 60fps animations, Zustand for state management, and Recharts for candlestick visualizations. Built the Express.js backend API handling user data persistence, trading simulations, and market data integration with Yahoo Finance 2. Engineered the animated cat mentor system with responsive positioning (left/center/right contexts) and word-by-word animation (40ms per character). Implemented responsive design ensuring mobile accessibility while maintaining premium feel with spring physics and staggered animations.",
       "impact": "Created an innovative educational platform that makes technical analysis and trading fundamentals engaging for students and novice investors. Demonstrated ability to synthesize game design psychology with financial education, producing a product that prioritizes user behavior correction (discipline, patience, stop-loss discipline) over gambling-like trading. Showcased full-stack expertise across frontend animation systems, state management, backend API design, and responsive UX. The pixel-art aesthetic and gamification approach achieved rapid adoption within the Nexus community, establishing a blueprint for fintech education products targeting digital natives.",
-      "screenshots": []
+      "screenshots": [
+        "/projects/candlecrush/candle1.webp",
+        "/projects/candlecrush/candle2.webp",
+        "/projects/candlecrush/candle3.webp",
+        "/projects/candlecrush/candle4.webp"
+      ]
     }
   },
   {
