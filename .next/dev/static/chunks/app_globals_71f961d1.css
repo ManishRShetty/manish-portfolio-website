@@ -653,10 +653,6 @@ body {
   height: 4rem;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
 .h-3 {
   height: .75rem;
 }
@@ -713,6 +709,10 @@ body {
   height: 1px;
 }
 
+.h-24 {
+  height: 6rem;
+}
+
 .max-h-\[85vh\] {
   max-height: 85vh;
 }
@@ -747,10 +747,6 @@ body {
 
 .w-16 {
   width: 4rem;
-}
-
-.w-24 {
-  width: 6rem;
 }
 
 .w-3 {
@@ -799,6 +795,10 @@ body {
 
 .w-full {
   width: 100%;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .min-w-0 {

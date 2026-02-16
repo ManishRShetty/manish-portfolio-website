@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 
 interface HeaderProps { }
 
@@ -35,10 +36,18 @@ export const Header: React.FC<HeaderProps> = () => {
           {/* LOGO */}
           <a
             href="/"
-            className="flex items-center gap-2 text-xl font-bold text-white shrink-0 tracking-wide"
+            className="flex items-center gap-2 text-lg font-bold text-white shrink-0"
             aria-label="Homepage"
           >
-            Manish
+            <div className="relative w-24 h-24">
+              <Image
+                src="/logo.svg"
+                alt="Manish Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </a>
 
           {/* DESKTOP NAV - Animated with stagger and hover effects */}
