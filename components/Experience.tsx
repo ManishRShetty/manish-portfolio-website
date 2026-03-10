@@ -15,8 +15,8 @@ const workExperienceData = [
     ]
   },
   {
-    duration: "Oct 2025 - Present",
-    role: "Full Stack Trainer",
+    duration: "Oct 2025 - January 2026",
+    role: "Product Engineer Intern",
     company: "Thaniya Technologies",
     location: "Mangalore, India",
     tasks: [
