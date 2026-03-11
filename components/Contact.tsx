@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { Send, Mail, MessageSquare, User, Github, Linkedin, Twitter, CheckCircle2 } from 'lucide-react';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { motion, Variants } from 'framer-motion';
+import { Send, Mail, MessageSquare, User, CheckCircle2 } from 'lucide-react';
+import { submitContactForm, type ActionState } from '@/lib/actions/contact';
 
 // --- Physics Engine ---
 const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
@@ -27,19 +32,56 @@ const itemBlurVariant: Variants = {
   },
 };
 
-export const Contact: React.FC = () => {
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+const initialState: ActionState = {
+  success: false,
+  message: '',
+};
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus('submitting');
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      (e.target as HTMLFormElement).reset();
-      setTimeout(() => setStatus('idle'), 3000);
-    }, 1500);
-  };
+function SubmitButton({ isSuccess }: { isSuccess: boolean }) {
+  const { pending } = useFormStatus();
+
+  return (
+    <motion.button
+      type="submit"
+      disabled={pending || isSuccess}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={focusPhysics}
+      className={`w-full py-4 rounded-xl font-semibold text-base flex items-center justify-center gap-2 transition-all duration-300 ${isSuccess
+          ? 'bg-green-500 text-white'
+          : pending
+            ? 'bg-white text-black opacity-80 cursor-not-allowed'
+            : 'bg-white text-black hover:bg-neutral-200'
+        }`}
+    >
+      {!pending && !isSuccess && (
+        <>
+          <span>Send Message</span>
+          <Send size={18} />
+        </>
+      )}
+      {pending && (
+        <span className="animate-pulse">Sending...</span>
+      )}
+      {isSuccess && (
+        <>
+          <span>Message Sent</span>
+          <CheckCircle2 size={18} />
+        </>
+      )}
+    </motion.button>
+  );
+}
+
+export const Contact: React.FC = () => {
+  const [state, formAction] = useActionState(submitContactForm, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.success) {
+      formRef.current?.reset();
+    }
+  }, [state.success]);
 
   return (
     <section id="contact" className="py-32 bg-black text-white px-6 overflow-hidden">
@@ -67,6 +109,19 @@ export const Contact: React.FC = () => {
           </motion.p>
         </div>
 
+        {/* Global Notifications */}
+        {state.message && state.success === false && !state.errors && (
+          <motion.div variants={itemBlurVariant} className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-medium text-center">
+            {state.message}
+          </motion.div>
+        )}
+
+        {state.message && state.success === true && (
+          <motion.div variants={itemBlurVariant} className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-500 text-sm font-medium text-center">
+            {state.message}
+          </motion.div>
+        )}
+
         {/* Form Container */}
         <motion.div
           variants={itemBlurVariant}
@@ -75,7 +130,13 @@ export const Contact: React.FC = () => {
           {/* Subtle Background Glow inside the card */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
 
-          <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+          <form ref={formRef} action={formAction} className="relative z-10 space-y-6">
+
+            {/* Honeypot field (Bot Protection) */}
+            <div aria-hidden="true" className="hidden" style={{ display: 'none' }}>
+              <label htmlFor="botField">Skip this field if you are human</label>
+              <input type="text" id="botField" name="botField" tabIndex={-1} autoComplete="off" />
+            </div>
 
             {/* Name Input */}
             <div className="space-y-2">
@@ -86,11 +147,18 @@ export const Contact: React.FC = () => {
                   type="text"
                   name="name"
                   id="name"
-                  required
+                  defaultValue={state.fields?.name || ''}
                   placeholder="Elon Musk"
-                  className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/5 rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 focus:border-white/20 transition-all duration-300"
+                  className={`w-full pl-12 pr-4 py-3 bg-white/5 border rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 transition-all duration-300 ${state.errors?.name ? 'border-red-500 focus:border-red-500' : 'border-white/5 focus:border-white/20'
+                    }`}
+                  aria-describedby={state.errors?.name ? 'name-error' : undefined}
                 />
               </div>
+              {state.errors?.name && (
+                <p id="name-error" className="text-sm font-medium text-red-500 ml-1">
+                  {state.errors.name[0]}
+                </p>
+              )}
             </div>
 
             {/* Email Input */}
@@ -102,11 +170,18 @@ export const Contact: React.FC = () => {
                   type="email"
                   name="email"
                   id="email"
-                  required
-                  placeholder="elon@example.com"
-                  className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/5 rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 focus:border-white/20 transition-all duration-300"
+                  defaultValue={state.fields?.email || ''}
+                  placeholder="john@example.com"
+                  className={`w-full pl-12 pr-4 py-3 bg-white/5 border rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 transition-all duration-300 ${state.errors?.email ? 'border-red-500 focus:border-red-500' : 'border-white/5 focus:border-white/20'
+                    }`}
+                  aria-describedby={state.errors?.email ? 'email-error' : undefined}
                 />
               </div>
+              {state.errors?.email && (
+                <p id="email-error" className="text-sm font-medium text-red-500 ml-1">
+                  {state.errors.email[0]}
+                </p>
+              )}
             </div>
 
             {/* Message Input */}
@@ -117,69 +192,27 @@ export const Contact: React.FC = () => {
                 <textarea
                   name="message"
                   id="message"
-                  required
                   rows={4}
+                  defaultValue={state.fields?.message || ''}
                   placeholder="Tell me about your project..."
-                  className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/5 rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 focus:border-white/20 transition-all duration-300 resize-none"
+                  className={`w-full pl-12 pr-4 py-3 bg-white/5 border rounded-xl text-white placeholder:text-neutral-600 focus:outline-none focus:bg-white/10 transition-all duration-300 resize-none ${state.errors?.message ? 'border-red-500 focus:border-red-500' : 'border-white/5 focus:border-white/20'
+                    }`}
+                  aria-describedby={state.errors?.message ? 'message-error' : undefined}
                 ></textarea>
               </div>
+              {state.errors?.message && (
+                <p id="message-error" className="text-sm font-medium text-red-500 ml-1">
+                  {state.errors.message[0]}
+                </p>
+              )}
             </div>
 
             {/* Submit Button & Status */}
             <div className="pt-2">
-              <motion.button
-                type="submit"
-                disabled={status !== 'idle'}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={focusPhysics}
-                className={`w-full py-4 rounded-xl font-semibold text-base flex items-center justify-center gap-2 transition-all duration-300 ${status === 'success'
-                  ? 'bg-green-500 text-white'
-                  : 'bg-white text-black hover:bg-neutral-200'
-                  }`}
-              >
-                {status === 'idle' && (
-                  <>
-                    <span>Send Message</span>
-                    <Send size={18} />
-                  </>
-                )}
-                {status === 'submitting' && (
-                  <span className="animate-pulse">Sending...</span>
-                )}
-                {status === 'success' && (
-                  <>
-                    <span>Message Sent</span>
-                    <CheckCircle2 size={18} />
-                  </>
-                )}
-              </motion.button>
+              <SubmitButton isSuccess={!!state.success} />
             </div>
           </form>
         </motion.div>
-
-        {/* Social Dock */}
-        {/* <motion.div
-          variants={itemBlurVariant}
-          className="mt-16 flex justify-center gap-6"
-        >
-          {[
-            { icon: <Github size={20} />, href: "https://github.com", label: "GitHub" },
-            { icon: <Linkedin size={20} />, href: "https://linkedin.com", label: "LinkedIn" },
-            { icon: <Twitter size={20} />, href: "https://twitter.com", label: "Twitter" }
-          ].map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 bg-[#1C1C1E] border border-white/5 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 hover:scale-110 transition-all duration-300"
-              aria-label={social.label}
-            >
-              {social.icon}
-            </a>
-          ))}
-        </motion.div> */}
       </motion.div>
     </section>
   );

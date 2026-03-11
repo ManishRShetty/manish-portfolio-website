@@ -64,8 +64,8 @@ export default function ContactForm() {
             {state.message && (
                 <div
                     className={`mb-6 p-4 rounded-lg text-sm font-medium ${state.success
-                            ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800'
-                            : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800'
+                        ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800'
+                        : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800'
                         }`}
                     role="alert"
                 >
@@ -88,11 +88,11 @@ export default function ContactForm() {
                         type="text"
                         id="name"
                         name="name"
-                        placeholder="John Doe"
+                        placeholder="Elon Musk"
                         defaultValue={state.fields?.name || ''}
                         className={`flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 dark:focus-visible:ring-zinc-300 dark:placeholder:text-zinc-400 ${state.errors?.name
-                                ? 'border-red-500 focus-visible:ring-red-500'
-                                : 'border-zinc-200 dark:border-zinc-800'
+                            ? 'border-red-500 focus-visible:ring-red-500'
+                            : 'border-zinc-200 dark:border-zinc-800'
                             }`}
                         aria-describedby={state.errors?.name ? 'name-error' : undefined}
                     />
@@ -114,8 +114,8 @@ export default function ContactForm() {
                         placeholder="john@example.com"
                         defaultValue={state.fields?.email || ''}
                         className={`flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 dark:focus-visible:ring-zinc-300 dark:placeholder:text-zinc-400 ${state.errors?.email
-                                ? 'border-red-500 focus-visible:ring-red-500'
-                                : 'border-zinc-200 dark:border-zinc-800'
+                            ? 'border-red-500 focus-visible:ring-red-500'
+                            : 'border-zinc-200 dark:border-zinc-800'
                             }`}
                         aria-describedby={state.errors?.email ? 'email-error' : undefined}
                     />
@@ -137,8 +137,8 @@ export default function ContactForm() {
                         rows={5}
                         defaultValue={state.fields?.message || ''}
                         className={`flex min-h-[120px] w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 dark:focus-visible:ring-zinc-300 dark:placeholder:text-zinc-400 ${state.errors?.message
-                                ? 'border-red-500 focus-visible:ring-red-500'
-                                : 'border-zinc-200 dark:border-zinc-800'
+                            ? 'border-red-500 focus-visible:ring-red-500'
+                            : 'border-zinc-200 dark:border-zinc-800'
                             }`}
                         aria-describedby={state.errors?.message ? 'message-error' : undefined}
                     />
