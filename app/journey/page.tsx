@@ -1,12 +1,9 @@
 import React from 'react';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 
 export default function JourneyPage() {
   return (
     <div className="min-h-screen bg-black text-gray-100 font-sans">
-      <Header />
       <main className="container mx-auto px-6 py-32 max-w-4xl space-y-24">
         
         {/* Intro */}
@@ -61,7 +58,6 @@ export default function JourneyPage() {
         </section>
 
       </main>
-      <Footer />
     </div>
   );
 }
