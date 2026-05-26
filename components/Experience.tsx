@@ -1,28 +1,50 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 
-// --- Data (Included locally for stability) ---
+// --- Leadership & Engineering data ---
 const workExperienceData = [
+  {
+    duration: "2026 - Present",
+    role: "Founder & Lead Architect",
+    company: "Siranta AI",
+    location: "Mangalore, India",
+    tasks: [
+      "Define platform architecture for zero-trust memory and context infrastructure for autonomous agents.",
+      "Ship core primitives: Kord (context aggregator) and Siranta Gateway (embedded triplestore + vector graph).",
+      "Lead a small, cross-functional engineering team; own roadmap, security posture, and production SLAs."
+    ]
+  },
+  {
+    duration: "2023 - Present",
+    role: "Vice Chairperson",
+    company: "Nexus SIT",
+    location: "Mangalore, India",
+    tasks: [
+      "Manage a 60+ member technical community and run daily Tech Jam engineering sessions.",
+      "Execute high-stakes logistics for large-scale events and coordinate cross-team shipping schedules.",
+      "Mentor contributors on system design, deployment, and performance engineering."
+    ]
+  },
   {
     duration: "Aug 2025 - Oct 2025",
     role: "Frontend Developer Intern",
     company: "MyDBLink",
     location: "Casablanca, Morocco (Remote)",
     tasks: [
-      "Redesigned a production-level web application, enhancing visual consistency and reducing bounce rates.",
-      "Engineered responsive UI components using React and Tailwind, ensuring 100% mobile compatibility.",
-      "Refactored legacy codebases, achieving a ~20% reduction in page load times through asset optimization."
+      "Redesigned production-level web interfaces to improve visual consistency and reduce bounce rates.",
+      "Built responsive UI components with React and Tailwind to ensure mobile-first performance.",
+      "Optimized assets and refactored legacy code, achieving measurable reductions in page load times."
     ]
   },
   {
-    duration: "Oct 2025 - January 2026",
+    duration: "Oct 2025 - Jan 2026",
     role: "Product Engineer Intern",
     company: "Thaniya Technologies",
     location: "Mangalore, India",
     tasks: [
-      "Architecting high-fidelity prototypes for enterprise mobile and web solutions.",
-      "Leading user research and usability testing sessions to drive product decisions.",
-      "Bridging the gap between design and engineering to ensure pixel-perfect implementation."
+      "Architected high-fidelity prototypes for enterprise mobile and web solutions.",
+      "Led usability testing and translated findings into prioritized product improvements.",
+      "Collaborated across design and engineering to ship customer-facing releases under tight deadlines."
     ]
   }
 ];
@@ -74,13 +96,13 @@ export const WorkExperience: React.FC = () => {
             variants={itemBlurVariant}
             className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6"
           >
-            Experience
+            Leadership & Engineering
           </motion.h2>
           <motion.p
             variants={itemBlurVariant}
             className="text-neutral-400 text-lg max-w-xl leading-relaxed"
           >
-            A timeline of my professional trajectory and the impact I've delivered.
+            Founding leadership and systems engineering: building and shipping infrastructure for agentic AI.
           </motion.p>
         </div>
 

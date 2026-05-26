@@ -3,266 +3,212 @@ import type { Project } from '../types';
 export const projectsData: Project[] = [
   {
     id: 1,
-    title: "AtLast: The Infinite, Self-Validating Trivia Engine (Currently in Development)",
-    thumbnail: "/projects/atlas-agents/atlastcover.webp",
-    description:
-      "🚧 Currently in Development 🚧 | A competitive 'Where in the World' game powered by a multi-agent AI system that generates real-time trivia questions, validates accuracy, and adapts difficulty based on player behavior—optimizing for both fun and fact-checking.",
-    stack: [
-      "Python",
-      "FastAPI",
-      "LangGraph",
-      "Next.js",
-      "React",
-      "Framer Motion",
-      "PostgreSQL (Vector)",
-      "Redis",
-      "Kubernetes",
-      "Docker",
-      "Mapbox GL JS",
-      "Wikipedia API",
-      "OpenStreetMap"
-    ],
-    liveDemoUrl: "https://atlast.manishshetty.dev",
-    codeUrl: "https://github.com/ManishRShetty/AtLast.git",
+    title: "Kord",
+    thumbnail: "/projects/kord/kord.webp",
+    description: "The open-source context aggregator.",
+    type: 'product',
+    stack: ["Go", "CLI", "XML", "RAG"],
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/siranta-ai/kord",
     caseStudy: {
-      problem:
-        "Traditional trivia games rely on static question databases that become repetitive and fail to adapt to player skill levels. Content creation is manual, slow, and prone to ambiguity. Players experience inconsistent difficulty curves and encounter questions that are either too easy or unfairly obscure.",
-      solution:
-        "Built an Autonomous Content Pipeline using a multi-agent system with three specialized nodes: (1) The Scraper Agent—uses Wikipedia API, Google Places API, and OpenStreetMap to fetch real-time location data; (2) The Creative Agent—drafts unique trivia riddles based on raw data; (3) The Adversary Agent—validates questions by attempting to break them, ensuring zero ambiguity through web searches. Implemented LLM-as-a-Judge metrics for hallucination checks, predictive queueing with Redis to eliminate latency, and dynamic difficulty scaling using ELO ratings for both users and agents. Created 'The Interrogation' game mode where users question an AI spy that lies 10% of the time, with real-time streaming of agent thoughts for transparency.",
-      role:
-        "Architected the entire multi-agent system using LangGraph for agent orchestration. Designed the agentic loop between Creative and Adversary agents to ensure content quality. Built the backend infrastructure with FastAPI, implemented the Redis queueing system for instant question delivery, and deployed on Kubernetes for scalable agent pools. Developed the frontend with Next.js, integrated Mapbox GL JS for cyberpunk-aesthetic 3D globe visualization, and implemented real-time agent thought streaming for technical transparency.",
-      impact:
-        "Created an infinitely scalable trivia system that generates verified, unique questions on-demand with zero manual content creation. Achieved sub-second question delivery through predictive caching despite complex LLM chains. Demonstrated advanced DevOps skills with Kubernetes-based agent scaling and content-as-code versioning. The project showcases expertise in agentic workflows, tool use, RAG systems, and production-grade AI infrastructure—making it a compelling portfolio piece for AI Product Engineer roles.",
-      screenshots: [
-
-      ]
-    }
-  },
-  {
-    "id": 2,
-    "title": "CandleCrush: Gamified Trading Simulator with AI Mentor",
-    "thumbnail": "/projects/candlecrush/candlecrushcover.webp",
-    "description": "A gamified trading simulator that transforms financial education through interactive gameplay, featuring an animated cat mentor, real-time historical chart playback, competitive leagues, and an emotional-safe learning environment designed to teach technical analysis and trading discipline without financial risk.",
-    "stack": [
-      "TypeScript",
-      "React 19",
-      "Express.js",
-      "Vite",
-      "Zustand",
-      "Framer Motion",
-      "Recharts",
-      "Tailwind CSS",
-      "Lucide React",
-      "Yahoo Finance 2 API",
-      "Node.js"
-    ],
-    "liveDemoUrl": "https://candlecrush.nexusclubs.in/",
-    "codeUrl": "https://github.com/Nexus-SIT/CandleCrush",
-    "caseStudy": {
-      "problem": "Traditional financial education is passive, intimidating, and disconnected from real-world application. Existing trading simulators focus solely on P&L metrics without addressing the psychological aspects of trading (FOMO, panic selling), and novice investors struggle to learn technical analysis in a meaningful, risk-free environment before investing real capital.",
-      "solution": "Built CandleCrush, a pixel-art RPG-styled trading simulator that gamifies financial learning by combining three core innovations: (1) Zero-Latency Learning Loop—users immediately apply concepts (e.g., recognizing chart patterns) within task-based puzzles rather than passively reading; (2) Psychological Safe-Box—the Contest Arena simulates real trading emotions in a consequence-free environment, teaching emotional regulation through gamified P&L swings; (3) Disarming Aesthetic—pixel-art styling transforms technical analysis from intimidating to game-like (Stardew Valley-inspired), making it instantly accessible to Gen Z. Features include an animated cat mentor with word-by-word typing animations, real-time historical chart playback, guided learning modules (8 progressive difficulty levels), immediate task application, and competitive ranking systems.",
-      "role": "Lead Designer and Full Stack Developer. Architected the entire application from concept through deployment. Designed the gamification framework, user experience flow, and visual identity (pixel-art RPG aesthetic). Developed the React + TypeScript frontend with Framer Motion for smooth 60fps animations, Zustand for state management, and Recharts for candlestick visualizations. Built the Express.js backend API handling user data persistence, trading simulations, and market data integration with Yahoo Finance 2. Engineered the animated cat mentor system with responsive positioning (left/center/right contexts) and word-by-word animation (40ms per character). Implemented responsive design ensuring mobile accessibility while maintaining premium feel with spring physics and staggered animations.",
-      "impact": "Created an innovative educational platform that makes technical analysis and trading fundamentals engaging for students and novice investors. Demonstrated ability to synthesize game design psychology with financial education, producing a product that prioritizes user behavior correction (discipline, patience, stop-loss discipline) over gambling-like trading. Showcased full-stack expertise across frontend animation systems, state management, backend API design, and responsive UX. The pixel-art aesthetic and gamification approach achieved rapid adoption within the Nexus community, establishing a blueprint for fintech education products targeting digital natives.",
-      "screenshots": [
-        "/projects/candlecrush/candle1.webp",
-        "/projects/candlecrush/candle2.webp",
-        "/projects/candlecrush/candle3.webp",
-        "/projects/candlecrush/candle4.webp"
-      ]
-    }
-  },
-  {
-    id: 4,
-    title: "AquaLedger",
-    thumbnail: "/projects/aqualedger/aqualedgercover.webp",
-    description: "An offline-first, hands-free fisheries platform engineered for zero-connectivity zones. Features a custom conflict-free sync engine and on-device voice parsing to enable rapid, reliable data entry in harsh marine environments.",
-    stack: [
-      "Next.js 14",
-      "Dexie.js (IndexedDB)",
-      "TanStack Query",
-      "Web Speech API",
-      "Tailwind CSS",
-      "Framer Motion"
-    ],
-    liveDemoUrl: "https://aqualedger.manishshetty.dev",
-    codeUrl: "https://github.com/ManishRShetty/AquaLedger",
-    caseStudy: {
-      problem: "Fishermen operate in wet, unstable environments where standard touch interfaces fail and internet is non-existent. Traditional cloud-first apps cause data loss during long offshore trips, and paper logs create a 48-hour lag in market pricing.",
-      solution: "I architected a 'Local-First' PWA using Dexie.js to guarantee 100% uptime without internet. I engineered a custom sync queue with optimistic UI updates that caches mutations offline and automatically resolves conflicts when connectivity is restored. To solve the 'wet hands' friction, I built a hands-free voice logger using the Web Speech API and a custom regex parser that normalizes natural language (e.g., '20kg Tuna') into structured data.",
-      impact: "Eliminated data loss via the persistent sync queue architecture. Reduced data entry time by ~60% using the hands-free voice mode compared to traditional forms. The system now supports full 'Apple-Dark' aesthetic visuals while running completely offline on low-end mobile hardware.",
+      problem: "Large repositories and datasets create context stuffing for LLMs, leading to degraded agent performance and hallucinations.",
+      solution: "A pure Go CLI tool that flattens entire repositories into LLM-optimized XML in milliseconds. Built to eliminate context stuffing for Claude and Gemini.",
+      impact: "Enables deterministic, compact context payloads for retrieval layers and reduces token usage while improving relevance in agent prompts.",
       screenshots: []
     }
   },
   {
     id: 2,
-    title: "FolkSpace",
-    thumbnail: "/projects/folkspace/FolkSpaceCover.webp",
-    description:
-      "An AI-powered retail solution designed for Nordic markets with demand forecasting, smart pricing, automation, and blockchain-based distributor tracking.",
-    stack: [
-      "Next.js",
-      "Node.js",
-      "Express",
-      "Flask",
-      "MongoDB",
-      "n8n Automation",
-      "Leaflet",
-      "OpenStreetMap",
-      "Custom Blockchain (PoW)"
-    ],
-    liveDemoUrl: "https://folkspace.manishshetty.dev",
-    codeUrl: "https://github.com/ManishRShetty/FolkSpace",
+    title: "Siranta Gateway",
+    thumbnail: "/projects/sirantagateway/gateway.webp",
+    description: "Zero-trust, bi-temporal agent memory.",
+    type: 'product',
+    stack: ["Go", "B-Tree", "Vector Graph", "Triplestore"],
+    liveDemoUrl: "",
+    // codeUrl: "https://github.com/siranta-ai/siranta-gateway",
     caseStudy: {
-      problem:
-        "Nordic retail suffers from volatile demand due to weather, seasons, and festivals—something traditional ERP/POS systems cannot interpret, causing overstocking and understocking.",
-      solution:
-        "We built an AI-driven system using Random Forest for demand forecasting, multi-language support, real-time weather-based stocking, dynamic pricing, distributor transparency via blockchain, and automated stock replenishment powered by n8n.",
-      role:
-        "Led end-to-end development: designed system architecture, developed AI models, built front-end/back-end components, integrated APIs, and implemented blockchain for transparency.",
-      impact:
-        "Received appreciation from multiple mentors for being one of the most complete and research-backed solutions. Improved stocking accuracy and pricing intelligence by combining sales data, weather history, and seasonal trends.",
+      problem: "Agent memories are opaque, mutable, and lack auditable timelines — creating compliance and debugging challenges.",
+      solution: "An embedded Triplestore and vector graph database built entirely in Go. Designed to give local AI agents persistent, time-traveling audit logs.",
+      impact: "Provides deterministic provenance, temporal queries, and tamper-evident storage for production agents.",
+      screenshots: []
+    }
+  },
+  // {
+  //   id: 3,
+  //   title: "Project Siranta",
+  //   thumbnail: "/projects/siranta/siranta.webp",
+  //   description: "Architectural research and platform for agent orchestration and memory models.",
+  //   type: 'product',
+  //   stack: ["Go", "LangGraph", "Agentic Workflows", "Distributed Systems"],
+  //   codeUrl: "",
+  //   caseStudy: {
+  //     problem: "Designing pipelines for long-running, stateful agents at scale requires new primitives across storage, ordering, and safety.",
+  //     solution: "Platform-level research combining immutable event logs, deterministic replay, and secure isolation for agent tasks.",
+  //     impact: "Defines operational patterns used across Siranta products and prototypes.",
+  //     screenshots: []
+  //   }
+  // },
+  // {
+  //   id: 4,
+  //   title: "Project Aura",
+  //   thumbnail: "/projects/aura/aura.webp",
+  //   description: "Secure context routing and policy enforcement for autonomous stacks.",
+  //   type: 'product',
+  //   stack: ["Go", "Policy Engines", "Zero-Trust", "Kubernetes"],
+  //   codeUrl: "",
+  //   caseStudy: {
+  //     problem: "Agents require guarded access to secrets and external tools while preserving auditability.",
+  //     solution: "Runtime policy enforcement and context shaping layer that mediates agent outputs and side effects.",
+  //     impact: "Reduces blast radius and enables safe experimentation with autonomous behaviors.",
+  //     screenshots: []
+  //   }
+  // },
+  // --- Restored project entries (lower priority) ---
+  {
+    id: 10,
+    title: "AtLast: The Infinite, Self-Validating Trivia Engine",
+    thumbnail: "/projects/atlas-agents/atlastcover.webp",
+    description: "A competitive, autonomous trivia system that generates, validates, and adapts questions in real-time using multi-agent orchestration.",
+    type: 'project',
+    stack: ["Python", "FastAPI", "LangGraph", "Next.js", "PostgreSQL (Vector)", "Redis", "Kubernetes"],
+    liveDemoUrl: "https://atlast.manishshetty.dev",
+    codeUrl: "https://github.com/ManishRShetty/AtLast.git",
+    caseStudy: {
+      problem: "Static question databases scale poorly and fail to adapt to player skill, causing poor UX and manual maintenance.",
+      solution: "A multi-agent pipeline that scrapes, drafts, and adversarially validates trivia using specialized agents and LLM-as-judge metrics.",
+      impact: "Delivers verified, adaptive questions at sub-second latency with predictive caching and horizontally scalable agents.",
+      screenshots: []
+    }
+  },
+  {
+    id: 11,
+    title: "CandleCrush",
+    thumbnail: "/projects/candlecrush/candlecrushcover.webp",
+    description: "A gamified trading simulator with an AI mentor that teaches technical analysis through interactive gameplay.",
+    type: 'project',
+    stack: ["TypeScript", "React", "Express", "Vite", "Framer Motion"],
+    liveDemoUrl: "https://candlecrush.nexusclubs.in/",
+    codeUrl: "https://github.com/Nexus-SIT/CandleCrush",
+    caseStudy: {
+      problem: "Financial education is often passive and intimidating for novices.",
+      solution: "A pixel-art, task-based simulator with an animated mentor and progressive learning modules.",
+      impact: "Improved adoption and engagement within the Nexus community; demonstrates product-level gamification and full-stack delivery.",
       screenshots: [
-        "/projects/folkspace/folkspace1.webp",
-        "/projects/folkspace/folkspace2.webp"
+        "/projects/candlecrush/candle1.webp",
+        "/projects/candlecrush/candle2.webp"
       ]
+    }
+  },
+  {
+    id: 12,
+    title: "AquaLedger",
+    thumbnail: "/projects/aqualedger/aqualedgercover.webp",
+    description: "An offline-first fisheries platform engineered for zero-connectivity zones with a conflict-free sync engine and hands-free voice parsing.",
+    type: 'project',
+    stack: ["Next.js", "Dexie.js (IndexedDB)", "TanStack Query", "Web Speech API"],
+    liveDemoUrl: "https://aqualedger.manishshetty.dev",
+    codeUrl: "https://github.com/ManishRShetty/AquaLedger",
+    caseStudy: {
+      problem: "Field data collection in no-connectivity zones leads to data loss and manual reconciliation.",
+      solution: "A local-first PWA with an optimistic sync queue and voice-first entry to accelerate data capture.",
+      impact: "Guaranteed offline reliability and reduced data entry time by ~60% in field trials.",
+      screenshots: []
+    }
+  },
+  {
+    id: 13,
+    title: "Srinathon 2.0 Official Platform",
+    thumbnail: "/projects/srinathon/srinathon.webp",
+    description: "A gamified, high-performance event platform for a 24-hour hackathon with a Card Deck UI and real-time scheduling.",
+    type: 'project',
+    stack: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    liveDemoUrl: "https://srinathon.nexusclubs.in/",
+    codeUrl: "https://github.com/ManishRShetty/srinathon",
+    caseStudy: {
+      problem: "Static hackathon portals fail to capture the event's energy and dynamic needs.",
+      solution: "A responsive gamified interface with a live timeline and interactive reveals for problem statements.",
+      impact: "Handled peak traffic and increased engagement during reveal windows.",
+      screenshots: []
+    }
+  },
+  {
+    id: 14,
+    title: "WebP Wizard",
+    thumbnail: "/projects/webpwizard/WebpWizardCover.webp",
+    description: "A tool for fast WebP conversion with AI-powered alt-text generation and optimization heuristics.",
+    type: 'project',
+    stack: ["TypeScript", "Next.js", "AI/ML", "Image Processing"],
+    liveDemoUrl: "https://webpwizard.manishshetty.dev/",
+    codeUrl: "https://github.com/ManishRShetty/webp-wizard",
+    caseStudy: {
+      problem: "Manual image optimization is time-consuming and error-prone.",
+      solution: "An automated conversion pipeline with accessibility-focused AI alt-text generation.",
+      impact: "Streamlines developer workflows and improves web performance and accessibility.",
+      screenshots: []
+    }
+  },
+  {
+    id: 15,
+    title: "Nexus Club Website",
+    thumbnail: "/projects/nexusclubs/nexusclubscover.webp",
+    description: "End-to-end development of the Nexus Club website — membership, events, and resource hub.",
+    type: 'project',
+    stack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+    liveDemoUrl: "https://www.nexusclubs.in",
+    codeUrl: "",
+    caseStudy: {
+      problem: "The club needed a modern, scalable website for events and member engagement.",
+      solution: "Built a modular full-stack application with an admin dashboard and performance optimizations.",
+      impact: "Centralized event operations and improved member engagement.",
+      screenshots: []
+    }
+  },
+  {
+    id: 16,
+    title: "Envision 2025 Official Platform",
+    thumbnail: "https://i.ibb.co/TD8n386m/New-Project-3.png",
+    description: "The official digital hub for a national-level tech fest focused on high-performance immersive web experiences.",
+    type: 'project',
+    stack: ["React", "Framer Motion", "Tailwind CSS"],
+    liveDemoUrl: "https://envision.manishshetty.dev",
+    codeUrl: "#",
+    caseStudy: {
+      problem: "Coordinating multi-track events requires a centralized, real-time experience.",
+      solution: "A responsive portal with scroll-linked animations and a Bento-grid presentation.",
+      impact: "Served as the central source of truth for the festival with high mobile accessibility.",
+      screenshots: []
+    }
+  },
+  {
+    id: 17,
+    title: "Arena - Experimental Game Lab",
+    thumbnail: "/projects/arena/arenacover.webp",
+    description: "A modular PWA runtime for browser-based mini-games with unified state and analytics.",
+    type: 'project',
+    stack: ["Next.js", "TypeScript", "HTML5 Canvas", "Zustand"],
+    liveDemoUrl: "https://arena.manishshetty.dev",
+    codeUrl: "https://github.com/ManishRShetty/arena",
+    caseStudy: {
+      problem: "Experimental game deployments create maintenance overhead and fragmented UX.",
+      solution: "A consolidated arcade container that injects modular games with shared resources.",
+      impact: "Reduced deployment overhead and showcased advanced state handling.",
+      screenshots: []
     }
   },
   {
     id: 5,
-    title: "Srinathon 2.0 Official Platform",
-    thumbnail: "/projects/srinathon/srinathon.webp",
-    description: "A gamified, high-performance event platform for Mangalore's largest 24-hour hackathon. Features a unique 'Card Deck' UI paradigm and real-time event scheduling.",
-    stack: [
-      "Next.js",
-      "Framer Motion (3D Card Flip)",
-      "Tailwind CSS",
-      "TypeScript",
-      "Vercel"
-    ],
-    liveDemoUrl: "https://srinathon.nexusclubs.in/",
-    codeUrl: "https://github.com/ManishRShetty/srinathon",
+    title: "FolkSpace",
+    thumbnail: "/projects/folkspace/FolkSpaceCover.webp",
+    description: "An architecture-level product integrating forecasting, automation, and distributed ledgers for retail.",
+    type: 'project',
+    stack: ["Next.js", "AI/ML", "Automation", "Blockchain"],
+    liveDemoUrl: "https://folkspace.manishshetty.dev",
+    codeUrl: "https://github.com/ManishRShetty/FolkSpace",
     caseStudy: {
-      problem: "Hackathon portals are usually static and boring, failing to capture the high-energy 'Game On' spirit of a 24-hour coding marathon. Additionally, organizing a multi-track event (Hardware, Software, Open Innovation) required a dynamic way to reveal problem statements without overwhelming the user.",
-      solution: "I engineered a 'Gamified' user experience centered around a Casino/Card theme. I built a custom 3D Card Flip interface using Framer Motion to interactively reveal Problem Statements, reducing cognitive load while increasing user time-on-site. The site features a responsive 'Live Timeline' that guided 500+ participants through the 24-hour sprint with zero downtime.",
-      impact: "The gamified interface led to a 3x increase in social sharing and successfully handled peak traffic during the 'Problem Statement Reveal' window. The platform served as the central command center for logistics, effectively showcasing 15+ sponsors and managing the flow of the 24-hour event.",
-      screenshots: [
-        "/projects/srinathon/1.webp",
-        "/projects/srinathon/2.webp",
-        "/projects/srinathon/3.webp",
-        "/projects/srinathon/4.webp",
-        "/projects/srinathon/5.webp",
-        "/projects/srinathon/6.webp"
-      ]
-    }
-  },
-  {
-    id: 7,
-    title: "WebP Wizard",
-    thumbnail: "/projects/webpwizard/WebpWizardCover.webp",
-    description:
-      "WebP Wizard is a tool designed to make image conversion to WebP format simple, fast, and efficient. With newly added AI-powered alt text generator, WebP Wizard not only compresses images but intelligently optimizes them for quality and content—helping you deliver the best visuals with the smallest files.",
-    stack: [
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "AI/ML",
-      "Image Processing",
-      "WebP Conversion",
-      "Alt Text Generation",
-      "Optimization Algorithms"
-    ],
-    liveDemoUrl: "https://webpwizard.manishshetty.dev/",
-    codeUrl: "https://github.com/ManishRShetty/webp-wizard",
-    caseStudy: {
-      problem:
-        "Web developers face challenges in optimizing images for web performance while maintaining quality. Manual image compression is time-consuming, and generating meaningful alt text for accessibility requires significant effort and expertise.",
-      solution:
-        "Built WebP Wizard with intelligent image conversion algorithms that automatically optimize images for the web while preserving visual quality. Integrated AI-powered alt text generation to enhance web accessibility by automatically creating descriptive, contextually relevant alternative text for images.",
-      role:
-        "Developed the complete tool including the image conversion engine, AI model integration for alt text generation, optimization algorithms, and user interface for seamless interaction.",
-      impact:
-        "Significantly reduced image file sizes while maintaining quality, improved web performance through efficient WebP conversion, and enhanced accessibility by automatically generating meaningful alt text. Streamlined the workflow for web developers by combining compression and accessibility features in one tool.",
-      screenshots: [
-        "/projects/webpwizard/Screenshot1.webp",
-        "/projects/webpwizard/Screenshot2.webp",
-        "/projects/webpwizard/Screenshot3.webp"
-      ]
-    }
-  },
-  {
-    id: 3,
-    title: "Nexus Club Website",
-    thumbnail: "/projects/nexusclubs/nexusclubscover.webp",
-    description:
-      "End-to-end development of the Nexus Club website — designed and built from front-end to back-end to support the tech club’s online presence, member engagement, events listing, and resource hub.",
-    stack: [
-      "Next.js",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "API integration",
-      "Hosting & Deployment"
-    ],
-    liveDemoUrl: "https://www.nexusclubs.in",
-    codeUrl: "",
-    caseStudy: {
-      problem:
-        "The club needed a modern, responsive website that could handle event listings, membership info, dynamic content updates and be scalable as the club grows.",
-      solution:
-        "Built a robust full-stack application: Next.js + Tailwind for the UI; Node.js/Express + MongoDB for the back-end; designed modular components, admin dashboard for event uploads, and optimized for performance and SEO.",
-      role:
-        "Sole developer responsible for full-stack development, system design, UI/UX, deployment, and ongoing maintenance.",
-      impact:
-        "Delivered a fast, mobile-friendly site; improved engagement among students, simplified event update workflows for club admins; created a scalable foundation for future features like hackathon portals and member analytics.",
-      screenshots: [
-        "/projects/nexusclubs/nexus1.webp",
-        "/projects/nexusclubs/nexus2.webp",
-        "/projects/nexusclubs/nexus3.webp",
-        "/projects/nexusclubs/nexus4.webp"
-      ]
-    }
-  },
-  {
-    id: 6,
-    title: "Envision 2025 Official Platform",
-    thumbnail: "https://i.ibb.co/TD8n386m/New-Project-3.png",
-    description: "The official digital hub for Srinivas Institute of Technology's National Level Tech Fest. A high-performance, immersive web experience designed to showcase events and drive student registrations.",
-    stack: [
-      "React",
-      "Framer Motion",
-      "Tailwind CSS",
-      "Vite"
-    ],
-    liveDemoUrl: "https://envision.manishshetty.dev",
-    codeUrl: "#",
-    caseStudy: {
-      problem: "Organizing a national-level tech fest like Envision 2025 involves coordinating 20+ events across multiple departments. Relying on static PDFs and Instagram posts resulted in information fragmentation and a poor attendee experience for students trying to find schedules and rules.",
-      solution: "I designed and developed the official event portal using React and Framer Motion. The focus was on 'Digital Hype'—using scroll-linked animations, a premium dark-mode aesthetic, and a Bento-grid layout to present event details excitingly. I prioritized mobile responsiveness to ensure students could access live schedules on the go.",
-      impact: "Served as the central source of truth for the entire festival. The site successfully centralized registration links and rulebooks, eliminating the need for manual PDF sharing. The high-performance animations created a strong brand identity, setting a professional tone for the event before it even started.",
-      screenshots: [
-        "/projects/envision/envision1.webp",
-        "/projects/envision/envision2.webp",
-        "/projects/envision/envision3.webp"
-      ]
-    }
-  },
-  {
-    id: 8,
-    title: "Arena - Experimental Game Lab",
-    thumbnail: "/projects/arena/arenacover.webp",
-    description: "A modular Progressive Web App (PWA) serving as a centralized runtime environment for browser-based mini-games, featuring unified state management and performance analytics.",
-    stack: ["Next.js", "TypeScript", "HTML5 Canvas", "Zustand", "Framer Motion"],
-    liveDemoUrl: "https://arena.manishshetty.dev",
-    codeUrl: "https://github.com/ManishRShetty/arena",
-    caseStudy: {
-      problem: "Developing distinct deployments for experimental game mechanics creates portfolio clutter and introduces maintenance fatigue, fragmenting the user experience.",
-      solution: "Architected a scalable 'arcade' container. I built a unified core system that handles shared resources (audio, global state, user preferences) and asset pre-loading. This allows individual games to be injected as modular components, drastically reducing code duplication.",
-      role: "Full-stack Engineer & Game Mechanic Designer.",
-      impact: "Consolidated distinct interactive projects into a single high-performance SPA, reducing deployment overhead by 80% and demonstrating complex state logic handling beyond standard CRUD apps.",
-      screenshots: [
-        "/projects/arena/arena1.webp"
-      ]
+      problem: "Complex retail logistics and demand forecasting across distributed merchants.",
+      solution: "A production system combining forecasting, automation, and transparent distributor tracking.",
+      impact: "Demonstrates high-level architecture skills and systems thinking at product scale.",
+      screenshots: []
     }
   }
 ];

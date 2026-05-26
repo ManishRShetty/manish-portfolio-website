@@ -4,6 +4,7 @@ import { FaDocker, FaNodeJs, FaAws, FaPython, FaGithub } from "react-icons/fa";
 import { SiFramer, SiFirebase, SiKubernetes, SiGooglecloud, SiN8N } from "react-icons/si";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { MdOutlineFileDownload } from "react-icons/md";
+import Link from 'next/link';
 
 // --- Minimal React Icon ---
 const ReactIcon = () => (
@@ -15,22 +16,16 @@ const ReactIcon = () => (
   </svg>
 );
 
-// --- Enhanced Data Structure with URLs and Brand Colors ---
-// If a color is too dark for your background, I've adjusted it to a visible shade.
+// --- Focused Technical Arsenal for Founder persona ---
+// Keep visual presentation but emphasize deep-tech systems skills
 const skills = [
-  { name: 'NextJS', icon: <RiNextjsFill />, href: 'https://nextjs.org', color: '#FFFFFF' },
-  { name: 'React', icon: <ReactIcon />, href: 'https://react.dev', color: '#61DAFB' },
-  { name: 'Tailwind', icon: <RiTailwindCssFill />, href: 'https://tailwindcss.com', color: '#38B2AC' },
-  { name: 'Python', icon: <FaPython />, href: 'https://www.python.org', color: '#3776AB' },
-  { name: 'Kubernetes', icon: <SiKubernetes />, href: 'https://kubernetes.io', color: '#326CE5' },
-  { name: 'Firebase', icon: <SiFirebase />, href: 'https://firebase.google.com', color: '#FFCA28' },
-  { name: 'Docker', icon: <FaDocker />, href: 'https://www.docker.com', color: '#2496ED' },
-  { name: 'AWS', icon: <FaAws />, href: 'https://aws.amazon.com', color: '#FF9900' },
-  { name: 'GCP', icon: <SiGooglecloud />, href: 'https://cloud.google.com', color: '#4285F4' },
-  { name: 'GitHub', icon: <FaGithub />, href: 'https://github.com', color: '#FFFFFF' },
-  { name: 'n8n', icon: <SiN8N />, href: 'https://n8n.io', color: '#FF6584' },
-  { name: 'Node.js', icon: <FaNodeJs />, href: 'https://nodejs.org', color: '#339933' },
-  { name: 'Framer', icon: <SiFramer />, href: 'https://www.framer.com/motion/', color: '#0055FF' },
+  { name: 'Go (systems)', icon: <ReactIcon />, href: 'https://golang.org', color: '#00ADD8' },
+  { name: 'bbolt / B-Tree DB', icon: <ReactIcon />, href: 'https://github.com/etcd-io/bbolt', color: '#6B7280' },
+  { name: 'LangGraph / Agentic AI', icon: <ReactIcon />, href: 'https://langgraph.ai', color: '#9B5CF6' },
+  { name: 'Vector & Triplestore', icon: <ReactIcon />, href: '#', color: '#F59E0B' },
+  { name: 'Next.js (high perf)', icon: <RiNextjsFill />, href: 'https://nextjs.org', color: '#FFFFFF' },
+  { name: 'Systems Programming', icon: <ReactIcon />, href: '#', color: '#10B981' },
+  { name: 'Distributed Systems', icon: <ReactIcon />, href: '#', color: '#3B82F6' },
 ];
 
 // --- Physics & Variants ---
@@ -101,12 +96,11 @@ export const About: React.FC = () => {
           {/* Text Content */}
           <motion.div className="w-full md:w-2/3 space-y-8" variants={containerVariants}>
             <motion.p variants={itemBlurVariant} className="text-xl md:text-2xl text-neutral-400 font-light leading-relaxed">
-              I'm a dedicated <span className="text-white font-medium">Full Stack & AI Engineer</span> building intelligent, elegant web applications.
-              I thrive in high-velocity environments where design, performance, and engineering converge.
+              I'm Manish R. Shetty — founder and systems engineer focused on building infrastructure for autonomous AI. I design and ship low-level primitives that make agentic systems reliable, auditable, and production-ready.
             </motion.p>
 
             <motion.p variants={itemBlurVariant} className="text-lg text-neutral-500 leading-relaxed">
-              Currently focused on Next.js, Agentic AI, and scalable DevOps workflows. I don't just write code; I craft experiences that solve actual problems.
+              Specializing in pure Go systems programming, native B-Tree database architecture (bbolt), Agentic AI workflows (LangGraph), and high-performance Next.js applications.
             </motion.p>
 
             {/* Buttons Row */}
@@ -119,6 +113,12 @@ export const About: React.FC = () => {
                 <MdOutlineFileDownload className="text-lg" />
                 <span>Resume</span>
               </a>
+              <Link
+                href="/journey"
+                className="group relative inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full text-sm font-semibold tracking-wide hover:bg-white/10 transition-colors duration-300"
+              >
+                <span>Learn more about me</span>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

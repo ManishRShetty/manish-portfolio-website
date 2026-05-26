@@ -7,6 +7,7 @@ export interface Project {
   stack: string[];
   liveDemoUrl?: string;
   codeUrl?: string;
+  type?: 'product' | 'project' | string;
 
   caseStudy: {
     problem: string;

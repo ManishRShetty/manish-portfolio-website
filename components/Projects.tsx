@@ -103,6 +103,10 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) 
 
   const isExpanded = visibleCount > DEFAULT_VIEW_COUNT;
 
+  // Split products (high priority) and projects (lower priority)
+  const products = projects.filter((p) => p.type === 'product');
+  const projectItems = projects.filter((p) => p.type !== 'product');
+
   const handleToggle = () => {
     if (isExpanded) {
       // Logic: Collapse
@@ -126,50 +130,64 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) 
       >
         <div className="text-center mb-20">
           <motion.h2 variants={itemBlurVariant} className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
-            Selected Works
+            Products & Infrastructure
           </motion.h2>
           <motion.p variants={itemBlurVariant} className="text-neutral-400 text-lg max-w-xl mx-auto mb-4">
-            A collection of robust applications focusing on AI integration, real-time data, and seamless user experiences.
+            Production-focused systems: open-source tooling, low-level databases, and infrastructure primitives driving agentic AI.
           </motion.p>
         </div>
 
         {/* Scroll Anchor */}
         <div ref={gridTopRef} className="scroll-mt-32" />
 
-        {/* CRITICAL FIX: 
-            1. layout prop on the grid container handles the height resizing animation.
-            2. mode="popLayout" ensures exiting items don't break the flow.
-        */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
-        >
-          <AnimatePresence mode="popLayout">
-            {projects.slice(0, visibleCount).map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                onClick={onProjectClick}
-              />
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {projects.length > DEFAULT_VIEW_COUNT && (
-          <motion.div variants={itemBlurVariant} className="flex justify-center">
-            <button
-              onClick={handleToggle}
-              className="group flex items-center gap-2 px-6 py-3 bg-[#1C1C1E] hover:bg-[#2C2C2E] text-white rounded-full font-medium transition-all duration-300 border border-white/5 hover:border-white/10"
-            >
-              <span>{isExpanded ? 'View Less' : 'View All Projects'}</span>
-              <motion.div
-                animate={{ rotate: isExpanded ? 180 : 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              >
-                <ChevronDown size={16} className="opacity-60" />
-              </motion.div>
-            </button>
+        {/* Products (High Priority) */}
+        {products.length > 0 && (
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <AnimatePresence mode="popLayout">
+              {products.map((product) => (
+                <ProjectCard key={product.id} project={product} onClick={onProjectClick} />
+              ))}
+            </AnimatePresence>
           </motion.div>
+        )}
+
+        {/* Projects (Lower Priority) */}
+        {projectItems.length > 0 && (
+          <>
+            <div className="mb-8 text-center">
+              <motion.h3 variants={itemBlurVariant} className="text-2xl font-semibold mb-2">
+                Projects
+              </motion.h3>
+              <motion.p variants={itemBlurVariant} className="text-neutral-400 max-w-xl mx-auto text-sm">
+                Selected research and implementation projects — lower priority than current products.
+              </motion.p>
+            </div>
+
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <AnimatePresence mode="popLayout">
+                {projectItems.slice(0, visibleCount).map((project) => (
+                  <ProjectCard key={project.id} project={project} onClick={onProjectClick} />
+                ))}
+              </AnimatePresence>
+            </motion.div>
+
+            {projectItems.length > DEFAULT_VIEW_COUNT && (
+              <motion.div variants={itemBlurVariant} className="flex justify-center">
+                <button
+                  onClick={handleToggle}
+                  className="group flex items-center gap-2 px-6 py-3 bg-[#1C1C1E] hover:bg-[#2C2C2E] text-white rounded-full font-medium transition-all duration-300 border border-white/5 hover:border-white/10"
+                >
+                  <span>{isExpanded ? 'View Less' : 'View All Projects'}</span>
+                  <motion.div
+                    animate={{ rotate: isExpanded ? 180 : 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  >
+                    <ChevronDown size={16} className="opacity-60" />
+                  </motion.div>
+                </button>
+              </motion.div>
+            )}
+          </>
         )}
       </motion.div>
     </section>

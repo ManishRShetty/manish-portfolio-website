@@ -1,3 +1,5 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/journey/page": "app/journey/page.js",
   "/page": "app/page.js"
 }

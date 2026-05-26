@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Download, ArrowRight } from 'lucide-react';
+import { Download, ArrowRight, Github } from 'lucide-react';
 
 // --- Physics Engine (Consistent with About Section) ---
 const springPhysics = { type: "spring", stiffness: 100, damping: 20 } as const;
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
           className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-6"
           variants={itemBlurVariant}
         >
-          Manish R Shetty
+          Manish R. Shetty
         </motion.h1>
 
         {/* Subheading: Gradient Text for subtle flair */}
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
           className="text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60 mb-8"
           variants={itemBlurVariant}
         >
-          AI Product Engineer
+          Building Siranta AI. Engineering zero-trust memory and context infrastructure for autonomous agents.
         </motion.p>
 
         {/* Description: Clean, constrained width for readability */}
@@ -71,9 +71,7 @@ export const Hero: React.FC = () => {
           className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-400 leading-relaxed font-light mb-12"
           variants={itemBlurVariant}
         >
-          I architect intelligent digital products. Bridging the gap between
-          <span className="text-neutral-200 font-normal"> complex AI systems</span> and
-          <span className="text-neutral-200 font-normal"> intuitive user experiences</span>.
+          Founder, systems engineer, and builder of infrastructure for autonomous AI. I design immutable, auditable memory systems and high-throughput context pipelines that power production-grade agents.
         </motion.p>
 
         {/* Action Buttons: Simplified Hierarchy */}
@@ -83,24 +81,38 @@ export const Hero: React.FC = () => {
         >
           {/* Primary Action - Solid White */}
           <motion.a
-            href="#projects"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            href="https://siranta.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
             className="group w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-semibold text-base tracking-tight transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2"
           >
-            View Projects
+            Explore Siranta AI
             <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-300 w-5 h-5" />
           </motion.a>
 
-          {/* Secondary Action - Glass/Ghost */}
+          {/* Secondary Action - GitHub (Ghost) */}
+          <motion.a
+            href="https://github.com/siranta-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-sm text-white rounded-full font-medium text-base tracking-tight transition-all flex items-center justify-center gap-2"
+          >
+            <Github className="w-5 h-5 opacity-80" />
+            View GitHub
+          </motion.a>
+
+          {/* Tertiary Action - Resume (ghost/text) */}
           <motion.a
             href="/manishshetty-resume.pdf"
             download
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-sm text-white rounded-full font-medium text-base tracking-tight transition-all flex items-center justify-center gap-2"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto px-4 py-2 text-neutral-300 hover:text-white text-sm font-medium transition-colors"
           >
-            <Download className="w-5 h-5 opacity-70" />
             Resume
           </motion.a>
         </motion.div>
