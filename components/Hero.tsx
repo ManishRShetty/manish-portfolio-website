@@ -86,15 +86,19 @@ export const Hero: React.FC = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="group w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-semibold text-base tracking-tight transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2"
+            className="group w-full sm:w-auto px-7 py-3.5 bg-white text-black rounded-full font-semibold text-base tracking-tight transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3"
           >
-            <img
-              src="/siranta/siranta-black.svg"
-              alt=""
-              aria-hidden="true"
-              className="w-5 h-5 object-contain"
-            />
-            Explore Siranta AI
+            <span className="flex items-center gap-3">
+              <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-black text-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
+                <img
+                  src="/siranta/siranta-white.svg"
+                  alt=""
+                  aria-hidden="true"
+                  className="w-7 h-7 object-contain"
+                />
+              </span>
+              <span>Explore Siranta AI</span>
+            </span>
             <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-300 w-5 h-5" />
           </motion.a>
 
@@ -117,8 +121,9 @@ export const Hero: React.FC = () => {
             download
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-4 py-2 text-neutral-300 hover:text-white text-sm font-medium transition-colors"
+            className="w-full sm:w-auto px-5 py-3 rounded-full border border-white/15 bg-white/5 text-white/90 text-sm font-semibold tracking-tight transition-all hover:bg-white/10 hover:border-white/30 flex items-center justify-center gap-2"
           >
+            <Download className="w-4 h-4 opacity-80" />
             Resume
           </motion.a>
         </motion.div>
