@@ -63,7 +63,15 @@ export const Hero: React.FC = () => {
           className="text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60 mb-8"
           variants={itemBlurVariant}
         >
-          Building Siranta AI. Engineering zero-trust memory and context infrastructure for autonomous agents.
+          Building{' '}
+          <span className="inline-flex items-center align-middle">
+            <img
+              src="/siranta/siranta-white.svg"
+              alt="Siranta AI"
+              className="w-7 h-7 object-contain"
+            />
+          </span>
+          . Engineering zero-trust memory and context infrastructure for autonomous agents.
         </motion.p>
 
         {/* Description: Clean, constrained width for readability */}
