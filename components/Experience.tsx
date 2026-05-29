@@ -16,17 +16,6 @@ const workExperienceData = [
     ]
   },
   {
-    duration: "May 2026 - Present",
-    role: "Core Member (UI)",
-    company: "UiPath Student Developer Champion Club",
-    location: "College Team",
-    tasks: [
-      "Core member of the college UiPath Student Developer Champion Club community.",
-      "Contribute to UI-focused initiatives and collaborative team efforts.",
-      "Support community activities and internal coordination as needed."
-    ]
-  },
-  {
     duration: "Aug 2025 - Oct 2025",
     role: "Frontend Developer Intern",
     company: "MyDBLink",

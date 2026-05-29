@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
         </motion.div>
 
         <motion.a
-          href="https://siranta.ai"
+          href="https://siranta.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-neutral-300 hover:text-white hover:border-white/30 transition-colors"

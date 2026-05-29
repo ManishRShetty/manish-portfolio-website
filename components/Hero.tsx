@@ -81,7 +81,7 @@ export const Hero: React.FC = () => {
         >
           {/* Primary Action - Solid White */}
           <motion.a
-            href="https://siranta.ai"
+            href="https://siranta.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
@@ -125,14 +125,14 @@ export const Hero: React.FC = () => {
       </motion.div>
 
       {/* Scroll Indicator - Minimal */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
         <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
