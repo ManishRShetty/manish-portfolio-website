@@ -88,17 +88,13 @@ export const Hero: React.FC = () => {
             whileTap={{ scale: 0.97 }}
             className="group w-full sm:w-auto px-7 py-3.5 bg-white text-black rounded-full font-semibold text-base tracking-tight transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3"
           >
-            <span className="flex items-center gap-3">
-              <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-black text-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
-                <img
-                  src="/siranta/siranta-white.svg"
-                  alt=""
-                  aria-hidden="true"
-                  className="w-7 h-7 object-contain"
-                />
-              </span>
-              <span>Explore Siranta AI</span>
-            </span>
+            <span>Explore</span>
+            <img
+              src="/siranta/siranta-black.svg"
+              alt=""
+              aria-hidden="true"
+              className="w-16 h-7 object-contain"
+            />
             <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-300 w-5 h-5" />
           </motion.a>
 
