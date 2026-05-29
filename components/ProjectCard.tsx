@@ -37,6 +37,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClic
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.4, ease: "easeOut" }} // Smooth easing for the image looks more cinematic
         />
+        {project.logo && (
+          <div className="absolute top-4 left-4 z-20 w-10 h-10 rounded-xl bg-black/60 border border-white/10 backdrop-blur-md flex items-center justify-center">
+            <img
+              src={project.logo}
+              alt={`${project.title} logo`}
+              className="w-6 h-6 object-contain"
+            />
+          </div>
+        )}
       </div>
 
       {/* Content Container */}

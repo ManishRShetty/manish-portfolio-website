@@ -78,6 +78,25 @@ export const Header: React.FC<HeaderProps> = () => {
                 />
               </motion.a>
             ))}
+            <motion.a
+              href="https://siranta.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Siranta AI"
+            >
+              <Image
+                src="/siranta/siranta-white.svg"
+                alt=""
+                aria-hidden="true"
+                width={18}
+                height={18}
+                className="object-contain"
+              />
+              <span>Siranta AI</span>
+            </motion.a>
           </nav>
 
           {/* MOBILE TOGGLE BUTTON */}
@@ -163,6 +182,38 @@ export const Header: React.FC<HeaderProps> = () => {
                   {link.name}
                 </motion.a>
               ))}
+              <motion.a
+                href="https://siranta.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-lg font-medium text-neutral-300 hover:text-white transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+                variants={{
+                  open: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { type: 'spring', stiffness: 300, damping: 24 }
+                  },
+                  closed: {
+                    opacity: 0,
+                    x: -20,
+                    transition: { duration: 0.2 }
+                  }
+                }}
+                whileHover={{ x: 5, color: '#ffffff' }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Siranta AI"
+              >
+                <Image
+                  src="/siranta/siranta-white.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width={18}
+                  height={18}
+                  className="object-contain"
+                />
+                <span>Siranta AI</span>
+              </motion.a>
             </motion.div>
           </motion.div>
         )}

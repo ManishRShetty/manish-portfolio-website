@@ -88,6 +88,25 @@ export const Footer: React.FC = () => {
           />
         </motion.div>
 
+        <motion.a
+          href="https://siranta.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-neutral-300 hover:text-white hover:border-white/30 transition-colors"
+          initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <img
+            src="/siranta/siranta-white.svg"
+            alt=""
+            aria-hidden="true"
+            className="w-4 h-4 object-contain"
+          />
+          <span>Siranta AI</span>
+        </motion.a>
+
         {/* Copyright & Info */}
         <motion.div
           className="flex flex-col items-center gap-3 text-center"

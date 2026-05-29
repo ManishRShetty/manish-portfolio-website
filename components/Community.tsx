@@ -12,6 +12,13 @@ const communityData = [
     logoUrl: "/clubs/nexus.webp", // Placeholder matching theme
     website: "https://www.nexusclubs.in"
   },
+  {
+    organization: "UiPath Student Developer Champion Club",
+    role: "Core Member (UI)",
+    duration: "May 2026 - Present",
+    description: "Core member of the college UiPath Student Developer Champion Club, contributing to community initiatives as part of the UI team.",
+    logoUrl: "https://placehold.co/100x100/0EA5E9/FFFFFF?text=UiP"
+  },
   // Added a second item to demonstrate the timeline layout
   // {
   //   organization: "OpenSource Collective",

@@ -8,6 +8,7 @@ const workExperienceData = [
     role: "Founder & Lead Architect",
     company: "Siranta AI",
     location: "Mangalore, India",
+    logo: "/siranta/siranta-white.svg",
     tasks: [
       "Define platform architecture for zero-trust memory and context infrastructure for autonomous agents.",
       "Ship core primitives: Kord (context aggregator) and Siranta Gateway (embedded triplestore + vector graph).",
@@ -15,14 +16,14 @@ const workExperienceData = [
     ]
   },
   {
-    duration: "2023 - Present",
-    role: "Vice Chairperson",
-    company: "Nexus SIT",
-    location: "Mangalore, India",
+    duration: "May 2026 - Present",
+    role: "Core Member (UI)",
+    company: "UiPath Student Developer Champion Club",
+    location: "College Team",
     tasks: [
-      "Manage a 60+ member technical community and run daily Tech Jam engineering sessions.",
-      "Execute high-stakes logistics for large-scale events and coordinate cross-team shipping schedules.",
-      "Mentor contributors on system design, deployment, and performance engineering."
+      "Core member of the college UiPath Student Developer Champion Club community.",
+      "Contribute to UI-focused initiatives and collaborative team efforts.",
+      "Support community activities and internal coordination as needed."
     ]
   },
   {
@@ -133,12 +134,23 @@ export const WorkExperience: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="mb-6">
-                  <div className="text-lg text-neutral-300 font-medium mb-1">
-                    {job.company}
-                  </div>
-                  <div className="text-sm text-neutral-500 font-light">
-                    {job.location}
+                <div className="mb-6 flex items-center gap-4">
+                  {job.logo && (
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                      <img
+                        src={job.logo}
+                        alt={`${job.company} logo`}
+                        className="w-9 h-9 object-contain"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <div className="text-lg text-neutral-300 font-medium mb-1">
+                      {job.company}
+                    </div>
+                    <div className="text-sm text-neutral-500 font-light">
+                      {job.location}
+                    </div>
                   </div>
                 </div>
 

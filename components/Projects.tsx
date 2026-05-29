@@ -57,6 +57,15 @@ const ProjectCard: React.FC<{ project: Project; onClick?: (project: Project) => 
           className="relative z-10 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           onError={(e) => (e.currentTarget.src = 'https://placehold.co/600x400/1C1C1E/3A3A3C?text=Project+Preview')}
         />
+        {project.logo && (
+          <div className="absolute top-4 left-4 z-20 w-10 h-10 rounded-xl bg-black/60 border border-white/10 backdrop-blur-md flex items-center justify-center">
+            <img
+              src={project.logo}
+              alt={`${project.title} logo`}
+              className="w-6 h-6 object-contain"
+            />
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1E] via-transparent to-transparent opacity-60" />
       </div>
 

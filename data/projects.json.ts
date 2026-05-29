@@ -4,6 +4,7 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: "Kord",
+    logo: "/siranta/siranta-white.svg",
     thumbnail: "/projects/kord/kord.webp",
     description: "The open-source context aggregator.",
     type: 'product',
@@ -20,6 +21,7 @@ export const projectsData: Project[] = [
   {
     id: 2,
     title: "Siranta Gateway",
+    logo: "/siranta/siranta-white.svg",
     thumbnail: "/projects/sirantagateway/gateway.webp",
     description: "Zero-trust, bi-temporal agent memory.",
     type: 'product',
