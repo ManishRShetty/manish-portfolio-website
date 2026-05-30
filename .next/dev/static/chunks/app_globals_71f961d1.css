@@ -583,6 +583,10 @@ body {
   margin-top: auto;
 }
 
+.mr-2 {
+  margin-right: .5rem;
+}
+
 .line-clamp-2 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -843,6 +847,14 @@ body {
 
 .w-7 {
   width: 1.75rem;
+}
+
+.w-20 {
+  width: 5rem;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .min-w-0 {

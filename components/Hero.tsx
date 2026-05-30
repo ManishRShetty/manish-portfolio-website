@@ -64,14 +64,19 @@ export const Hero: React.FC = () => {
           variants={itemBlurVariant}
         >
           Building{' '}
-          <span className="inline-flex items-center align-middle">
+          <a
+            href="https://siranta.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center align-middle"
+          >
             <img
               src="/siranta/siranta-white.svg"
               alt="Siranta AI"
-              className="w-7 h-7 object-contain"
+              className="w-26 h-7 object-contain mb-3 mr-2"
             />
-          </span>
-          . Engineering zero-trust memory and context infrastructure for autonomous agents.
+          </a>
+           Engineering zero-trust memory and context infrastructure for autonomous agents.
         </motion.p>
 
         {/* Description: Clean, constrained width for readability */}
