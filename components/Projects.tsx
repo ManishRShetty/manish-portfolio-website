@@ -156,7 +156,7 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
               <h4 className="text-neutral-500 text-sm font-medium mb-1">
                 The Solution
               </h4>
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 text-lg md:text-xl font-semibold leading-snug tracking-tight">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 text-lg md:text-xl font-semibold leading-snug tracking-tight">
                 {project.caseStudy.solution}
               </p>
             </div>
