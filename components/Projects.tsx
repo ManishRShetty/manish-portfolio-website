@@ -102,6 +102,87 @@ const ProjectCard: React.FC<{ project: Project; onClick?: (project: Project) => 
   );
 };
 
+// --- Featured Product Card (Full Width) ---
+const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Project) => void }> = ({ project, onClick }) => {
+  return (
+    <motion.div
+      layout
+      variants={itemBlurVariant}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="group relative flex flex-col lg:flex-row bg-[#1C1C1E] border border-white/5 rounded-[2rem] overflow-hidden hover:border-white/10 transition-colors duration-500 cursor-pointer w-full shadow-2xl"
+      onClick={() => onClick?.(project)}
+    >
+      <div className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative z-20">
+        <div className="flex justify-between items-start mb-6">
+          {project.logo && (
+            <div className="w-14 h-14 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-md flex items-center justify-center shadow-xl">
+              <img src={project.logo} alt={`${project.title} logo`} className="w-8 h-8 object-contain" />
+            </div>
+          )}
+          <div className="flex gap-4">
+            {project.codeUrl && (
+              <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="p-3 bg-white/5 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm border border-white/5">
+                <Github size={20} />
+              </a>
+            )}
+            {project.liveDemoUrl && (
+              <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="p-3 bg-white/5 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm border border-white/5">
+                <ExternalLink size={20} />
+              </a>
+            )}
+          </div>
+        </div>
+        
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4 group-hover:text-blue-400 transition-colors duration-300">
+          {project.title}
+        </h3>
+        <p className="text-neutral-400 text-lg md:text-xl leading-relaxed mb-8">
+          {project.description}
+        </p>
+        
+        {project.caseStudy && (
+          <div className="space-y-4 mb-10 hidden md:block">
+            <div className="bg-black/40 border border-white/5 rounded-xl p-5 backdrop-blur-sm">
+              <h4 className="text-white font-medium mb-2 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span> The Problem
+              </h4>
+              <p className="text-neutral-400 text-sm leading-relaxed">{project.caseStudy.problem}</p>
+            </div>
+            <div className="bg-black/40 border border-white/5 rounded-xl p-5 backdrop-blur-sm">
+              <h4 className="text-white font-medium mb-2 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> The Solution
+              </h4>
+              <p className="text-neutral-400 text-sm leading-relaxed">{project.caseStudy.solution}</p>
+            </div>
+          </div>
+        )}
+
+        <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5">
+          {project.stack.map((tech) => (
+            <span key={tech} className="px-4 py-1.5 bg-white/5 border border-white/5 rounded-full text-xs font-medium text-neutral-300 tracking-wide">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+      
+      <div className="w-full lg:w-[50%] xl:w-[55%] relative min-h-[300px] lg:min-h-full overflow-hidden flex items-center justify-center bg-black">
+        <div className="absolute inset-0 bg-neutral-900 animate-pulse" />
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          loading="lazy"
+          className="relative z-10 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-80 group-hover:opacity-100"
+          onError={(e) => (e.currentTarget.src = 'https://placehold.co/1200x800/1C1C1E/3A3A3C?text=Featured+Project')}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-transparent via-[#1C1C1E]/30 to-[#1C1C1E] opacity-100 z-10 pointer-events-none" />
+      </div>
+    </motion.div>
+  );
+};
+
 // --- Main Projects Section ---
 export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) => {
   const DEFAULT_VIEW_COUNT = 3;
@@ -139,10 +220,10 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) 
       >
         <div className="text-center mb-20">
           <motion.h2 variants={itemBlurVariant} className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
-            Products & Infrastructure
+            Engineering Siranta
           </motion.h2>
           <motion.p variants={itemBlurVariant} className="text-neutral-400 text-lg max-w-xl mx-auto mb-4">
-            Production-focused systems: open-source tooling, low-level databases, and infrastructure primitives driving agentic AI.
+            A deep dive into the architecture, context engines, and zero-trust memory systems driving autonomous agents.
           </motion.p>
         </div>
 
@@ -151,10 +232,10 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) 
 
         {/* Products (High Priority) */}
         {products.length > 0 && (
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <motion.div layout className="flex flex-col gap-12 mb-20">
             <AnimatePresence mode="popLayout">
               {products.map((product) => (
-                <ProjectCard key={product.id} project={product} onClick={onProjectClick} />
+                <FeaturedProductCard key={product.id} project={product} onClick={onProjectClick} />
               ))}
             </AnimatePresence>
           </motion.div>
