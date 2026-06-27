@@ -1475,6 +1475,12 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-blue-400 {
+  --tw-gradient-from: #60a5fa var(--tw-gradient-from-position);
+  --tw-gradient-to: #60a5fa00 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-black\/40 {
   --tw-gradient-to: #0000 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #0006 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -1520,6 +1526,11 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), #0808084d var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
+.via-indigo-400 {
+  --tw-gradient-to: #818cf800 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #818cf8 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .to-black\/30 {
   --tw-gradient-to: #0000004d var(--tw-gradient-to-position);
 }
@@ -1542,6 +1553,10 @@ body {
 
 .to-\[\#080808\] {
   --tw-gradient-to: #080808 var(--tw-gradient-to-position);
+}
+
+.to-purple-400 {
+  --tw-gradient-to: #c084fc var(--tw-gradient-to-position);
 }
 
 .bg-clip-text {
@@ -1845,6 +1860,10 @@ body {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.leading-snug {
+  line-height: 1.375;
 }
 
 .tracking-tight {
@@ -2722,6 +2741,10 @@ body {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
   }
 
   .md\:hidden {

@@ -143,18 +143,22 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
         </p>
         
         {project.caseStudy && (
-          <div className="space-y-3 mb-6 hidden md:block">
-            <div className="bg-black/40 border border-white/5 rounded-xl p-4 backdrop-blur-sm">
-              <h4 className="text-white text-sm font-medium mb-1.5 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span> The Problem
+          <div className="grid grid-cols-1 gap-6 mb-6 hidden md:grid">
+            <div>
+              <h4 className="text-neutral-500 text-sm font-medium mb-1">
+                The Problem
               </h4>
-              <p className="text-neutral-400 text-xs leading-relaxed">{project.caseStudy.problem}</p>
+              <p className="text-white text-lg md:text-xl font-semibold leading-snug tracking-tight">
+                {project.caseStudy.problem}
+              </p>
             </div>
-            <div className="bg-black/40 border border-white/5 rounded-xl p-4 backdrop-blur-sm">
-              <h4 className="text-white text-sm font-medium mb-1.5 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> The Solution
+            <div>
+              <h4 className="text-neutral-500 text-sm font-medium mb-1">
+                The Solution
               </h4>
-              <p className="text-neutral-400 text-xs leading-relaxed">{project.caseStudy.solution}</p>
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 text-lg md:text-xl font-semibold leading-snug tracking-tight">
+                {project.caseStudy.solution}
+              </p>
             </div>
           </div>
         )}
