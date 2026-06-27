@@ -45,7 +45,7 @@ const ProjectCard: React.FC<{ project: Project; onClick?: (project: Project) => 
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="group relative flex flex-col bg-[#1C1C1E] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-500 cursor-pointer"
+      className="group relative flex flex-col bg-[#080808] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-500 cursor-pointer"
       onClick={() => onClick?.(project)}
     >
       <div className="relative aspect-video overflow-hidden">
@@ -111,7 +111,7 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="group relative flex flex-col lg:flex-row bg-[#1C1C1E] border border-white/5 rounded-[2rem] overflow-hidden hover:border-white/10 transition-colors duration-500 cursor-pointer w-full shadow-2xl"
+      className="group relative flex flex-col lg:flex-row bg-[#080808] border border-white/5 rounded-[2rem] overflow-hidden hover:border-white/10 transition-colors duration-500 cursor-pointer w-full shadow-2xl"
       onClick={() => onClick?.(project)}
     >
       <div className="flex-1 p-6 md:p-8 lg:p-10 flex flex-col justify-center relative z-20">
@@ -177,7 +177,7 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
           className="relative z-10 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-80 group-hover:opacity-100"
           onError={(e) => (e.currentTarget.src = 'https://placehold.co/1200x800/1C1C1E/3A3A3C?text=Featured+Project')}
         />
-        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-transparent via-[#1C1C1E]/30 to-[#1C1C1E] opacity-100 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-transparent via-[#080808]/30 to-[#080808] opacity-100 z-10 pointer-events-none" />
       </div>
     </motion.div>
   );
@@ -265,7 +265,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) 
               <motion.div variants={itemBlurVariant} className="flex justify-center">
                 <button
                   onClick={handleToggle}
-                  className="group flex items-center gap-2 px-6 py-3 bg-[#1C1C1E] hover:bg-[#2C2C2E] text-white rounded-full font-medium transition-all duration-300 border border-white/5 hover:border-white/10"
+                  className="group flex items-center gap-2 px-6 py-3 bg-[#080808] hover:bg-[#121212] text-white rounded-full font-medium transition-all duration-300 border border-white/5 hover:border-white/10"
                 >
                   <span>{isExpanded ? 'View Less' : 'View All Projects'}</span>
                   <motion.div

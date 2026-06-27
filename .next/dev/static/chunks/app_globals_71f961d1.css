@@ -1390,6 +1390,11 @@ body {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#080808\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 8 8 / var(--tw-bg-opacity, 1));
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1510,6 +1515,11 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), #1c1c1e4d var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
+.via-\[\#080808\]\/30 {
+  --tw-gradient-to: #08080800 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #0808084d var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .to-black\/30 {
   --tw-gradient-to: #0000004d var(--tw-gradient-to-position);
 }
@@ -1528,6 +1538,10 @@ body {
 
 .to-\[\#1C1C1E\] {
   --tw-gradient-to: #1c1c1e var(--tw-gradient-to-position);
+}
+
+.to-\[\#080808\] {
+  --tw-gradient-to: #080808 var(--tw-gradient-to-position);
 }
 
 .bg-clip-text {
@@ -2426,6 +2440,11 @@ body {
 .hover\:bg-zinc-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-\[\#121212\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 18 18 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-\[\#0A84FF\]:hover {
