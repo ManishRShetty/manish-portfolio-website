@@ -5,7 +5,7 @@ export const projectsData: Project[] = [
     id: 1,
     title: "Siranta AI - Founder & Lead Engineer",
     logo: "/siranta/siranta-white.svg",
-    thumbnail: "/siranta/gateway.png",
+    thumbnail: "/siranta/siranta.png",
     description: "A comprehensive ecosystem of zero-trust, bi-temporal agent memory and context aggregation tools.",
     type: 'product',
     stack: ["Go", "LangGraph", "Vector Graph", "RAG", "Distributed Systems"],

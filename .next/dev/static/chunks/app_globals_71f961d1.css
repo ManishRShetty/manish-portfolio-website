@@ -494,6 +494,10 @@ body {
   z-index: -1;
 }
 
+.z-30 {
+  z-index: 30;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2474,6 +2478,10 @@ body {
 .hover\:bg-\[\#121212\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(18 18 18 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-black\/80:hover {
+  background-color: #000c;
 }
 
 .hover\:text-\[\#0A84FF\]:hover {

@@ -114,21 +114,20 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
       className="group relative flex flex-col lg:flex-row bg-[#080808] border border-white/5 rounded-[2rem] overflow-hidden hover:border-white/10 transition-colors duration-500 cursor-pointer w-full shadow-2xl"
       onClick={() => onClick?.(project)}
     >
+      <div className="absolute top-6 right-6 z-30 flex gap-3">
+        {project.codeUrl && (
+          <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="p-2.5 bg-black/60 hover:bg-black/80 rounded-full text-neutral-400 hover:text-white transition-colors backdrop-blur-md border border-white/10 shadow-lg">
+            <Github size={18} />
+          </a>
+        )}
+        {project.liveDemoUrl && (
+          <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="p-2.5 bg-black/60 hover:bg-black/80 rounded-full text-neutral-400 hover:text-white transition-colors backdrop-blur-md border border-white/10 shadow-lg">
+            <ExternalLink size={18} />
+          </a>
+        )}
+      </div>
+
       <div className="flex-1 p-6 md:p-8 lg:p-10 flex flex-col justify-center relative z-20">
-        <div className="flex justify-end items-start mb-4">
-          <div className="flex gap-3">
-            {project.codeUrl && (
-              <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="p-2.5 bg-white/5 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm border border-white/5">
-                <Github size={18} />
-              </a>
-            )}
-            {project.liveDemoUrl && (
-              <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="p-2.5 bg-white/5 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm border border-white/5">
-                <ExternalLink size={18} />
-              </a>
-            )}
-          </div>
-        </div>
         
         <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 tracking-tight mb-3 leading-tight">
           {project.title}
