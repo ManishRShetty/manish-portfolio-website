@@ -587,6 +587,10 @@ body {
   margin-top: auto;
 }
 
+.mb-1\.5 {
+  margin-bottom: .375rem;
+}
+
 .line-clamp-2 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -843,6 +847,10 @@ body {
 
 .w-max {
   width: max-content;
+}
+
+.w-7 {
+  width: 1.75rem;
 }
 
 .min-w-0 {
@@ -1569,6 +1577,10 @@ body {
   padding: .75rem;
 }
 
+.p-2\.5 {
+  padding: .625rem;
+}
+
 .px-2 {
   padding-left: .5rem;
   padding-right: .5rem;
@@ -1672,6 +1684,11 @@ body {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .pb-2 {
@@ -2736,6 +2753,15 @@ body {
     padding: 3rem;
   }
 
+  .md\:p-8 {
+    padding: 2rem;
+  }
+
+  .md\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
   .md\:pl-16 {
     padding-left: 4rem;
   }
@@ -2783,6 +2809,11 @@ body {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -2816,6 +2847,10 @@ body {
 
   .lg\:p-16 {
     padding: 4rem;
+  }
+
+  .lg\:p-10 {
+    padding: 2.5rem;
   }
 
   .lg\:px-8 {
