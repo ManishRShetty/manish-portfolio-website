@@ -3,68 +3,24 @@ import type { Project } from '../types';
 export const projectsData: Project[] = [
   {
     id: 1,
-    title: "Kord",
-    logo: "/siranta/siranta-white.svg",
-    thumbnail: "/siranta/kord.png",
-    description: "The open-source context aggregator.",
-    type: 'product',
-    stack: ["Go", "CLI", "XML", "RAG"],
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/siranta-ai/kord",
-    caseStudy: {
-      problem: "Large repositories and datasets create context stuffing for LLMs, leading to degraded agent performance and hallucinations.",
-      solution: "A pure Go CLI tool that flattens entire repositories into LLM-optimized XML in milliseconds. Built to eliminate context stuffing for Claude and Gemini.",
-      impact: "Enables deterministic, compact context payloads for retrieval layers and reduces token usage while improving relevance in agent prompts.",
-      screenshots: []
-    }
-  },
-  {
-    id: 2,
-    title: "Siranta Gateway",
+    title: "Siranta AI - Founder & Lead Engineer",
     logo: "/siranta/siranta-white.svg",
     thumbnail: "/siranta/gateway.png",
-    description: "Zero-trust, bi-temporal agent memory.",
+    description: "A comprehensive ecosystem of zero-trust, bi-temporal agent memory and context aggregation tools.",
     type: 'product',
-    stack: ["Go", "B-Tree", "Vector Graph", "Triplestore"],
-    liveDemoUrl: "",
-    // codeUrl: "https://github.com/siranta-ai/siranta-gateway",
+    stack: ["Go", "LangGraph", "Vector Graph", "RAG", "Distributed Systems"],
+    liveDemoUrl: "https://siranta.vercel.app",
+    codeUrl: "https://github.com/siranta-ai",
     caseStudy: {
-      problem: "Agent memories are opaque, mutable, and lack auditable timelines — creating compliance and debugging challenges.",
-      solution: "An embedded Triplestore and vector graph database built entirely in Go. Designed to give local AI agents persistent, time-traveling audit logs.",
-      impact: "Provides deterministic provenance, temporal queries, and tamper-evident storage for production agents.",
-      screenshots: []
+      problem: "Large repositories create context stuffing for LLMs, and agent memories are opaque, mutable, and lack auditable timelines.",
+      solution: "Engineered a unified ecosystem featuring Kord (a pure Go CLI for rapid repo-to-XML flattening), Siranta Gateway (an embedded Triplestore and vector graph database for time-traveling audit logs), and Project Aura (zero-trust context routing).",
+      impact: "Eliminates context stuffing, reduces token usage, and provides deterministic provenance and tamper-evident storage for production agents at scale.",
+      screenshots: [
+        "/siranta/kord.png",
+        "/siranta/gateway.png"
+      ]
     }
   },
-  // {
-  //   id: 3,
-  //   title: "Project Siranta",
-  //   thumbnail: "/projects/siranta/siranta.webp",
-  //   description: "Architectural research and platform for agent orchestration and memory models.",
-  //   type: 'product',
-  //   stack: ["Go", "LangGraph", "Agentic Workflows", "Distributed Systems"],
-  //   codeUrl: "",
-  //   caseStudy: {
-  //     problem: "Designing pipelines for long-running, stateful agents at scale requires new primitives across storage, ordering, and safety.",
-  //     solution: "Platform-level research combining immutable event logs, deterministic replay, and secure isolation for agent tasks.",
-  //     impact: "Defines operational patterns used across Siranta products and prototypes.",
-  //     screenshots: []
-  //   }
-  // },
-  // {
-  //   id: 4,
-  //   title: "Project Aura",
-  //   thumbnail: "/projects/aura/aura.webp",
-  //   description: "Secure context routing and policy enforcement for autonomous stacks.",
-  //   type: 'product',
-  //   stack: ["Go", "Policy Engines", "Zero-Trust", "Kubernetes"],
-  //   codeUrl: "",
-  //   caseStudy: {
-  //     problem: "Agents require guarded access to secrets and external tools while preserving auditability.",
-  //     solution: "Runtime policy enforcement and context shaping layer that mediates agent outputs and side effects.",
-  //     impact: "Reduces blast radius and enables safe experimentation with autonomous behaviors.",
-  //     screenshots: []
-  //   }
-  // },
   // --- Restored project entries (lower priority) ---
   {
     id: 10,
