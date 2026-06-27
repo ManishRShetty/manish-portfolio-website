@@ -115,12 +115,7 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
       onClick={() => onClick?.(project)}
     >
       <div className="flex-1 p-6 md:p-8 lg:p-10 flex flex-col justify-center relative z-20">
-        <div className="flex justify-between items-start mb-4">
-          {project.logo && (
-            <div className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-md flex items-center justify-center shadow-xl">
-              <img src={project.logo} alt={`${project.title} logo`} className="w-7 h-7 object-contain" />
-            </div>
-          )}
+        <div className="flex justify-end items-start mb-4">
           <div className="flex gap-3">
             {project.codeUrl && (
               <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="p-2.5 bg-white/5 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm border border-white/5">
@@ -135,7 +130,7 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
           </div>
         </div>
         
-        <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-3 group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+        <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 tracking-tight mb-3 leading-tight">
           {project.title}
         </h3>
         <p className="text-neutral-400 text-base md:text-lg leading-relaxed mb-6">
@@ -156,7 +151,7 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
               <h4 className="text-neutral-500 text-sm font-medium mb-1">
                 The Solution
               </h4>
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 text-lg md:text-xl font-semibold leading-snug tracking-tight">
+              <p className="text-white text-lg md:text-xl font-semibold leading-snug tracking-tight">
                 {project.caseStudy.solution}
               </p>
             </div>
