@@ -44,11 +44,11 @@ export const Hero: React.FC = () => {
         animate="visible"
       >
         {/* Badge / Pill */}
-        <motion.div variants={itemBlurVariant} className="flex justify-center mb-8">
+        {/* <motion.div variants={itemBlurVariant} className="flex justify-center mb-8">
           <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-medium text-neutral-300 tracking-wide uppercase">
             Available for new opportunities
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Heading 1: Massive, tight tracking, confident */}
         <motion.h1
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
               className="w-26 h-7 object-contain mb-3 mr-2"
             />
           </a>
-           Engineering zero-trust memory and context infrastructure for autonomous agents.
+          Engineering zero-trust memory and context infrastructure for autonomous agents.
         </motion.p>
 
         {/* Description: Clean, constrained width for readability */}
@@ -93,7 +93,7 @@ export const Hero: React.FC = () => {
           variants={itemBlurVariant}
         >
           {/* Primary Action - Solid White */}
-          <motion.a
+          {/* <motion.a
             href="https://siranta.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
@@ -109,7 +109,7 @@ export const Hero: React.FC = () => {
               className="w-16 h-7 object-contain"
             />
             <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-300 w-5 h-5" />
-          </motion.a>
+          </motion.a> */}
 
           {/* Secondary Action - GitHub (Ghost) */}
           <motion.a
