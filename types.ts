@@ -1,5 +1,5 @@
 export interface Project {
-  id: number;
+  id: number | string;
   title: string;
   logo?: string;
   thumbnail: string;
@@ -8,8 +8,9 @@ export interface Project {
   liveDemoUrl?: string;
   codeUrl?: string;
   type?: 'product' | 'project' | string;
+  priority?: number;
 
-  caseStudy: {
+  caseStudy?: {
     problem: string;
     solution: string;
     impact: string;

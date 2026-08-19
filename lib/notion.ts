@@ -1,0 +1,154 @@
+import { Client } from '@notionhq/client';
+import { projectsData as fallbackProjects } from '@/data/projects.json';
+import type { Project } from '@/types';
+
+// Helper to extract text from Notion rich text or title array
+function getRichText(property: any): string {
+  if (!property) return '';
+  if (property.type === 'rich_text' && property.rich_text?.length > 0) {
+    return property.rich_text.map((t: any) => t.plain_text).join('');
+  }
+  if (property.type === 'title' && property.title?.length > 0) {
+    return property.title.map((t: any) => t.plain_text).join('');
+  }
+  return '';
+}
+
+// Helper to extract file or external image URL
+function getFileUrl(property: any): string {
+  if (!property) return '';
+  if (property.type === 'url' && property.url) {
+    return property.url;
+  }
+  if (property.type === 'files' && property.files?.length > 0) {
+    const file = property.files[0];
+    return file?.file?.url || file?.external?.url || '';
+  }
+  return '';
+}
+
+export async function getProjects(): Promise<Project[]> {
+  const apiKey = process.env.NOTION_API_KEY;
+  const databaseId = process.env.NOTION_DATABASE_ID;
+
+  if (!apiKey || !databaseId) {
+    // Graceful fallback when Notion environment variables are not configured
+    return fallbackProjects;
+  }
+
+  try {
+    const notion = new Client({ auth: apiKey });
+
+    const response = await notion.request<{ results: any[] }>({
+      path: `databases/${databaseId}/query`,
+      method: 'post',
+      body: {
+        filter: {
+          or: [
+            {
+              property: 'Published',
+              checkbox: {
+                equals: true,
+              },
+            },
+          ],
+        },
+        sorts: [
+          {
+            property: 'Priority',
+            direction: 'ascending',
+          },
+        ],
+      },
+    });
+
+    if (!response.results || response.results.length === 0) {
+      return fallbackProjects;
+    }
+
+    const projects: Project[] = response.results
+      .filter((page: any) => 'properties' in page)
+      .map((page: any, index: number) => {
+        const props = page.properties;
+
+        // Title
+        const titleProp = props.Title || props.Name || props.title;
+        const title = getRichText(titleProp) || 'Untitled Project';
+
+        // Priority (number)
+        const priorityProp = props.Priority || props.priority || props.Order;
+        const priority = typeof priorityProp?.number === 'number' ? priorityProp.number : index + 1;
+
+        // Type (select)
+        const typeProp = props.Type || props.type;
+        const projectType = (typeProp?.select?.name?.toLowerCase() === 'product' ? 'product' : 'project') as 'product' | 'project';
+
+        // Description
+        const descProp = props.Description || props.description;
+        const description = getRichText(descProp);
+
+        // Tech Stack (multi_select)
+        const stackProp = props['Tech Stack'] || props.Stack || props.stack || props.Tags;
+        const stack = stackProp?.multi_select?.map((item: any) => item.name) || [];
+
+        // Thumbnail
+        const thumbProp = props.Thumbnail || props.thumbnail || props.Cover || props.Image;
+        const thumbnail = getFileUrl(thumbProp) || '/projects/default-cover.webp';
+
+        // Logo
+        const logoProp = props.Logo || props.logo;
+        const logo = getFileUrl(logoProp) || undefined;
+
+        // Live Demo & Code URLs
+        const liveProp = props['Live Demo URL'] || props.LiveDemoUrl || props.Live || props.Demo;
+        const liveDemoUrl = liveProp?.url || undefined;
+
+        const codeProp = props['Code URL'] || props.CodeUrl || props.GitHub || props.Code;
+        const codeUrl = codeProp?.url || undefined;
+
+        // Case Study fields
+        const problemProp = props.Problem || props['Case Study - Problem'];
+        const problem = getRichText(problemProp);
+
+        const solutionProp = props.Solution || props['Case Study - Solution'];
+        const solution = getRichText(solutionProp);
+
+        const impactProp = props.Impact || props['Case Study - Impact'];
+        const impact = getRichText(impactProp);
+
+        // Case Study screenshots
+        const screenshotsProp = props.Screenshots || props.screenshots;
+        let screenshots: string[] = [];
+        if (screenshotsProp?.type === 'files' && screenshotsProp.files?.length > 0) {
+          screenshots = screenshotsProp.files.map((f: any) => f?.file?.url || f?.external?.url || '').filter(Boolean);
+        }
+
+        const project: Project = {
+          id: page.id || index + 1,
+          title,
+          logo,
+          thumbnail,
+          description,
+          type: projectType,
+          stack,
+          liveDemoUrl,
+          codeUrl,
+          priority,
+          caseStudy: {
+            problem: problem || 'Real-time performance and scalability challenge.',
+            solution: solution || 'Engineered an end-to-end architecture with modern web stacks.',
+            impact: impact || 'Deployed to production with high reliability and engagement.',
+            screenshots,
+          },
+        };
+
+        return project;
+      });
+
+    // Sort by priority (1 is highest)
+    return projects.sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999));
+  } catch (error) {
+    console.error('Failed to fetch projects from Notion, using fallback data:', error);
+    return fallbackProjects;
+  }
+}

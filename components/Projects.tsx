@@ -191,9 +191,10 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) 
 
   const isExpanded = visibleCount > DEFAULT_VIEW_COUNT;
 
-  // Split products (high priority) and projects (lower priority)
-  const products = projects.filter((p) => p.type === 'product');
-  const projectItems = projects.filter((p) => p.type !== 'product');
+  // Sort by priority (lowest number = highest priority), then split products and projects
+  const sorted = [...projects].sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999));
+  const products = sorted.filter((p) => p.type === 'product');
+  const projectItems = sorted.filter((p) => p.type !== 'product');
 
   const handleToggle = () => {
     if (isExpanded) {

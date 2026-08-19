@@ -1,5 +1,21 @@
 {
-  "node": {},
+  "node": {
+    "60d5878278b4c8c9b84da5e50e7c796fa409486017": {
+      "workers": {
+        "app/page": {
+          "moduleId": 6423,
+          "async": false,
+          "exportedName": "submitContactForm",
+          "filename": "lib/actions/contact.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "filename": "lib/actions/contact.ts",
+      "exportedName": "submitContactForm"
+    }
+  },
   "edge": {},
-  "encryptionKey": "pvqMQnpQpsyXJkV/qolhWLSMlILLlN2JOm3fN5VOca4="
+  "encryptionKey": "tyHd0wArxXvoCavYTT0dDkHdyMfaJcq0u5rlbRBRwZg="
 }

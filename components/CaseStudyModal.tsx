@@ -178,24 +178,30 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-8">
-              <section>
-                <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">The Problem</h3>
-                <p className="text-[#A1A1A6] leading-relaxed text-[15px]">{project.caseStudy.problem}</p>
-              </section>
+              {project.caseStudy?.problem && (
+                <section>
+                  <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">The Problem</h3>
+                  <p className="text-[#A1A1A6] leading-relaxed text-[15px]">{project.caseStudy.problem}</p>
+                </section>
+              )}
 
-              <section>
-                <h3 className="text-lg font-semibold text-white mb-2">The Solution</h3>
-                <p className="text-[#A1A1A6] leading-relaxed text-[15px]">{project.caseStudy.solution}</p>
-              </section>
+              {project.caseStudy?.solution && (
+                <section>
+                  <h3 className="text-lg font-semibold text-white mb-2">The Solution</h3>
+                  <p className="text-[#A1A1A6] leading-relaxed text-[15px]">{project.caseStudy.solution}</p>
+                </section>
+              )}
 
-              <section>
-                <h3 className="text-lg font-semibold text-white mb-2">Impact & Results</h3>
-                <p className="text-[#A1A1A6] leading-relaxed text-[15px]">{project.caseStudy.impact}</p>
-              </section>
+              {project.caseStudy?.impact && (
+                <section>
+                  <h3 className="text-lg font-semibold text-white mb-2">Impact & Results</h3>
+                  <p className="text-[#A1A1A6] leading-relaxed text-[15px]">{project.caseStudy.impact}</p>
+                </section>
+              )}
             </div>
 
             <div className="lg:col-span-1 space-y-6">
-              {project.caseStudy.role && (
+              {project.caseStudy?.role && (
                 <div className="bg-[#2C2C2E]/50 p-5 rounded-2xl border border-white/5">
                   <h3 className="text-sm font-semibold text-white/90 mb-2 uppercase tracking-wider">My Role</h3>
                   <p className="text-[#A1A1A6] text-sm leading-relaxed">{project.caseStudy.role}</p>
@@ -204,7 +210,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
             </div>
           </div>
 
-          {project.caseStudy.screenshots && project.caseStudy.screenshots.length > 0 && (
+          {project.caseStudy?.screenshots && project.caseStudy.screenshots.length > 0 && (
             <div className="mt-12">
               <h3 className="text-xl font-bold text-white mb-6">Interface Gallery</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
