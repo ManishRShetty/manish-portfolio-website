@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getProjects } from '@/lib/notion';
 
-export const revalidate = 60; // Auto-revalidate cache every 60 seconds
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {

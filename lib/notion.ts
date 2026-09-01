@@ -27,126 +27,149 @@ function getFileUrl(property: any): string {
   return '';
 }
 
-export async function getProjects(): Promise<Project[]> {
-  const apiKey = process.env.NOTION_API_KEY;
-  const databaseId = process.env.NOTION_DATABASE_ID;
+// Helper to extract clean UUID from Database ID or full Notion URL
+function cleanDatabaseId(rawId: string): string {
+  const trimmed = rawId.trim();
+  // If user pasted a full URL, extract the ID before ?v= or from the last path segment
+  const match = trimmed.match(/([a-f0-9]{32})/i) || trimmed.match(/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
+  if (match) {
+    return match[1].replace(/-/g, '');
+  }
+  return trimmed.replace(/-/g, '');
+}
 
-  if (!apiKey || !databaseId) {
+export async function getProjects(): Promise<Project[]> {
+  const apiKey = process.env.NOTION_API_KEY?.trim();
+  const rawDatabaseId = process.env.NOTION_DATABASE_ID?.trim();
+
+  if (!apiKey || !rawDatabaseId) {
     // Graceful fallback when Notion environment variables are not configured
     return fallbackProjects;
   }
 
-  try {
-    const notion = new Client({ auth: apiKey });
+  const databaseId = cleanDatabaseId(rawDatabaseId);
 
-    const response = await notion.request<{ results: any[] }>({
-      path: `databases/${databaseId}/query`,
-      method: 'post',
-      body: {
-        filter: {
-          or: [
-            {
-              property: 'Published',
-              checkbox: {
-                equals: true,
-              },
-            },
-          ],
-        },
-        sorts: [
-          {
-            property: 'Priority',
-            direction: 'ascending',
-          },
-        ],
+  try {
+    const res = await fetch(`https://api.notion.com/v1/databases/${databaseId}/query`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Notion-Version': '2022-06-28',
+        'Content-Type': 'application/json',
       },
+      body: JSON.stringify({}),
+      cache: 'no-store', // Always fetch latest state so removals/additions appear immediately
     });
 
-    if (!response.results || response.results.length === 0) {
+    if (!res.ok) {
+      const errText = await res.text();
+      console.error(`Notion API error (${res.status}):`, errText);
       return fallbackProjects;
     }
 
-    const projects: Project[] = response.results
-      .filter((page: any) => 'properties' in page)
-      .map((page: any, index: number) => {
-        const props = page.properties;
+    const data = await res.json();
+    const results = data.results || [];
 
-        // Title
-        const titleProp = props.Title || props.Name || props.title;
-        const title = getRichText(titleProp) || 'Untitled Project';
+    // Track all projects present in Notion (both published & unpublished)
+    const allNotionTitles = new Set<string>();
 
-        // Priority (number)
-        const priorityProp = props.Priority || props.priority || props.Order;
-        const priority = typeof priorityProp?.number === 'number' ? priorityProp.number : index + 1;
+    const notionProjects: Project[] = [];
 
-        // Type (select)
-        const typeProp = props.Type || props.type;
-        const projectType = (typeProp?.select?.name?.toLowerCase() === 'product' ? 'product' : 'project') as 'product' | 'project';
+    results.forEach((page: any, index: number) => {
+      if (!page || !('properties' in page)) return;
+      const props = page.properties;
 
-        // Description
-        const descProp = props.Description || props.description;
-        const description = getRichText(descProp);
+      // Title
+      const titleProp = props.Title || props.Name || props.title;
+      const title = getRichText(titleProp) || 'Untitled Project';
+      allNotionTitles.add(title.trim().toLowerCase());
 
-        // Tech Stack (multi_select)
-        const stackProp = props['Tech Stack'] || props.Stack || props.stack || props.Tags;
-        const stack = stackProp?.multi_select?.map((item: any) => item.name) || [];
+      // Published check: If Published checkbox exists and is unchecked, skip it!
+      const pubProp = props.Published || props.published;
+      if (pubProp && pubProp.type === 'checkbox' && pubProp.checkbox === false) {
+        return;
+      }
 
-        // Thumbnail
-        const thumbProp = props.Thumbnail || props.thumbnail || props.Cover || props.Image;
-        const thumbnail = getFileUrl(thumbProp) || '/projects/default-cover.webp';
+      // Priority (number)
+      const priorityProp = props.Priority || props.priority || props.Order;
 
-        // Logo
-        const logoProp = props.Logo || props.logo;
-        const logo = getFileUrl(logoProp) || undefined;
+      // Type (select)
+      const typeProp = props.Type || props.type;
+      const projectType = (typeProp?.select?.name?.toLowerCase() === 'product' ? 'product' : 'project') as 'product' | 'project';
 
-        // Live Demo & Code URLs
-        const liveProp = props['Live Demo URL'] || props.LiveDemoUrl || props.Live || props.Demo;
-        const liveDemoUrl = liveProp?.url || undefined;
+      // Description
+      const descProp = props.Description || props.description;
+      const description = getRichText(descProp);
 
-        const codeProp = props['Code URL'] || props.CodeUrl || props.GitHub || props.Code;
-        const codeUrl = codeProp?.url || undefined;
+      // Tech Stack (multi_select)
+      const stackProp = props['Tech Stack'] || props.Stack || props.stack || props.Tags;
+      const stack = stackProp?.multi_select?.map((item: any) => item.name) || [];
 
-        // Case Study fields
-        const problemProp = props.Problem || props['Case Study - Problem'];
-        const problem = getRichText(problemProp);
+      // Thumbnail
+      const thumbProp = props.Thumbnail || props.thumbnail || props.Cover || props.Image;
+      const thumbnail = getFileUrl(thumbProp) || '/projects/default-cover.webp';
 
-        const solutionProp = props.Solution || props['Case Study - Solution'];
-        const solution = getRichText(solutionProp);
+      // Logo
+      const logoProp = props.Logo || props.logo;
+      const logo = getFileUrl(logoProp) || undefined;
 
-        const impactProp = props.Impact || props['Case Study - Impact'];
-        const impact = getRichText(impactProp);
+      // Live Demo & Code URLs
+      const liveProp = props['Live Demo URL'] || props.LiveDemoUrl || props.Live || props.Demo;
+      const liveDemoUrl = liveProp?.url || undefined;
 
-        // Case Study screenshots
-        const screenshotsProp = props.Screenshots || props.screenshots;
-        let screenshots: string[] = [];
-        if (screenshotsProp?.type === 'files' && screenshotsProp.files?.length > 0) {
-          screenshots = screenshotsProp.files.map((f: any) => f?.file?.url || f?.external?.url || '').filter(Boolean);
-        }
+      const codeProp = props['Code URL'] || props.CodeUrl || props.GitHub || props.Code;
+      const codeUrl = codeProp?.url || undefined;
 
-        const project: Project = {
-          id: page.id || index + 1,
-          title,
-          logo,
-          thumbnail,
-          description,
-          type: projectType,
-          stack,
-          liveDemoUrl,
-          codeUrl,
-          priority,
-          caseStudy: {
-            problem: problem || 'Real-time performance and scalability challenge.',
-            solution: solution || 'Engineered an end-to-end architecture with modern web stacks.',
-            impact: impact || 'Deployed to production with high reliability and engagement.',
-            screenshots,
-          },
-        };
+      // Case Study fields
+      const problemProp = props.Problem || props['Case Study - Problem'];
+      const problem = getRichText(problemProp);
 
-        return project;
+      const solutionProp = props.Solution || props['Case Study - Solution'];
+      const solution = getRichText(solutionProp);
+
+      const impactProp = props.Impact || props['Case Study - Impact'];
+      const impact = getRichText(impactProp);
+
+      // Case Study screenshots
+      const screenshotsProp = props.Screenshots || props.screenshots;
+      let screenshots: string[] = [];
+      if (screenshotsProp?.type === 'files' && screenshotsProp.files?.length > 0) {
+        screenshots = screenshotsProp.files.map((f: any) => f?.file?.url || f?.external?.url || '').filter(Boolean);
+      }
+
+      notionProjects.push({
+        id: page.id || index + 1,
+        title,
+        logo,
+        thumbnail,
+        description,
+        type: projectType,
+        stack,
+        liveDemoUrl,
+        codeUrl,
+        priority: typeof priorityProp?.number === 'number' ? priorityProp.number : undefined,
+        caseStudy: {
+          problem: problem || 'Real-time performance and scalability challenge.',
+          solution: solution || 'Engineered an end-to-end architecture with modern web stacks.',
+          impact: impact || 'Deployed to production with high reliability and engagement.',
+          screenshots,
+        },
       });
+    });
 
-    // Sort by priority (1 is highest)
-    return projects.sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999));
+    // Merge: Include fallback projects only if they haven't been added/managed in Notion
+    const uniqueLocalProjects = fallbackProjects.filter(
+      (p) => !allNotionTitles.has(p.title.trim().toLowerCase())
+    );
+
+    const mergedProjects = [...notionProjects, ...uniqueLocalProjects];
+
+    // Sort by priority (lowest number = highest priority; undefined priorities keep relative position)
+    return mergedProjects.sort((a, b) => {
+      const pA = a.priority ?? 999;
+      const pB = b.priority ?? 999;
+      return pA - pB;
+    });
   } catch (error) {
     console.error('Failed to fetch projects from Notion, using fallback data:', error);
     return fallbackProjects;
