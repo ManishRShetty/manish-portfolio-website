@@ -132,11 +132,16 @@ export const ExperienceStrip: React.FC<ExperienceStripProps> = ({ experience, ha
             variants={itemBlurVariant}
             className="p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#09090B] space-y-6"
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Award className="w-4 h-4 text-amber-400" />
-              <h3 className="font-semibold text-lg text-white">
-                Hackathons & Academic Honors
-              </h3>
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <div className="flex items-center gap-2">
+                <Award className="w-4 h-4 text-amber-400" />
+                <h3 className="font-semibold text-lg text-white">
+                  Hackathons & Honors
+                </h3>
+              </div>
+              <span className="text-[11px] font-mono text-amber-400 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">
+                6 Wins & National Recognitions
+              </span>
             </div>
 
             <div className="space-y-4">

@@ -1,25 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-// --- Mock Data (from '../data/achievements.json') ---
-// Mock data created to match the structure of the original component
-const achievementsData = [
-  {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2024"
-  },
-  {
-    title: "Framer Motion Pro",
-    issuer: "Framer",
-    date: "2023"
-  },
-  {
-    title: "Awwwards Site of the Day",
-    issuer: "Awwwards",
-    date: "2022"
-  }
-];
+import { achievementsData } from '@/data/achievements.json';
 
 // --- Icons ---
 // A custom SVG TrophyIcon to replace the emoji for a cleaner, premium look
