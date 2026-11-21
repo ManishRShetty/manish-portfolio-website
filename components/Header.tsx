@@ -2,12 +2,16 @@
 import React from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 interface HeaderProps { }
 
 export const Header: React.FC<HeaderProps> = () => {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const shouldReduceMotion = useReducedMotion();
+
+  if (pathname?.startsWith('/outboxlabs')) return null;
 
   const navLinks = [
     { name: 'About', href: '/#about' },

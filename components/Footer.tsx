@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import { GithubIcon } from './Icons'; // Assuming this exists as per your snippet
 
 // --- Icons ---
@@ -54,7 +55,10 @@ const SocialButton = ({ href, label, icon: Icon }: { href: string; label: string
  * Redesigned Footer component with Apple-grade physics
  */
 export const Footer: React.FC = () => {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  if (pathname?.startsWith('/outboxlabs')) return null;
 
   return (
     <footer className="relative w-full py-12 overflow-hidden">

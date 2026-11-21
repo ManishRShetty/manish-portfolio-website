@@ -6,11 +6,12 @@
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/78ae4a069704c0ec.js",
-    "static/chunks/32b9a9a0046e15ea.js",
-    "static/chunks/6740f161f60c6ab5.js",
-    "static/chunks/023d923a37d494fc.js",
-    "static/chunks/turbopack-45e8e15c7d92e263.js"
+    "static/chunks/44a6b9dcbecc9b42.js",
+    "static/chunks/7f33612cfd354b86.js",
+    "static/chunks/71ee70f25d768873.js",
+    "static/chunks/3e377543f587e4b0.js",
+    "static/chunks/09a6c3983aa98323.js",
+    "static/chunks/turbopack-e309bffb967abe17.js"
   ],
   "pages": {},
   "ampFirstPages": []

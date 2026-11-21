@@ -40,6 +40,12 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/api/outbox-demo",
+      "regex": "^/api/outbox\\-demo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/outbox\\-demo(?:/)?$"
+    },
+    {
       "page": "/api/projects",
       "regex": "^/api/projects(?:/)?$",
       "routeKeys": {},
@@ -62,6 +68,12 @@
       "regex": "^/journey(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/journey(?:/)?$"
+    },
+    {
+      "page": "/outboxlabs",
+      "regex": "^/outboxlabs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/outboxlabs(?:/)?$"
     }
   ],
   "dataRoutes": [],

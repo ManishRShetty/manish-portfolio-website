@@ -65,10 +65,28 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/outboxlabs/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/outboxlabs">> = Specific
+  const handler = {} as typeof import("../../app/outboxlabs/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
   const handler = {} as typeof import("../../app/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/outbox-demo/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/outbox-demo">> = Specific
+  const handler = {} as typeof import("../../app/api/outbox-demo/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -91,6 +109,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
   const handler = {} as typeof import("../../app/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/outboxlabs/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/outboxlabs">> = Specific
+  const handler = {} as typeof import("../../app/outboxlabs/layout.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
