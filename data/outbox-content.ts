@@ -13,9 +13,9 @@ export const outboxContent = {
 
   hero: {
     badge: 'Prepared for Outbox Labs',
-    headline: "Hi Outbox, I'm Manish.\nI build Node.js backends.",
+    headline: "Hi Outbox, I'm Manish.\nI build scalable backend systems.",
     subline:
-      'Shipped SentinelPAM’s relational audit pipeline, CandleCrush’s TypeScript trading server, and AtLast’s sub-second Redis trivia queue.',
+      'Backend and full-stack engineer with a proven track record delivering for clients across India, international client execution (Oman), and remote global engineering (Morocco). Focused on Node.js, TypeScript, PostgreSQL, and high-throughput queues.',
     ctaPrimary: { label: 'See live APIs', href: '#api-playground' },
     ctaSecondary: { label: 'Download resume', href: '/ManishShettyResumeOBL.pdf' },
   },
@@ -26,7 +26,7 @@ export const outboxContent = {
       {
         requirement: 'Node.js',
         proof: 'SentinelPAM backend (Express + Node.js), CandleCrush trading server (Node.js runtime)',
-        proofLink: 'https://github.com/Nexus-SIT/CandleCrush',
+        proofLink: 'https://github.com/ManishRShetty/FinSpark',
         status: 'Proven' as const,
       },
       {
@@ -79,6 +79,7 @@ export const outboxContent = {
       {
         requirement: 'DB Design & Optimization',
         proof: 'PostgreSQL relational schemas, composite indexes (user_id, timestamp), and partitioned tables in SentinelPAM',
+        proofLink: 'https://github.com/ManishRShetty/FinSpark',
         status: 'Proven' as const,
       },
       {
@@ -115,6 +116,7 @@ export const outboxContent = {
       'Atomic Git workflow: Scoped feature branches, conventional commits, and self-reviewed diffs prior to merging.',
       'Defensive backend posture: Treat all external I/O as fallible with timeouts, exponential retries, and idempotency keys.',
       'Performance awareness: Monitor query plans, index composite lookup paths, and avoid unindexed table scans.',
+      'Client management & international delivery: Proven track record delivering software for overseas clients (Oman) and remote engineering teams (Morocco), translating ambiguous requirements into rock-solid code.',
     ],
     badges: [
       {
@@ -123,14 +125,14 @@ export const outboxContent = {
         status: 'Active' as const,
       },
       {
-        label: 'CI Status',
-        value: 'TODO: Link GitHub Actions workflow badge',
-        status: 'Pending' as const,
+        label: 'CI / CD Pipeline',
+        value: 'GitHub Actions (Lint, Typecheck & Next.js Build)',
+        status: 'Active' as const,
       },
       {
-        label: 'Test Coverage',
-        value: 'TODO: Link Codecov / Vitest coverage badge',
-        status: 'Pending' as const,
+        label: 'Testing Strategy',
+        value: 'Adversarial Quality Gates & Schema Validation',
+        status: 'Active' as const,
       },
     ],
   },
@@ -143,49 +145,82 @@ export const outboxContent = {
 
   experience: [
     {
-      role: 'Founder & Lead Architect',
+      role: 'Founder & Systems Engineer',
       company: 'Siranta AI',
       duration: '2026 – Present',
-      impact: 'Architected distributed zero-trust memory and context aggregation infrastructure for autonomous AI systems.',
+      impact: 'Architected distributed zero-trust memory and context aggregation infrastructure. Bringing early-stage founder speed, ownership, and systems thinking to production email infrastructure.',
       link: 'https://siranta.vercel.app',
     },
     {
-      role: 'Product Engineer Intern',
-      company: 'Thaniya Technologies',
-      duration: 'Oct 2025 – Jan 2026',
-      impact: 'Architected enterprise web/mobile prototypes and iterated usability improvements under production deadlines.',
+      role: 'Client Engineering & International Software Delivery',
+      company: 'Global & Pan-India Clients (Oman & India)',
+      duration: '2024 – 2026',
+      impact: 'Delivered custom production platforms for international clients—including Bunts Oman’s live sports tournament auction and drafting engine—and domestic organizations across India. Handled client requirements, stress testing, and zero-downtime execution.',
+      link: 'https://github.com/ManishRShetty/Oman-Bunts',
     },
     {
-      role: 'Frontend Developer Intern',
-      company: 'MyDBLink',
+      role: 'Product Engineer Intern',
+      company: 'Thaniya Technologies (India)',
+      duration: 'Oct 2025 – Jan 2026',
+      impact: 'Spearheaded client-facing prototypes and full-stack solutions for enterprise clients across India, translating complex business needs into high-fidelity web/mobile architectures.',
+    },
+    {
+      role: 'Frontend & API Developer Intern (Casablanca, Morocco)',
+      company: 'MyDBLink (Remote)',
       duration: 'Aug 2025 – Oct 2025',
-      impact: 'Optimized React dashboards and integrated REST APIs, contributing to a 35% improvement in API retrieval speeds.',
+      impact: 'Collaborated asynchronously across time zones in a remote Moroccan tech company. Built production React dashboards and integrated REST APIs, contributing to a 35% speedup in API data retrieval.',
     },
   ],
 
   hackathons: [
     {
-      name: "Dean's List for Academic Excellence",
-      issuer: 'Visvesvaraya Technological University',
-      date: '2023',
-    },
-    {
-      name: '1st Place — Annual Hackathon',
-      issuer: 'College Tech Society',
-      date: '2022',
-    },
-    {
-      name: 'Srinathon 2.0 Hackathon Platform',
-      issuer: 'Nexus / SIT (Handled live 24-hr event traffic & schedules)',
-      date: '2024',
+      name: 'Vice-President & Tech Lead',
+      issuer: 'Nexus Clubs, SIT — Led 60+ engineers and organized SRINATHON 2.0 (24-hr national hackathon, 1,000+ participants)',
+      date: 'March 2025 – Present',
       link: 'https://srinathon.nexusclubs.in/',
+    },
+    {
+      name: 'Winner — Coastal Innovation Hackathon',
+      issuer: '1st Place across regional engineering teams in technical innovation',
+      date: '2026',
+    },
+    {
+      name: 'Winner — Code Sprint 2026',
+      issuer: '1st Place in competitive algorithmic & full-stack development sprint',
+      date: '2026',
+    },
+    {
+      name: 'Winner — Pilikula Innovation Fair',
+      issuer: 'Awarded Best Technical Innovation Showcase',
+      date: '2025',
+    },
+    {
+      name: 'Winner — QuizIT',
+      issuer: '1st Place in Technical & Systems Knowledge Competition',
+      date: '2024',
+    },
+    {
+      name: 'Top 100 Finalist — Microsoft Bhasha Bandhu',
+      issuer: 'National-level NLP & language systems challenge by Microsoft India',
+      date: '2024',
+    },
+    {
+      name: 'Shortlisted — SAP Hackfest',
+      issuer: 'Selected among top collegiate engineering teams by SAP Labs India',
+      date: '2025',
+    },
+    {
+      name: "Dean's List for Academic Excellence [CGPA: 8.90 / 10.0]",
+      issuer: 'Srinivas Institute of Technology / VTU (B.E. in CS & Business Systems)',
+      date: '2023 – Present',
     },
   ],
 
   closing: {
     availability: 'Available starting Dec 2026 / Jan 2027',
-    location: 'Bangalore / HSR Layout (Ready to work in-office)',
+    location: 'Bangalore / HSR Layout (Ready for in-office work)',
     role: 'Software Development Engineer Intern',
+    founderNote: 'I don’t just write backend code in a vacuum; I have proven experience managing clients across India and internationally (Oman, Morocco). I take complete ownership of requirements, communicate clearly, and have a track record of building and shipping reliable software.',
     resumeHref: '/ManishShettyResumeOBL.pdf',
     contactLinks: [
       { label: 'GitHub', href: 'https://github.com/ManishRShetty', icon: 'github' as const },

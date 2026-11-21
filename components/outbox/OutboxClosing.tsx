@@ -9,6 +9,7 @@ interface ClosingProps {
     location: string;
     role: string;
     resumeHref: string;
+    founderNote?: string;
     contactLinks: readonly {
       label: string;
       href: string;
@@ -50,6 +51,16 @@ export const OutboxClosing: React.FC<ClosingProps> = ({ content }) => {
             high-throughput queueing, and deliverability mechanics.
           </p>
         </div>
+
+        {/* Founder Mindset & High-Agency Callout */}
+        {content.founderNote && (
+          <div className="max-w-2xl mx-auto p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs sm:text-sm text-neutral-300 font-mono leading-relaxed text-left">
+            <span className="text-emerald-400 font-semibold block mb-1">
+              ⚡ Why Outbox Labs (Founder Mindset + High Agency):
+            </span>
+            {content.founderNote}
+          </div>
+        )}
 
         {/* Action CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

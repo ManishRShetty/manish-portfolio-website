@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { ExternalLink, Github, FileText, CheckCircle, AlertTriangle } from 'lucide-react';
+import { ExternalLink, Github, FileText, UserCheck, Wrench } from 'lucide-react';
 import type { OutboxProject } from '@/data/outbox-projects';
 
 const springPhysics = { type: 'spring', stiffness: 100, damping: 20 } as const;
@@ -61,32 +61,38 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
             variants={itemBlurVariant}
             className="text-neutral-400 text-sm md:text-base mt-2 max-w-2xl"
           >
-            Ordered strictly by relevance to Outbox Labs: relational schema & audit pipelines (SentinelPAM),
-            Node.js/Express with TypeScript trade mechanics (CandleCrush), and Redis queue architecture (AtLast).
+            Ordered strictly by relevance to Outbox Labs: relational telemetry & query optimization (SentinelPAM),
+            Node.js/Express server-authoritative trade mechanics (CandleCrush), and Redis queue architecture (AtLast).
           </motion.p>
         </div>
 
         {/* Case Studies List */}
         <div className="space-y-16">
           {projects.map((project, idx) => {
-            const isTodoLink = (link?: string) => !link || link.startsWith('TODO');
-
             return (
               <motion.article
                 key={project.id}
                 variants={itemBlurVariant}
                 className="relative rounded-3xl border border-white/10 bg-[#09090B] p-6 sm:p-8 md:p-10 overflow-hidden shadow-2xl"
               >
-                {/* Index tag & Relevance pill */}
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                {/* Index tag & Title */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-neutral-500 font-semibold px-2.5 py-1 rounded-md bg-white/5 border border-white/5">
+                    <span className="font-mono text-xs text-neutral-400 font-semibold px-2.5 py-1 rounded-md bg-white/5 border border-white/5">
                       0{idx + 1}
                     </span>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight">
                       {project.title}
                     </h3>
                   </div>
+                </div>
+
+                {/* Explicit Ownership & Role Badge */}
+                <div className="mb-6 p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-start gap-2.5">
+                  <UserCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <p className="text-xs sm:text-sm text-neutral-200 font-mono">
+                    <strong className="text-emerald-400">My System Ownership:</strong> {project.myRole}
+                  </p>
                 </div>
 
                 {/* Relevance summary */}
@@ -159,13 +165,8 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
 
                 {/* Action Links */}
                 <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/5">
-                  {/* Live Demo */}
-                  {isTodoLink(project.links.live) ? (
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono text-neutral-500 bg-white/[0.02] border border-white/5 cursor-not-allowed">
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      <span>Live Demo (Pending deployment)</span>
-                    </span>
-                  ) : (
+                  {/* Live Demo (if available) */}
+                  {project.links.live && (
                     <a
                       href={project.links.live}
                       target="_blank"
@@ -173,17 +174,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
                       className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium text-black bg-white hover:bg-neutral-200 transition-colors"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      <span>Live Demo</span>
+                      <span>Live Platform</span>
                     </a>
                   )}
 
                   {/* GitHub Repo */}
-                  {isTodoLink(project.links.github) ? (
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono text-neutral-500 bg-white/[0.02] border border-white/5 cursor-not-allowed">
-                      <Github className="w-3.5 h-3.5" />
-                      <span>GitHub (Private repo)</span>
-                    </span>
-                  ) : (
+                  {project.links.github && (
                     <a
                       href={project.links.github}
                       target="_blank"
@@ -191,17 +187,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
                       className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium text-white bg-white/10 hover:bg-white/15 border border-white/10 transition-colors"
                     >
                       <Github className="w-3.5 h-3.5" />
-                      <span>GitHub Repo</span>
+                      <span>GitHub Repository</span>
                     </a>
                   )}
 
                   {/* API Docs */}
-                  {isTodoLink(project.links.apiDocs) ? (
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono text-neutral-500 bg-white/[0.02] border border-white/5 cursor-not-allowed">
-                      <FileText className="w-3.5 h-3.5" />
-                      <span>API Docs (TODO)</span>
-                    </span>
-                  ) : (
+                  {project.links.apiDocs && (
                     <a
                       href={project.links.apiDocs}
                       target="_blank"
@@ -209,7 +200,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
                       className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium text-neutral-300 hover:text-white bg-white/5 border border-white/10 transition-colors"
                     >
                       <FileText className="w-3.5 h-3.5" />
-                      <span>API Docs</span>
+                      <span>API Specification</span>
                     </a>
                   )}
                 </div>

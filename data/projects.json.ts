@@ -49,12 +49,12 @@ export const projectsData: Project[] = [
   {
     id: 20,
     title: "SentinelPAM (FinSpark): Insider Threat & Access Misuse Detection",
-    thumbnail: "https://opengraph.githubassets.com/1/allenlobo31/FinSpark",
+    thumbnail: "https://opengraph.githubassets.com/1/ManishRShetty/FinSpark",
     description: "Real-time privileged access management and database telemetry anomaly detection engine for high-compliance banking architectures.",
     type: 'project',
     priority: 3,
     stack: ["Python", "PostgreSQL (pg_stat_statements)", "Node.js", "Express", "Docker", "Scikit-Learn"],
-    codeUrl: "https://github.com/allenlobo31/FinSpark.git",
+    codeUrl: "https://github.com/ManishRShetty/FinSpark",
     caseStudy: {
       problem: "Privileged database misuse goes undetected until data exfiltration occurs, while synthetic logging fails in enterprise audits.",
       solution: "Ingests live query telemetry directly from PostgreSQL pg_stat_statements and OS audit files. Trains unsupervised Isolation Forests and z-score models to detect anomalous query frequencies and off-hour access.",
@@ -65,12 +65,12 @@ export const projectsData: Project[] = [
   {
     id: 30,
     title: "CIH: AI-Powered Flood-Aware Evacuation Routing & Dispatch",
-    thumbnail: "https://opengraph.githubassets.com/1/Nexus-SIT/CIH",
+    thumbnail: "https://opengraph.githubassets.com/1/ManishRShetty/Flood-Routing",
     description: "Crisis dispatch platform parsing OpenStreetMap vector data into dynamic topological graphs with vehicle-specific flood routing.",
     type: 'project',
     priority: 4,
     stack: ["Node.js", "Express", "ngraph.path", "OpenStreetMap (PBF)", "Redis", "Flutter", "Leaflet"],
-    codeUrl: "https://github.com/Nexus-SIT/CIH.git",
+    codeUrl: "https://github.com/ManishRShetty/Flood-Routing",
     caseStudy: {
       problem: "Static navigation tools route emergency vehicles into submerged corridors during flash floods, cutting off critical rescue lines.",
       solution: "Parsed raw OpenStreetMap PBF files into an in-memory spatial graph using ngraph. Dynamic edge-weighting recalculates vehicle-specific A* paths: routing ambulances around deep waters while directing rescue boats through canals.",

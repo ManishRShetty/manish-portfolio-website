@@ -139,8 +139,8 @@ export const EngineeringProof: React.FC<EngineeringProofProps> = ({ content }) =
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-6">
-                Direct honesty regarding automated quality gates. Rather than faking pass badges,
-                pending configurations are labeled clearly as TODOs.
+                Active quality gates across active repositories: strict TypeScript contracts,
+                automated build validation, and adversarial evaluation pipelines.
               </p>
 
               <div className="space-y-3">

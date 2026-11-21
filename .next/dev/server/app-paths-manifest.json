@@ -1,6 +1,4 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/api/outbox-demo/route": "app/api/outbox-demo/route.js",
-  "/outboxlabs/page": "app/outboxlabs/page.js",
-  "/page": "app/page.js"
+  "/outboxlabs/page": "app/outboxlabs/page.js"
 }

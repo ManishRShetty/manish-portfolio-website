@@ -20,6 +20,7 @@ export interface OutboxProjectHardProblem {
 export interface OutboxProject {
   id: string;
   title: string;
+  myRole: string;
   relevance: string;
   problem: string;
   architecture: string;
