@@ -5,5 +5,7 @@
   "/blogs/page": "/blogs",
   "/favicon.ico/route": "/favicon.ico",
   "/journey/page": "/journey",
-  "/page": "/"
+  "/lab/page": "/lab",
+  "/page": "/",
+  "/universe/page": "/universe"
 }

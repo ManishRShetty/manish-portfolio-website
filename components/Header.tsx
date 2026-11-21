@@ -98,15 +98,13 @@ export const Header: React.FC<HeaderProps> = () => {
               <span>Siranta AI</span>
             </motion.a>
             <motion.a
-              href="https://uilab.manishshetty.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-white bg-white/10 hover:bg-white/20 border border-white/10 px-4 py-1.5 rounded-full transition-all duration-300 backdrop-blur-md"
+              href="/lab"
+              className="flex items-center gap-1.5 text-sm font-medium text-white bg-white/10 hover:bg-white/20 border border-white/10 px-4 py-1.5 rounded-full transition-all duration-300 backdrop-blur-md"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              aria-label="UI Lab"
+              aria-label="Lab"
             >
-              <span>UI Lab</span>
+              <span>Lab</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
             </motion.a>
           </nav>
@@ -227,9 +225,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 <span>Siranta AI</span>
               </motion.a>
               <motion.a
-                href="https://uilab.manishshetty.dev"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/lab"
                 className="flex items-center gap-2 text-lg font-medium text-white bg-white/10 hover:bg-white/20 border border-white/10 px-4 py-2 rounded-xl transition-all duration-300 w-max"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variants={{
@@ -246,9 +242,9 @@ export const Header: React.FC<HeaderProps> = () => {
                 }}
                 whileHover={{ x: 5, color: '#ffffff' }}
                 whileTap={{ scale: 0.95 }}
-                aria-label="UI Lab"
+                aria-label="Lab"
               >
-                <span>UI Lab</span>
+                <span>Lab</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
               </motion.a>
             </motion.div>

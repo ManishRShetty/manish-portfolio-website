@@ -62,6 +62,18 @@
       "regex": "^/journey(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/journey(?:/)?$"
+    },
+    {
+      "page": "/lab",
+      "regex": "^/lab(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/lab(?:/)?$"
+    },
+    {
+      "page": "/universe",
+      "regex": "^/universe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/universe(?:/)?$"
     }
   ],
   "dataRoutes": [],

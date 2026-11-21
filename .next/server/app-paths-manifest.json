@@ -5,5 +5,7 @@
   "/blogs/page": "app/blogs/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/journey/page": "app/journey/page.js",
-  "/page": "app/page.js"
+  "/lab/page": "app/lab/page.js",
+  "/page": "app/page.js",
+  "/universe/page": "app/universe/page.js"
 }

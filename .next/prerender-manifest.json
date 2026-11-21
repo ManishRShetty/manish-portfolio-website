@@ -52,37 +52,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/api/projects": {
-      "initialHeaders": {
-        "cache-control": "public, s-maxage=60, stale-while-revalidate=300",
-        "content-type": "application/json",
-        "x-next-cache-tags": "_N_T_/layout,_N_T_/api/layout,_N_T_/api/projects/layout,_N_T_/api/projects/route,_N_T_/api/projects"
-      },
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 60,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/api/projects",
-      "dataRoute": null,
-      "prefetchDataRoute": null,
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/blogs": {
       "experimentalBypassFor": [
         {
@@ -163,7 +132,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/lab": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -175,10 +144,34 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/lab",
+      "dataRoute": "/lab.rsc",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/universe": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/universe",
+      "dataRoute": "/universe.rsc",
       "prefetchDataRoute": null,
       "allowHeader": [
         "host",

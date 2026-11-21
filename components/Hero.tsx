@@ -87,53 +87,45 @@ export const Hero: React.FC = () => {
           Founder, systems engineer, and builder of infrastructure for autonomous AI. I design immutable, auditable memory systems and high-throughput context pipelines that power production-grade agents.
         </motion.p>
 
-        {/* Action Buttons: Simplified Hierarchy */}
+        {/* Action Buttons: Clean Minimal Hierarchy */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           variants={itemBlurVariant}
         >
-          {/* Primary Action - Solid White */}
-          {/* <motion.a
-            href="https://siranta.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="group w-full sm:w-auto px-7 py-3.5 bg-white text-black rounded-full font-semibold text-base tracking-tight transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3"
-          >
-            <span>Explore</span>
-            <img
-              src="/siranta/siranta-black.svg"
-              alt=""
-              aria-hidden="true"
-              className="w-16 h-7 object-contain"
-            />
-            <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-300 w-5 h-5" />
-          </motion.a> */}
-
-          {/* Secondary Action - GitHub (Ghost) */}
+          {/* Primary Action - GitHub */}
           <motion.a
             href="https://github.com/siranta-ai"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-sm text-white rounded-full font-medium text-base tracking-tight transition-all flex items-center justify-center gap-2"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto px-7 py-3.5 bg-white text-black font-semibold rounded-full text-sm tracking-tight transition-all flex items-center justify-center gap-2 hover:bg-neutral-200"
           >
-            <Github className="w-5 h-5 opacity-80" />
-            View GitHub
+            <Github className="w-4 h-4" />
+            <span>View GitHub</span>
           </motion.a>
 
-          {/* Tertiary Action - Resume (ghost/text) */}
+          {/* Secondary Action - Resume */}
           <motion.a
             href="/manishshetty-resume.pdf"
             download
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-5 py-3 rounded-full border border-white/15 bg-white/5 text-white/90 text-sm font-semibold tracking-tight transition-all hover:bg-white/10 hover:border-white/30 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-3.5 rounded-full border border-white/15 bg-white/5 text-white text-sm font-medium tracking-tight transition-all hover:bg-white/10 hover:border-white/30 flex items-center justify-center gap-2"
           >
             <Download className="w-4 h-4 opacity-80" />
-            Resume
+            <span>Resume</span>
+          </motion.a>
+
+          {/* 3rd Priority Action - Lab (Minimal & Clean) */}
+          <motion.a
+            href="/lab"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto px-5 py-3.5 rounded-full border border-white/10 bg-white/[0.03] text-neutral-400 text-sm font-medium tracking-tight transition-all hover:bg-white/5 hover:border-white/20 hover:text-white flex items-center justify-center gap-2"
+          >
+            <span>Lab</span>
+            <ArrowRight className="w-3.5 h-3.5 opacity-60" />
           </motion.a>
         </motion.div>
       </motion.div>
