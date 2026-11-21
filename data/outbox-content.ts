@@ -38,7 +38,7 @@ export const outboxContent = {
       {
         requirement: 'TypeScript',
         proof: 'CandleCrush server/client contracts, Arena engine, WebP Wizard, strict typing',
-        proofLink: 'https://github.com/Nexus-SIT/CandleCrush',
+        proofLink: 'https://github.com/ManishRShetty/CandleCrush',
         status: 'Proven' as const,
       },
       {
@@ -185,9 +185,14 @@ export const outboxContent = {
       date: '2026',
     },
     {
-      name: 'Winner — Code Sprint 2026',
-      issuer: '1st Place in competitive algorithmic & full-stack development sprint',
+      name: 'Winner — Code Sprint 2026 Hackathon',
+      issuer: '1st Place in competitive algorithmic & full-stack development hackathon',
       date: '2026',
+    },
+    {
+      name: 'Institutional Commendation & Acknowledgement',
+      issuer: 'Srinivas College of Pharmacy — Formal Letter of Acknowledgement for Project Delivery & Engineering Team Management across clinical healthcare systems',
+      date: '2025',
     },
     {
       name: 'Winner — Pilikula Innovation Fair',

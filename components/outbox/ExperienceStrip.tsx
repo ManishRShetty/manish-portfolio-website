@@ -140,7 +140,7 @@ export const ExperienceStrip: React.FC<ExperienceStripProps> = ({ experience, ha
                 </h3>
               </div>
               <span className="text-[11px] font-mono text-amber-400 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">
-                6 Wins & National Recognitions
+                Hackathon Wins & Commendations
               </span>
             </div>
 

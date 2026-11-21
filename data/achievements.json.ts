@@ -7,9 +7,14 @@ export const achievementsData: Achievement[] = [
         date: "2026"
     },
     {
-        title: "Winner — Code Sprint 2026",
-        issuer: "1st Place in competitive algorithmic & full-stack development",
+        title: "Winner — Code Sprint 2026 Hackathon",
+        issuer: "1st Place in competitive algorithmic & full-stack development hackathon",
         date: "2026"
+    },
+    {
+        title: "Letter of Acknowledgement — Project & Team Management",
+        issuer: "Srinivas College of Pharmacy (Commendation for Project Delivery & Clinical Engineering Leadership)",
+        date: "2025"
     },
     {
         title: "Winner — Pilikula Innovation Fair",

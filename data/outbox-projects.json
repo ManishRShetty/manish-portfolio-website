@@ -7,11 +7,25 @@
     "problem": "Unmonitored privileged access creates silent security breaches. Needed sub-50ms session verification and real-time anomaly scoring across sensitive administrative operations.",
     "architecture": "Client / Admin Dashboard\n  ↓ REST API (JWT + RBAC)\nExpress.js Gateway (Node.js)\n  ├─ Session Authenticator & Token Verifier\n  ├─ Audit Log Ingestion Engine\n  └─ Anomaly Detection Dispatcher\n      ↓\nPostgreSQL (Relational Schema: users, roles, sessions, partitioned audit_logs)\n      ↕\nPython Anomaly Scoring Worker (Real-time Behavioral Analytics)",
     "stack": [
-      { "name": "Node.js", "version": "v18+" },
-      { "name": "Express.js", "version": "v4.x" },
-      { "name": "PostgreSQL", "version": "v16" },
-      { "name": "Python", "version": "v3.10+" },
-      { "name": "Docker Compose" }
+      {
+        "name": "Node.js",
+        "version": "v18+"
+      },
+      {
+        "name": "Express.js",
+        "version": "v4.x"
+      },
+      {
+        "name": "PostgreSQL",
+        "version": "v16"
+      },
+      {
+        "name": "Python",
+        "version": "v3.10+"
+      },
+      {
+        "name": "Docker Compose"
+      }
     ],
     "hardProblem": {
       "title": "Write Contention & Latency on High-Frequency Audit Ingestion",
@@ -31,11 +45,22 @@
     "problem": "Trading education platforms suffer from client-side state manipulation or laggy execution. Needed a server-authoritative engine that validates orders and tracks portfolio balances without desync.",
     "architecture": "React + Tailwind Client (Vite)\n  ↓ Typed REST API (Shared TypeScript Interfaces)\nExpress.js Server (Node.js + TypeScript)\n  ├─ Order Validation & Matching Pipeline\n  ├─ Balance Lock & Execution Unit\n  ├─ Market Tick Simulator\n  └─ AI Mentor Logic Handler\n      ↓\nIn-Memory Session Store / State Persistence",
     "stack": [
-      { "name": "Node.js" },
-      { "name": "TypeScript", "version": "v5.x" },
-      { "name": "Express.js" },
-      { "name": "React.js" },
-      { "name": "Tailwind CSS" }
+      {
+        "name": "Node.js"
+      },
+      {
+        "name": "TypeScript",
+        "version": "v5.x"
+      },
+      {
+        "name": "Express.js"
+      },
+      {
+        "name": "React.js"
+      },
+      {
+        "name": "Tailwind CSS"
+      }
     ],
     "hardProblem": {
       "title": "Concurrency & Balance Race Condition Prevention",
@@ -44,8 +69,8 @@
     "measurableResult": "Deterministic order execution within 15ms. Tested across 1,000+ simulated concurrent market orders with zero portfolio balance drift or state race conditions.",
     "links": {
       "live": "https://candlecrush.nexusclubs.in/",
-      "github": "https://github.com/Nexus-SIT/CandleCrush",
-      "apiDocs": "https://github.com/Nexus-SIT/CandleCrush#api-endpoints"
+      "github": "https://github.com/ManishRShetty/CandleCrush",
+      "apiDocs": "https://github.com/ManishRShetty/CandleCrush#api-endpoints"
     }
   },
   {
@@ -56,12 +81,27 @@
     "problem": "Static question databases go stale, while on-the-fly multi-agent generation takes 2-4 seconds—ruining real-time interactive game flow.",
     "architecture": "Next.js Frontend (WebSocket + REST)\n  ↓ REST API Gateway\nFastAPI Gateway Service\n  ├─ Redis Predictive Question Queue (Pre-cached by Tier)\n  └─ Background Worker Trigger\n      ↓ Async Queue\nLangGraph Multi-Agent Pipeline (Scraper → Drafter → Adversarial Judge)\n      ↓\nPostgreSQL (pgvector Embeddings) ← Kubernetes Horizontal Autoscaling",
     "stack": [
-      { "name": "TypeScript" },
-      { "name": "Next.js" },
-      { "name": "Redis", "version": "v7.x" },
-      { "name": "FastAPI", "version": "v0.100+" },
-      { "name": "LangGraph" },
-      { "name": "PostgreSQL", "version": "pgvector" }
+      {
+        "name": "TypeScript"
+      },
+      {
+        "name": "Next.js"
+      },
+      {
+        "name": "Redis",
+        "version": "v7.x"
+      },
+      {
+        "name": "FastAPI",
+        "version": "v0.100+"
+      },
+      {
+        "name": "LangGraph"
+      },
+      {
+        "name": "PostgreSQL",
+        "version": "pgvector"
+      }
     ],
     "hardProblem": {
       "title": "Predictive Cache Tiering for Decoupled Multi-Agent Generation",

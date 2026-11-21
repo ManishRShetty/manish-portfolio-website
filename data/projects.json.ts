@@ -239,7 +239,7 @@ export const projectsData: Project[] = [
     caseStudy: {
       problem: "Emergency triage for acute coronary syndromes involves dense, multi-variable clinical guidelines prone to diagnostic variability.",
       solution: "Developed a deterministic medical inference rule engine ingesting cardiac biomarkers, ECG parameters, and hemodynamic factors. Codified TIMI/GRACE risk scoring to guide early invasive versus conservative therapy.",
-      impact: "Standardized patient risk stratification and automated audit report generation from clinical CSV/Excel registries.",
+      impact: "Standardized patient risk stratification from clinical registries. Awarded a formal Letter of Acknowledgement from Srinivas College of Pharmacy for technical delivery and engineering team management.",
       screenshots: []
     }
   },
@@ -337,7 +337,7 @@ export const projectsData: Project[] = [
     priority: 20,
     stack: ["TypeScript", "Node.js", "Express", "React", "Tailwind CSS", "Framer Motion"],
     liveDemoUrl: "https://candlecrush.nexusclubs.in/",
-    codeUrl: "https://github.com/Nexus-SIT/CandleCrush",
+    codeUrl: "https://github.com/ManishRShetty/CandleCrush",
     caseStudy: {
       problem: "Financial education platforms are intimidating for novices, while client-rendered games suffer from balance manipulation exploits.",
       solution: "Constructed an Express and TypeScript backend validating order execution, locking balance deductions, and streaming simulated market ticks to a pixel-art React interface.",
