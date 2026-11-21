@@ -183,7 +183,7 @@ const FeaturedProductCard: React.FC<{ project: Project; onClick?: (project: Proj
 
 // --- Main Projects Section ---
 export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) => {
-  const DEFAULT_VIEW_COUNT = 3;
+  const DEFAULT_VIEW_COUNT = 6;
   const [visibleCount, setVisibleCount] = useState(DEFAULT_VIEW_COUNT);
 
   // Ref for smooth scrolling back to top of grid when collapsing
@@ -266,7 +266,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onProjectClick }) 
                   onClick={handleToggle}
                   className="group flex items-center gap-2 px-6 py-3 bg-[#080808] hover:bg-[#121212] text-white rounded-full font-medium transition-all duration-300 border border-white/5 hover:border-white/10"
                 >
-                  <span>{isExpanded ? 'View Less' : 'View All Projects'}</span>
+                  <span>{isExpanded ? 'View Less' : `View All Projects (${projectItems.length})`}</span>
                   <motion.div
                     animate={{ rotate: isExpanded ? 180 : 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
